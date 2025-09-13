@@ -1,0 +1,1126 @@
+{
+  "topic": "artificial intelligence in healthcare",
+  "filters": {
+    "start_year": null,
+    "end_year": null,
+    "include_keywords": [
+      "machine learning",
+      "deep learning",
+      "AI"
+    ],
+    "exclude_keywords": [],
+    "venues": [],
+    "limit": 15
+  },
+  "raw_papers": [
+    {
+      "id": "http://arxiv.org/abs/2305.18302v2",
+      "source": "arxiv",
+      "title": "What We Know So Far: Artificial Intelligence in African Healthcare",
+      "abstract": "Healthcare in Africa is a complex issue influenced by many factors including\npoverty, lack of infrastructure, and inadequate funding. However, Artificial\nintelligence (AI) applied to healthcare, has the potential to transform\nhealthcare in Africa by improving the accuracy and efficiency of diagnosis,\nenabling earlier detection of diseases, and supporting the delivery of\npersonalized medicine. This paper reviews the current state of how AI\nAlgorithms can be used to improve diagnostics, treatment, and disease\nmonitoring, as well as how AI can be used to improve access to healthcare in\nAfrica as a low-resource setting and discusses some of the critical challenges\nand opportunities for its adoption. As such, there is a need for a\nwell-coordinated effort by the governments, private sector, healthcare\nproviders, and international organizations to create sustainable AI solutions\nthat meet the unique needs of the African healthcare system.",
+      "authors": [
+        "Naome Etori",
+        "Ebasa Temesgen",
+        "Maria Gini"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2305.18302v2",
+      "pdf_url": "http://arxiv.org/pdf/2305.18302v2",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2406.10121v1",
+      "source": "arxiv",
+      "title": "Data Ethics in the Era of Healthcare Artificial Intelligence in Africa:\n  An Ubuntu Philosophy Perspective",
+      "abstract": "Data are essential in developing healthcare artificial intelligence (AI)\nsystems. However, patient data collection, access, and use raise ethical\nconcerns, including informed consent, data bias, data protection and privacy,\ndata ownership, and benefit sharing. Various ethical frameworks have been\nproposed to ensure the ethical use of healthcare data and AI, however, these\nframeworks often align with Western cultural values, social norms, and\ninstitutional contexts emphasizing individual autonomy and well-being. Ethical\nguidelines must reflect political and cultural settings to account for cultural\ndiversity, inclusivity, and historical factors such as colonialism. Thus, this\npaper discusses healthcare data ethics in the AI era in Africa from the Ubuntu\nphilosophy perspective. It focuses on the contrast between individualistic and\ncommunitarian approaches to data ethics. The proposed framework could inform\nstakeholders, including AI developers, healthcare providers, the public, and\npolicy-makers about healthcare data ethical usage in AI in Africa.",
+      "authors": [
+        "Abdoul Jalil Djiberou Mahamadou",
+        "Aloysius Ochasi",
+        "Russ B. Altman"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2406.10121v1",
+      "pdf_url": "http://arxiv.org/pdf/2406.10121v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2406.10653v1",
+      "source": "arxiv",
+      "title": "Justice in Healthcare Artificial Intelligence in Africa",
+      "abstract": "There is an ongoing debate on balancing the benefits and risks of artificial\nintelligence (AI) as AI is becoming critical to improving healthcare delivery\nand patient outcomes. Such improvements are essential in resource-constrained\nsettings where millions lack access to adequate healthcare services, such as in\nAfrica. AI in such a context can potentially improve the effectiveness,\nefficiency, and accessibility of healthcare services. Nevertheless, the\ndevelopment and use of AI-driven healthcare systems raise numerous ethical,\nlegal, and socio-economic issues. Justice is a major concern in AI that has\nimplications for amplifying social inequities. This paper discusses these\nimplications and related justice concepts such as solidarity, Common Good,\nsustainability, AI bias, and fairness. For Africa to effectively benefit from\nAI, these principles should align with the local context while balancing the\nrisks. Compared to mainstream ethical debates on justice, this perspective\noffers context-specific considerations for equitable healthcare AI development\nin Africa.",
+      "authors": [
+        "Aloysius Ochasi",
+        "Abdoul Jalil Djiberou Mahamadou",
+        "Russ B. Altman"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2406.10653v1",
+      "pdf_url": "http://arxiv.org/pdf/2406.10653v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2410.00366v1",
+      "source": "arxiv",
+      "title": "Easydiagnos: a framework for accurate feature selection for automatic\n  diagnosis in smart healthcare",
+      "abstract": "The rapid advancements in artificial intelligence (AI) have revolutionized\nsmart healthcare, driving innovations in wearable technologies, continuous\nmonitoring devices, and intelligent diagnostic systems. However, security,\nexplainability, robustness, and performance optimization challenges remain\ncritical barriers to widespread adoption in clinical environments. This\nresearch presents an innovative algorithmic method using the Adaptive Feature\nEvaluator (AFE) algorithm to improve feature selection in healthcare datasets\nand overcome problems. AFE integrating Genetic Algorithms (GA), Explainable\nArtificial Intelligence (XAI), and Permutation Combination Techniques (PCT),\nthe algorithm optimizes Clinical Decision Support Systems (CDSS), thereby\nenhancing predictive accuracy and interpretability. The proposed method is\nvalidated across three diverse healthcare datasets using six distinct machine\nlearning algorithms, demonstrating its robustness and superiority over\nconventional feature selection techniques. The results underscore the\ntransformative potential of AFE in smart healthcare, enabling personalized and\ntransparent patient care. Notably, the AFE algorithm, when combined with a\nMulti-layer Perceptron (MLP), achieved an accuracy of up to 98.5%, highlighting\nits capability to improve clinical decision-making processes in real-world\nhealthcare applications.",
+      "authors": [
+        "Prasenjit Maji",
+        "Amit Kumar Mondal",
+        "Hemanta Kumar Mondal",
+        "Saraju P. Mohanty"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2410.00366v1",
+      "pdf_url": "http://arxiv.org/pdf/2410.00366v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2210.07065v1",
+      "source": "arxiv",
+      "title": "Advancing the cybersecurity of the healthcare system with\n  self-optimising and self-adaptative artificial intelligence (part 2)",
+      "abstract": "This article advances the knowledge on teaching and training new artificial\nintelligence algorithms, for securing, preparing, and adapting the healthcare\nsystem to cope with future pandemics. The core objective is to develop a\nconcept healthcare system supported by autonomous artificial intelligence that\ncan use edge health devices with real-time data. The article constructs two\ncase scenarios for applying cybersecurity with autonomous artificial\nintelligence for (1) self-optimising predictive cyber risk analytics of\nfailures in healthcare systems during a Disease X event (i.e., undefined future\npandemic), and (2) self-adaptive forecasting of medical production and supply\nchain bottlenecks during future pandemics. To construct the two testing\nscenarios, the article uses the case of Covid-19 to synthesise data for the\nalgorithms i.e., for optimising and securing digital healthcare systems in\nanticipation of disease X. The testing scenarios are built to tackle the\nlogistical challenges and disruption of complex production and supply chains\nfor vaccine distribution with optimisation algorithms.",
+      "authors": [
+        "Petar Radanliev",
+        "David De Roure"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2210.07065v1",
+      "pdf_url": "http://arxiv.org/pdf/2210.07065v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2107.13454v1",
+      "source": "arxiv",
+      "title": "Artificial Intelligence in Healthcare: Lost In Translation?",
+      "abstract": "Artificial intelligence (AI) in healthcare is a potentially revolutionary\ntool to achieve improved healthcare outcomes while reducing overall health\ncosts. While many exploratory results hit the headlines in recent years there\nare only few certified and even fewer clinically validated products available\nin the clinical setting. This is a clear indication of failing translation due\nto shortcomings of the current approach to AI in healthcare. In this work, we\nhighlight the major areas, where we observe current challenges for translation\nin AI in healthcare, namely precision medicine, reproducible science, data\nissues and algorithms, causality, and product development. For each field, we\noutline possible solutions for these challenges. Our work will lead to improved\ntranslation of AI in healthcare products into the clinical setting",
+      "authors": [
+        "Vince I. Madai",
+        "David C. Higgins"
+      ],
+      "year": 2021,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2107.13454v1",
+      "pdf_url": "http://arxiv.org/pdf/2107.13454v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2305.09209v1",
+      "source": "arxiv",
+      "title": "Trustworthy Privacy-preserving Hierarchical Ensemble and Federated\n  Learning in Healthcare 4.0 with Blockchain",
+      "abstract": "The advancement of Internet and Communication Technologies (ICTs) has led to\nthe era of Industry 4.0. This shift is followed by healthcare industries\ncreating the term Healthcare 4.0. In Healthcare 4.0, the use of IoT-enabled\nmedical imaging devices for early disease detection has enabled medical\npractitioners to increase healthcare institutions' quality of service. However,\nHealthcare 4.0 is still lagging in Artificial Intelligence and big data\ncompared to other Industry 4.0 due to data privacy concerns. In addition,\ninstitutions' diverse storage and computing capabilities restrict institutions\nfrom incorporating the same training model structure. This paper presents a\nsecure multi-party computation-based ensemble federated learning with\nblockchain that enables heterogeneous models to collaboratively learn from\nhealthcare institutions' data without violating users' privacy. Blockchain\nproperties also allow the party to enjoy data integrity without trust in a\ncentralized server while also providing each healthcare institution with\nauditability and version control capability.",
+      "authors": [
+        "Veronika Stephanie",
+        "Ibrahim Khalil",
+        "Mohammed Atiquzzaman",
+        "Xun Yi"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2305.09209v1",
+      "pdf_url": "http://arxiv.org/pdf/2305.09209v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2408.12880v1",
+      "source": "arxiv",
+      "title": "Has Multimodal Learning Delivered Universal Intelligence in Healthcare?\n  A Comprehensive Survey",
+      "abstract": "The rapid development of artificial intelligence has constantly reshaped the\nfield of intelligent healthcare and medicine. As a vital technology, multimodal\nlearning has increasingly garnered interest due to data complementarity,\ncomprehensive modeling form, and great application potential. Currently,\nnumerous researchers are dedicating their attention to this field, conducting\nextensive studies and constructing abundant intelligent systems. Naturally, an\nopen question arises that has multimodal learning delivered universal\nintelligence in healthcare? To answer the question, we adopt three unique\nviewpoints for a holistic analysis. Firstly, we conduct a comprehensive survey\nof the current progress of medical multimodal learning from the perspectives of\ndatasets, task-oriented methods, and universal foundation models. Based on\nthem, we further discuss the proposed question from five issues to explore the\nreal impacts of advanced techniques in healthcare, from data and technologies\nto performance and ethics. The answer is that current technologies have NOT\nachieved universal intelligence and there remains a significant journey to\nundertake. Finally, in light of the above reviews and discussions, we point out\nten potential directions for exploration towards the goal of universal\nintelligence in healthcare.",
+      "authors": [
+        "Qika Lin",
+        "Yifan Zhu",
+        "Xin Mei",
+        "Ling Huang",
+        "Jingying Ma",
+        "Kai He",
+        "Zhen Peng",
+        "Erik Cambria",
+        "Mengling Feng"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2408.12880v1",
+      "pdf_url": "http://arxiv.org/pdf/2408.12880v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "10.1016/j.artmed.2024.102861",
+      "source": "crossref",
+      "title": "Challenges and strategies for wide-scale artificial intelligence (AI) deployment in healthcare practices: A perspective for healthcare organizations",
+      "abstract": null,
+      "authors": [
+        "Pouyan Esmaeilzadeh"
+      ],
+      "year": 2024,
+      "venue": "Artificial Intelligence in Medicine",
+      "doi": "10.1016/j.artmed.2024.102861",
+      "url": "https://doi.org/10.1016/j.artmed.2024.102861",
+      "pdf_url": null,
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2409.07415v2",
+      "source": "arxiv",
+      "title": "SoK: Security and Privacy Risks of Healthcare AI",
+      "abstract": "The integration of artificial intelligence (AI) and machine learning (ML)\ninto healthcare systems holds great promise for enhancing patient care and care\ndelivery efficiency; however, it also exposes sensitive data and system\nintegrity to potential cyberattacks. Current security and privacy (S&P)\nresearch on healthcare AI is highly unbalanced in terms of healthcare\ndeployment scenarios and threat models, and has a disconnected focus with the\nbiomedical research community. This hinders a comprehensive understanding of\nthe risks that healthcare AI entails. To address this gap, this paper takes a\nthorough examination of existing healthcare AI S&P research, providing a\nunified framework that allows the identification of under-explored areas. Our\nsurvey presents a systematic overview of healthcare AI attacks and defenses,\nand points out challenges and research opportunities for each AI-driven\nhealthcare application domain. Through our experimental analysis of different\nthreat models and feasibility studies on under-explored adversarial attacks, we\nprovide compelling insights into the pressing need for cybersecurity research\nin the rapidly evolving field of healthcare AI.",
+      "authors": [
+        "Yuanhaur Chang",
+        "Han Liu",
+        "Chenyang Lu",
+        "Ning Zhang"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2409.07415v2",
+      "pdf_url": "http://arxiv.org/pdf/2409.07415v2",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2209.05457v1",
+      "source": "arxiv",
+      "title": "Reliable and Resilient AI and IoT-based Personalised Healthcare\n  Services: A Survey",
+      "abstract": "Recent technological and economic developments have transformed the\nhealthcare sector towards more personalized and IoT-based healthcare services.\nThese services are realized through control and monitoring applications that\nare typically developed using artificial intelligence/machine learning-based\nalgorithms, which play a significant role in highlighting the efficiency of\ntraditional healthcare systems. Current personalized healthcare services are\ndedicated to a specific environment to support technological personalization.\nHowever, they are unable to consider different interrelated health conditions,\nleading to inappropriate diagnoses and affecting sustainability and the\nlong-term health of patients. To this end, current Healthcare 5.0 technology\nhas evolved that supersede previous healthcare technologies. The goal of\nhealthcare 5.0 is to achieve an autonomous healthcare service, that takes into\naccount the interdependent effect of different health conditions of a patient.\nThis paper conducts a comprehensive survey on personalized healthcare services.\nIn particular, we first present an overview of key requirements of\ncomprehensive personalized healthcare services in modern healthcare Internet of\nThings (HIoT), including the definition of personalization and an example use\ncase scenario as a representative for modern HIoT. Second, we explored a\nfundamental three-layer architecture for IoT-based healthcare systems using AI\nand non-AI-based approaches, considering key requirements for CPHS followed by\ntheir strengths and weaknesses in the frame of personalized healthcare\nservices. Third, we highlighted different security threats against each layer\nof IoT architecture along with the possible AI and non-AI-based solutions.\nFinally, we propose a methodology to develop reliable, resilient, and\npersonalized healthcare services that address the identified weaknesses of\nexisting approaches.",
+      "authors": [
+        "Najma Taimoor",
+        "Semeen Rehman"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2209.05457v1",
+      "pdf_url": "http://arxiv.org/pdf/2209.05457v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2311.00842v1",
+      "source": "arxiv",
+      "title": "healthAIChain: Improving security and safety using Blockchain Technology\n  applications in AI-based healthcare systems",
+      "abstract": "Blockchain as a digital ledger for keeping records of digital transactions\nand other information, it is secure and decentralized technology. The globally\ngrowing number of digital population every day possesses a significant threat\nto online data including the medical and patients data. After bitcoin,\nblockchain technology has emerged into a general-purpose technology with\napplications in medical industries and healthcare. Blockchain can promote\nhighly configurable openness while retaining the highest security standards for\ncritical data of medical patients. Referred to as distributed record keeping\nfor healthcare systems which makes digital assets unalterable and transparent\nvia a cryptographic hash and decentralized network. The study delves into the\nsecurity and safety improvement associated with implementing blockchain in\nAI-based healthcare systems. Blockchain-enabled AI tackles the existing issues\nrelated to security, performance efficiencies, and safety in healthcare\nsystems. We have also examined the Artificial Intelligence in healthcare and\nmedical industry, potential areas, open questions concerning the blockchain in\nhealthcare systems. Finally, the article proposed an AI-based healthcare\nblockchain model (healthAIChain) to improve patients data and security.",
+      "authors": [
+        "Naresh Kshetri",
+        "James Hutson",
+        "Revathy G"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2311.00842v1",
+      "pdf_url": "http://arxiv.org/pdf/2311.00842v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2211.06346v1",
+      "source": "arxiv",
+      "title": "AI Ethics in Smart Healthcare",
+      "abstract": "This article reviews the landscape of ethical challenges of integrating\nartificial intelligence (AI) into smart healthcare products, including medical\nelectronic devices. Differences between traditional ethics in the medical\ndomain and emerging ethical challenges with AI-driven healthcare are presented,\nparticularly as they relate to transparency, bias, privacy, safety,\nresponsibility, justice, and autonomy. Open challenges and recommendations are\noutlined to enable the integration of ethical principles into the design,\nvalidation, clinical trials, deployment, monitoring, repair, and retirement of\nAI-based smart healthcare products.",
+      "authors": [
+        "Sudeep Pasricha"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2211.06346v1",
+      "pdf_url": "http://arxiv.org/pdf/2211.06346v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2103.12144v1",
+      "source": "arxiv",
+      "title": "Edge Intelligence for Empowering IoT-based Healthcare Systems",
+      "abstract": "The demand for real-time, affordable, and efficient smart healthcare services\nis increasing exponentially due to the technological revolution and burst of\npopulation. To meet the increasing demands on this critical infrastructure,\nthere is a need for intelligent methods to cope with the existing obstacles in\nthis area. In this regard, edge computing technology can reduce latency and\nenergy consumption by moving processes closer to the data sources in comparison\nto the traditional centralized cloud and IoT-based healthcare systems. In\naddition, by bringing automated insights into the smart healthcare systems,\nartificial intelligence (AI) provides the possibility of detecting and\npredicting high-risk diseases in advance, decreasing medical costs for\npatients, and offering efficient treatments. The objective of this article is\nto highlight the benefits of the adoption of edge intelligent technology, along\nwith AI in smart healthcare systems. Moreover, a novel smart healthcare model\nis proposed to boost the utilization of AI and edge technology in smart\nhealthcare systems. Additionally, the paper discusses issues and research\ndirections arising when integrating these different technologies together.",
+      "authors": [
+        "Vahideh Hayyolalam",
+        "Moayad Aloqaily",
+        "Oznur Ozkasap",
+        "Mohsen Guizani"
+      ],
+      "year": 2021,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2103.12144v1",
+      "pdf_url": "http://arxiv.org/pdf/2103.12144v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2304.00524v2",
+      "source": "arxiv",
+      "title": "A Survey on Federated Learning for the Healthcare Metaverse: Concepts,\n  Applications, Challenges, and Future Directions",
+      "abstract": "Recent technological advancements have considerately improved healthcare\nsystems to provide various intelligent healthcare services and improve the\nquality of life. Federated learning (FL), a new branch of artificial\nintelligence (AI), opens opportunities to deal with privacy issues in\nhealthcare systems and exploit data and computing resources available at\ndistributed devices. Additionally, the Metaverse, through integrating emerging\ntechnologies, such as AI, cloud edge computing, Internet of Things (IoT),\nblockchain, and semantic communications, has transformed many vertical domains\nin general and the healthcare sector in particular. Obviously, FL shows many\nbenefits and provides new opportunities for conventional and Metaverse\nhealthcare, motivating us to provide a survey on the usage of FL for Metaverse\nhealthcare systems. First, we present preliminaries to IoT-based healthcare\nsystems, FL in conventional healthcare, and Metaverse healthcare. The benefits\nof FL in Metaverse healthcare are then discussed, from improved privacy and\nscalability, better interoperability, better data management, and extra\nsecurity to automation and low-latency healthcare services. Subsequently, we\ndiscuss several applications pertaining to FL-enabled Metaverse healthcare,\nincluding medical diagnosis, patient monitoring, medical education, infectious\ndisease, and drug discovery. Finally, we highlight significant challenges and\npotential solutions toward the realization of FL in Metaverse healthcare.",
+      "authors": [
+        "Ali Kashif Bashir",
+        "Nancy Victor",
+        "Sweta Bhattacharya",
+        "Thien Huynh-The",
+        "Rajeswari Chengoden",
+        "Gokul Yenduri",
+        "Praveen Kumar Reddy Maddikunta",
+        "Quoc-Viet Pham",
+        "Thippa Reddy Gadekallu",
+        "Madhusanka Liyanage"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2304.00524v2",
+      "pdf_url": "http://arxiv.org/pdf/2304.00524v2",
+      "citations_count": null,
+      "keywords": []
+    }
+  ],
+  "reviews": [
+    {
+      "paper_id": "http://arxiv.org/abs/2305.18302v2",
+      "summary": {
+        "tldr": "Healthcare in Africa is a complex issue influenced by many factors including\npoverty, lack of infrastructure, and inadequate funding. However, Artificial\nintelligence (AI) applied to healthcare, has the potential to transform\nhealthcare in Africa by improving the accuracy and eff...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Healthcare in Africa is a complex issue influenced by many factors including\npoverty, lack of infrastructure, and inadequate funding. However, Artificial\nintelligence (AI) applied to healthcare, has t",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2406.10121v1",
+      "summary": {
+        "tldr": "Data are essential in developing healthcare artificial intelligence (AI)\nsystems. However, patient data collection, access, and use raise ethical\nconcerns, including informed consent, data bias, data protection and privacy,\ndata ownership, and benefit sharing. Various ethical fra...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Data are essential in developing healthcare artificial intelligence (AI)\nsystems. However, patient data collection, access, and use raise ethical\nconcerns, including informed consent, data bias, data ",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2406.10653v1",
+      "summary": {
+        "tldr": "There is an ongoing debate on balancing the benefits and risks of artificial\nintelligence (AI) as AI is becoming critical to improving healthcare delivery\nand patient outcomes. Such improvements are essential in resource-constrained\nsettings where millions lack access to adequate...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "There is an ongoing debate on balancing the benefits and risks of artificial\nintelligence (AI) as AI is becoming critical to improving healthcare delivery\nand patient outcomes. Such improvements are e",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2410.00366v1",
+      "summary": {
+        "tldr": "The rapid advancements in artificial intelligence (AI) have revolutionized\nsmart healthcare, driving innovations in wearable technologies, continuous\nmonitoring devices, and intelligent diagnostic systems. However, security,\nexplainability, robustness, and performance optimizatio...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "The rapid advancements in artificial intelligence (AI) have revolutionized\nsmart healthcare, driving innovations in wearable technologies, continuous\nmonitoring devices, and intelligent diagnostic sys",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2210.07065v1",
+      "summary": {
+        "tldr": "This article advances the knowledge on teaching and training new artificial\nintelligence algorithms, for securing, preparing, and adapting the healthcare\nsystem to cope with future pandemics. The core objective is to develop a\nconcept healthcare system supported by autonomous art...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "This article advances the knowledge on teaching and training new artificial\nintelligence algorithms, for securing, preparing, and adapting the healthcare\nsystem to cope with future pandemics. The core",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2107.13454v1",
+      "summary": {
+        "tldr": "Artificial intelligence (AI) in healthcare is a potentially revolutionary\ntool to achieve improved healthcare outcomes while reducing overall health\ncosts. While many exploratory results hit the headlines in recent years there\nare only few certified and even fewer clinically vali...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Artificial intelligence (AI) in healthcare is a potentially revolutionary\ntool to achieve improved healthcare outcomes while reducing overall health\ncosts. While many exploratory results hit the headl",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "overclaiming",
+            "severity": "medium",
+            "rationale": "Claims strong superiority; check against baselines in paper."
+          },
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2305.09209v1",
+      "summary": {
+        "tldr": "The advancement of Internet and Communication Technologies (ICTs) has led to\nthe era of Industry 4.0. This shift is followed by healthcare industries\ncreating the term Healthcare 4.0. In Healthcare 4.0, the use of IoT-enabled\nmedical imaging devices for early disease detection ha...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "The advancement of Internet and Communication Technologies (ICTs) has led to\nthe era of Industry 4. 0",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2408.12880v1",
+      "summary": {
+        "tldr": "The rapid development of artificial intelligence has constantly reshaped the\nfield of intelligent healthcare and medicine. As a vital technology, multimodal\nlearning has increasingly garnered interest due to data complementarity,\ncomprehensive modeling form, and great application...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "The rapid development of artificial intelligence has constantly reshaped the\nfield of intelligent healthcare and medicine. As a vital technology, multimodal\nlearning has increasingly garnered interest",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "10.1016/j.artmed.2024.102861",
+      "summary": {
+        "tldr": "Challenges and strategies for wide-scale artificial intelligence (AI) deployment in healthcare practices: A perspective for healthcare organizations",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.0,
+        "quotes": []
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2409.07415v2",
+      "summary": {
+        "tldr": "The integration of artificial intelligence (AI) and machine learning (ML)\ninto healthcare systems holds great promise for enhancing patient care and care\ndelivery efficiency; however, it also exposes sensitive data and system\nintegrity to potential cyberattacks. Current security ...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "The integration of artificial intelligence (AI) and machine learning (ML)\ninto healthcare systems holds great promise for enhancing patient care and care\ndelivery efficiency; however, it also exposes ",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2209.05457v1",
+      "summary": {
+        "tldr": "Recent technological and economic developments have transformed the\nhealthcare sector towards more personalized and IoT-based healthcare services.\nThese services are realized through control and monitoring applications that\nare typically developed using artificial intelligence/ma...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Recent technological and economic developments have transformed the\nhealthcare sector towards more personalized and IoT-based healthcare services. These services are realized through control and monit",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2311.00842v1",
+      "summary": {
+        "tldr": "Blockchain as a digital ledger for keeping records of digital transactions\nand other information, it is secure and decentralized technology. The globally\ngrowing number of digital population every day possesses a significant threat\nto online data including the medical and patient...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Blockchain as a digital ledger for keeping records of digital transactions\nand other information, it is secure and decentralized technology. The globally\ngrowing number of digital population every day",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2211.06346v1",
+      "summary": {
+        "tldr": "This article reviews the landscape of ethical challenges of integrating\nartificial intelligence (AI) into smart healthcare products, including medical\nelectronic devices. Differences between traditional ethics in the medical\ndomain and emerging ethical challenges with AI-driven h...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "This article reviews the landscape of ethical challenges of integrating\nartificial intelligence (AI) into smart healthcare products, including medical\nelectronic devices. Differences between tradition",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2103.12144v1",
+      "summary": {
+        "tldr": "The demand for real-time, affordable, and efficient smart healthcare services\nis increasing exponentially due to the technological revolution and burst of\npopulation. To meet the increasing demands on this critical infrastructure,\nthere is a need for intelligent methods to cope w...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "The demand for real-time, affordable, and efficient smart healthcare services\nis increasing exponentially due to the technological revolution and burst of\npopulation. To meet the increasing demands on",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2304.00524v2",
+      "summary": {
+        "tldr": "Recent technological advancements have considerately improved healthcare\nsystems to provide various intelligent healthcare services and improve the\nquality of life. Federated learning (FL), a new branch of artificial\nintelligence (AI), opens opportunities to deal with privacy iss...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Recent technological advancements have considerately improved healthcare\nsystems to provide various intelligent healthcare services and improve the\nquality of life. Federated learning (FL), a new bran",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    }
+  ],
+  "matrix": {
+    "columns": [
+      "Venue",
+      "Year",
+      "Citations",
+      "Methods",
+      "Results",
+      "Limitations"
+    ],
+    "rows": [
+      "What We Know So Far: Artificial Intelligence in African Healthcare",
+      "Data Ethics in the Era of Healthcare Artificial Intelligence in Africa:\n  An Ubuntu Philosophy Perspective",
+      "Justice in Healthcare Artificial Intelligence in Africa",
+      "Easydiagnos: a framework for accurate feature selection for automatic\n  diagnosis in smart healthcare",
+      "Advancing the cybersecurity of the healthcare system with\n  self-optimising and self-adaptative artificial intelligence (part 2)",
+      "Artificial Intelligence in Healthcare: Lost In Translation?",
+      "Trustworthy Privacy-preserving Hierarchical Ensemble and Federated\n  Learning in Healthcare 4.0 with Blockchain",
+      "Has Multimodal Learning Delivered Universal Intelligence in Healthcare?\n  A Comprehensive Survey",
+      "Challenges and strategies for wide-scale artificial intelligence (AI) deployment in healthcare practices: A perspective for healthcare organizations",
+      "SoK: Security and Privacy Risks of Healthcare AI",
+      "Reliable and Resilient AI and IoT-based Personalised Healthcare\n  Services: A Survey",
+      "healthAIChain: Improving security and safety using Blockchain Technology\n  applications in AI-based healthcare systems",
+      "AI Ethics in Smart Healthcare",
+      "Edge Intelligence for Empowering IoT-based Healthcare Systems",
+      "A Survey on Federated Learning for the Healthcare Metaverse: Concepts,\n  Applications, Challenges, and Future Directions"
+    ],
+    "data": {
+      "What We Know So Far: Artificial Intelligence in African Healthcare": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2023"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "This paper reviews the current state of how AI\nAlgorithms can be used to improve diagnostics, treatment, and disease\nmonitoring, as well as "
+        },
+        "Results": {
+          "value": "This paper reviews the current state of how AI\nAlgorithms can be used to improve diagnostics, treatment, and disease\nmonitoring, as well as "
+        },
+        "Limitations": {
+          "value": "This paper reviews the current state of how AI\nAlgorithms can be used to improve diagnostics, treatment, and disease\nmonitoring, as well as "
+        }
+      },
+      "Data Ethics in the Era of Healthcare Artificial Intelligence in Africa:\n  An Ubuntu Philosophy Perspective": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2024"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "It focuses on the contrast between individualistic and\ncommunitarian approaches to data ethics"
+        },
+        "Results": {
+          "value": "Results not detailed in abstract"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "Justice in Healthcare Artificial Intelligence in Africa": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2024"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "Nevertheless, the\ndevelopment and use of AI-driven healthcare systems raise numerous ethical,\nlegal, and socio-economic issues"
+        },
+        "Results": {
+          "value": "Such improvements are essential in resource-constrained\nsettings where millions lack access to adequate healthcare services, such as in\nAfri"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "Easydiagnos: a framework for accurate feature selection for automatic\n  diagnosis in smart healthcare": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2024"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "This\nresearch presents an innovative algorithmic method using the Adaptive Feature\nEvaluator (AFE) algorithm to improve feature selection in"
+        },
+        "Results": {
+          "value": "The results underscore the\ntransformative potential of AFE in smart healthcare, enabling personalized and\ntransparent patient care"
+        },
+        "Limitations": {
+          "value": "However, security,\nexplainability, robustness, and performance optimization challenges remain\ncritical barriers to widespread adoption in cl"
+        }
+      },
+      "Advancing the cybersecurity of the healthcare system with\n  self-optimising and self-adaptative artificial intelligence (part 2)": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2022"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "This article advances the knowledge on teaching and training new artificial\nintelligence algorithms, for securing, preparing, and adapting t"
+        },
+        "Results": {
+          "value": "Results not detailed in abstract"
+        },
+        "Limitations": {
+          "value": "The testing scenarios are built to tackle the\nlogistical challenges and disruption of complex production and supply chains\nfor vaccine distr"
+        }
+      },
+      "Artificial Intelligence in Healthcare: Lost In Translation?": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2021"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "This is a clear indication of failing translation due\nto shortcomings of the current approach to AI in healthcare"
+        },
+        "Results": {
+          "value": "While many exploratory results hit the headlines in recent years there\nare only few certified and even fewer clinically validated products a"
+        },
+        "Limitations": {
+          "value": "In this work, we\nhighlight the major areas, where we observe current challenges for translation\nin AI in healthcare, namely precision medici"
+        }
+      },
+      "Trustworthy Privacy-preserving Hierarchical Ensemble and Federated\n  Learning in Healthcare 4.0 with Blockchain": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2023"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "In addition,\ninstitutions' diverse storage and computing capabilities restrict institutions\nfrom incorporating the same training model struc"
+        },
+        "Results": {
+          "value": "Results not detailed in abstract"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "Has Multimodal Learning Delivered Universal Intelligence in Healthcare?\n  A Comprehensive Survey": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2024"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "Firstly, we conduct a comprehensive survey\nof the current progress of medical multimodal learning from the perspectives of\ndatasets, task-or"
+        },
+        "Results": {
+          "value": "The answer is that current technologies have NOT\nachieved universal intelligence and there remains a significant journey to\nundertake"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "Challenges and strategies for wide-scale artificial intelligence (AI) deployment in healthcare practices: A perspective for healthcare organizations": {
+        "Venue": {
+          "value": "Artificial Intelligence in Medicine"
+        },
+        "Year": {
+          "value": "2024"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "Not specified"
+        },
+        "Results": {
+          "value": "Not specified"
+        },
+        "Limitations": {
+          "value": "Not specified"
+        }
+      },
+      "SoK: Security and Privacy Risks of Healthcare AI": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2024"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "Current security and privacy (S&P)\nresearch on healthcare AI is highly unbalanced in terms of healthcare\ndeployment scenarios and threat mod"
+        },
+        "Results": {
+          "value": "Results not detailed in abstract"
+        },
+        "Limitations": {
+          "value": "Our\nsurvey presents a systematic overview of healthcare AI attacks and defenses,\nand points out challenges and research opportunities for ea"
+        }
+      },
+      "Reliable and Resilient AI and IoT-based Personalised Healthcare\n  Services: A Survey": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2022"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "Finally, we propose a methodology to develop reliable, resilient, and\npersonalized healthcare services that address the identified weaknesse"
+        },
+        "Results": {
+          "value": "0 is to achieve an autonomous healthcare service, that takes into\naccount the interdependent effect of different health conditions of a pati"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "healthAIChain: Improving security and safety using Blockchain Technology\n  applications in AI-based healthcare systems": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2023"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "Finally, the article proposed an AI-based healthcare\nblockchain model (healthAIChain) to improve patients data and security"
+        },
+        "Results": {
+          "value": "The study delves into the\nsecurity and safety improvement associated with implementing blockchain in\nAI-based healthcare systems"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "AI Ethics in Smart Healthcare": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2022"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "Method details not available in abstract"
+        },
+        "Results": {
+          "value": "Results not detailed in abstract"
+        },
+        "Limitations": {
+          "value": "This article reviews the landscape of ethical challenges of integrating\nartificial intelligence (AI) into smart healthcare products, includi"
+        }
+      },
+      "Edge Intelligence for Empowering IoT-based Healthcare Systems": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2021"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "To meet the increasing demands on this critical infrastructure,\nthere is a need for intelligent methods to cope with the existing obstacles "
+        },
+        "Results": {
+          "value": "Results not detailed in abstract"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "A Survey on Federated Learning for the Healthcare Metaverse: Concepts,\n  Applications, Challenges, and Future Directions": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2023"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "Recent technological advancements have considerately improved healthcare\nsystems to provide various intelligent healthcare services and impr"
+        },
+        "Results": {
+          "value": "Recent technological advancements have considerately improved healthcare\nsystems to provide various intelligent healthcare services and impr"
+        },
+        "Limitations": {
+          "value": "Finally, we highlight significant challenges and\npotential solutions toward the realization of FL in Metaverse healthcare"
+        }
+      }
+    }
+  },
+  "synthesis": {
+    "executive_summary": "This literature review analyzed 15 papers across 2 venues, with 15 papers published since 2020. The analysis reveals key trends, methodological approaches, and identifies critical gaps in the current research landscape.",
+    "gaps": [
+      "Insufficient comparison against established baselines"
+    ],
+    "future_work": [
+      "Transition from preprint to peer-reviewed publications",
+      "Open-sourcing code and datasets for reproducibility",
+      "Larger, diverse datasets and multi-institutional studies",
+      "Standardized evaluation frameworks and metrics"
+    ]
+  },
+  "artifacts": {
+    "markdown_path": "outputs\\review_artificial-intelligence-in-healthcare.md",
+    "json_path": "outputs\\review_artificial-intelligence-in-healthcare.json",
+    "csv_path": "outputs\\papers_artificial-intelligence-in-healthcare.csv"
+  },
+  "created_at": "2025-09-13T13:44:47.211360"
+}
