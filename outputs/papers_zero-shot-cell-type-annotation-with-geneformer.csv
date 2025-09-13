@@ -1,0 +1,19 @@
+id,source,title,year,venue,doi,url,pdf_url,citations,authors
+http://arxiv.org/abs/2508.04747v1,arxiv,"GRIT: Graph-Regularized Logit Refinement for Zero-shot Cell Type
+  Annotation",2025,arXiv,,http://arxiv.org/abs/2508.04747v1,http://arxiv.org/pdf/2508.04747v1,,Tianxiang Hu; Chenyi Zhou; Jiaxiang Liu; Jiongxin Wang; Ruizhe Chen; Haoxiang Xia; Gaoang Wang; Jian Wu; Zuozhu Liu
+http://arxiv.org/abs/2411.06331v1,arxiv,"GenoHoption: Bridging Gene Network Graphs and Single-Cell Foundation
+  Models",2024,arXiv,,http://arxiv.org/abs/2411.06331v1,http://arxiv.org/pdf/2411.06331v1,,Jiabei Cheng; Jiachen Li; Kaiyuan Yang; Hongbin Shen; Ye Yuan
+http://arxiv.org/abs/2505.12638v2,arxiv,"ChromFound: Towards A Universal Foundation Model for Single-Cell
+  Chromatin Accessibility Data",2025,arXiv,,http://arxiv.org/abs/2505.12638v2,http://arxiv.org/pdf/2505.12638v2,,Yifeng Jiao; Yuchen Liu; Yu Zhang; Xin Guo; Yushuai Wu; Chen Jiang; Jiyang Li; Hongwei Zhang; Limei Han; Xin Gao; Yuan Qi; Yuan Cheng
+http://arxiv.org/abs/2305.04417v1,arxiv,"Unlocking Practical Applications in Legal Domain: Evaluation of GPT for
+  Zero-Shot Semantic Annotation of Legal Texts",2023,arXiv,,http://arxiv.org/abs/2305.04417v1,http://arxiv.org/pdf/2305.04417v1,,Jaromir Savelka
+http://arxiv.org/abs/2304.07991v1,arxiv,"One-shot and Partially-Supervised Cell Image Segmentation Using Small
+  Visual Prompt",2023,arXiv,,http://arxiv.org/abs/2304.07991v1,http://arxiv.org/pdf/2304.07991v1,,Sota Kato; Kazuhiro Hotta
+http://arxiv.org/abs/2107.07761v2,arxiv,"Exploiting generative self-supervised learning for the assessment of
+  biological images with lack of annotations: a COVID-19 case-study",2021,arXiv,,http://arxiv.org/abs/2107.07761v2,http://arxiv.org/pdf/2107.07761v2,,Alessio Mascolini; Dario Cardamone; Francesco Ponzio; Santa Di Cataldo; Elisa Ficarra
+http://arxiv.org/abs/2007.01671v1,arxiv,Few-Shot Microscopy Image Cell Segmentation,2020,arXiv,,http://arxiv.org/abs/2007.01671v1,http://arxiv.org/pdf/2007.01671v1,,Youssef Dawoud; Julia Hornauer; Gustavo Carneiro; Vasileios Belagiannis
+http://arxiv.org/abs/2503.08603v1,arxiv,CellStyle: Improved Zero-Shot Cell Segmentation via Style Transfer,2025,arXiv,,http://arxiv.org/abs/2503.08603v1,http://arxiv.org/pdf/2503.08603v1,,Rüveyda Yilmaz; Zhu Chen; Yuli Wu; Johannes Stegmaier
+http://arxiv.org/abs/2501.05269v1,arxiv,"CellViT++: Energy-Efficient and Adaptive Cell Segmentation and
+  Classification Using Foundation Models",2025,arXiv,,http://arxiv.org/abs/2501.05269v1,http://arxiv.org/pdf/2501.05269v1,,Fabian Hörst; Moritz Rempe; Helmut Becker; Lukas Heine; Julius Keyl; Jens Kleesiek
+http://arxiv.org/abs/2503.18170v1,arxiv,"Self-Attention Diffusion Models for Zero-Shot Biomedical Image
+  Segmentation: Unlocking New Frontiers in Medical Imaging",2025,arXiv,,http://arxiv.org/abs/2503.18170v1,http://arxiv.org/pdf/2503.18170v1,,Abderrachid Hamrani; Anuradha Godavarty

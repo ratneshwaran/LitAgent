@@ -1,0 +1,781 @@
+{
+  "topic": "zero shot cell type annotation with geneformer",
+  "filters": {
+    "start_year": null,
+    "end_year": null,
+    "include_keywords": [],
+    "exclude_keywords": [],
+    "venues": [],
+    "limit": 10
+  },
+  "raw_papers": [
+    {
+      "id": "http://arxiv.org/abs/2508.04747v1",
+      "source": "arxiv",
+      "title": "GRIT: Graph-Regularized Logit Refinement for Zero-shot Cell Type\n  Annotation",
+      "abstract": "Cell type annotation is a fundamental step in the analysis of single-cell RNA\nsequencing (scRNA-seq) data. In practice, human experts often rely on the\nstructure revealed by principal component analysis (PCA) followed by\n$k$-nearest neighbor ($k$-NN) graph construction to guide annotation. While\neffective, this process is labor-intensive and does not scale to large\ndatasets. Recent advances in CLIP-style models offer a promising path toward\nautomating cell type annotation. By aligning scRNA-seq profiles with natural\nlanguage descriptions, models like LangCell enable zero-shot annotation. While\nLangCell demonstrates decent zero-shot performance, its predictions remain\nsuboptimal, particularly in achieving consistent accuracy across all cell\ntypes. In this paper, we propose to refine the zero-shot logits produced by\nLangCell through a graph-regularized optimization framework. By enforcing local\nconsistency over the task-specific PCA-based k-NN graph, our method combines\nthe scalability of the pre-trained models with the structural robustness relied\nupon in expert annotation. We evaluate our approach on 14 annotated human\nscRNA-seq datasets from 4 distinct studies, spanning 11 organs and over 200,000\nsingle cells. Our method consistently improves zero-shot annotation accuracy,\nachieving accuracy gains of up to 10%. Further analysis showcase the mechanism\nby which GRIT effectively propagates correct signals through the graph, pulling\nback mislabeled cells toward more accurate predictions. The method is\ntraining-free, model-agnostic, and serves as a simple yet effective plug-in for\nenhancing automated cell type annotation in practice.",
+      "authors": [
+        "Tianxiang Hu",
+        "Chenyi Zhou",
+        "Jiaxiang Liu",
+        "Jiongxin Wang",
+        "Ruizhe Chen",
+        "Haoxiang Xia",
+        "Gaoang Wang",
+        "Jian Wu",
+        "Zuozhu Liu"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2508.04747v1",
+      "pdf_url": "http://arxiv.org/pdf/2508.04747v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2411.06331v1",
+      "source": "arxiv",
+      "title": "GenoHoption: Bridging Gene Network Graphs and Single-Cell Foundation\n  Models",
+      "abstract": "The remarkable success of foundation models has sparked growing interest in\ntheir application to single-cell biology. Models like Geneformer and scGPT\npromise to serve as versatile tools in this specialized field. However,\nrepresenting a cell as a sequence of genes remains an open question since the\norder of genes is interchangeable. Injecting the gene network graph offers gene\nrelative positions and compact data representation but poses a dilemma: limited\nreceptive fields without in-layer message passing or parameter explosion with\nmessage passing in each layer. To pave the way forward, we propose GenoHoption,\na new computational framework for single-cell sequencing data that effortlessly\ncombines the strengths of these foundation models with explicit relationships\nin gene networks. We also introduce a constraint that lightens the model by\nfocusing on learning the predefined graph structure while ensuring further hops\nare deducted to expand the receptive field. Empirical studies show that our\nmodel improves by an average of 1.27% on cell-type annotation and 3.86% on\nperturbation prediction. Furthermore, our method significantly decreases\ncomputational overhead and exhibits few-shot potential. GenoHoption can\nfunction as an efficient and expressive bridge, connecting existing single-cell\nfoundation models to gene network graphs.",
+      "authors": [
+        "Jiabei Cheng",
+        "Jiachen Li",
+        "Kaiyuan Yang",
+        "Hongbin Shen",
+        "Ye Yuan"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2411.06331v1",
+      "pdf_url": "http://arxiv.org/pdf/2411.06331v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2505.12638v2",
+      "source": "arxiv",
+      "title": "ChromFound: Towards A Universal Foundation Model for Single-Cell\n  Chromatin Accessibility Data",
+      "abstract": "The advent of single-cell Assay for Transposase-Accessible Chromatin using\nsequencing (scATAC-seq) offers an innovative perspective for deciphering\nregulatory mechanisms by assembling a vast repository of single-cell chromatin\naccessibility data. While foundation models have achieved significant success\nin single-cell transcriptomics, there is currently no foundation model for\nscATAC-seq that supports zero-shot high-quality cell identification and\ncomprehensive multi-omics analysis simultaneously. Key challenges lie in the\nhigh dimensionality and sparsity of scATAC-seq data, as well as the lack of a\nstandardized schema for representing open chromatin regions (OCRs). Here, we\npresent ChromFound, a foundation model tailored for scATAC-seq. ChromFound\nutilizes a hybrid architecture and genome-aware tokenization to effectively\ncapture genome-wide long contexts and regulatory signals from dynamic chromatin\nlandscapes. Pretrained on 1.97 million cells from 30 tissues and 6 disease\nconditions, ChromFound demonstrates broad applicability across 6 diverse tasks.\nNotably, it achieves robust zero-shot performance in generating universal cell\nrepresentations and exhibits excellent transferability in cell type annotation\nand cross-omics prediction. By uncovering enhancer-gene links undetected by\nexisting computational methods, ChromFound offers a promising framework for\nunderstanding disease risk variants in the noncoding genome.",
+      "authors": [
+        "Yifeng Jiao",
+        "Yuchen Liu",
+        "Yu Zhang",
+        "Xin Guo",
+        "Yushuai Wu",
+        "Chen Jiang",
+        "Jiyang Li",
+        "Hongwei Zhang",
+        "Limei Han",
+        "Xin Gao",
+        "Yuan Qi",
+        "Yuan Cheng"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2505.12638v2",
+      "pdf_url": "http://arxiv.org/pdf/2505.12638v2",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2305.04417v1",
+      "source": "arxiv",
+      "title": "Unlocking Practical Applications in Legal Domain: Evaluation of GPT for\n  Zero-Shot Semantic Annotation of Legal Texts",
+      "abstract": "We evaluated the capability of a state-of-the-art generative pre-trained\ntransformer (GPT) model to perform semantic annotation of short text snippets\n(one to few sentences) coming from legal documents of various types.\nDiscussions of potential uses (e.g., document drafting, summarization) of this\nemerging technology in legal domain have intensified, but to date there has not\nbeen a rigorous analysis of these large language models' (LLM) capacity in\nsentence-level semantic annotation of legal texts in zero-shot learning\nsettings. Yet, this particular type of use could unlock many practical\napplications (e.g., in contract review) and research opportunities (e.g., in\nempirical legal studies). We fill the gap with this study. We examined if and\nhow successfully the model can semantically annotate small batches of short\ntext snippets (10-50) based exclusively on concise definitions of the semantic\ntypes. We found that the GPT model performs surprisingly well in zero-shot\nsettings on diverse types of documents (F1=.73 on a task involving court\nopinions, .86 for contracts, and .54 for statutes and regulations). These\nfindings can be leveraged by legal scholars and practicing lawyers alike to\nguide their decisions in integrating LLMs in wide range of workflows involving\nsemantic annotation of legal texts.",
+      "authors": [
+        "Jaromir Savelka"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2305.04417v1",
+      "pdf_url": "http://arxiv.org/pdf/2305.04417v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2304.07991v1",
+      "source": "arxiv",
+      "title": "One-shot and Partially-Supervised Cell Image Segmentation Using Small\n  Visual Prompt",
+      "abstract": "Semantic segmentation of microscopic cell images using deep learning is an\nimportant technique, however, it requires a large number of images and ground\ntruth labels for training. To address the above problem, we consider an\nefficient learning framework with as little data as possible, and we propose\ntwo types of learning strategies: One-shot segmentation which can learn with\nonly one training sample, and Partially-supervised segmentation which assigns\nannotations to only a part of images. Furthermore, we introduce novel\nsegmentation methods using the small prompt images inspired by prompt learning\nin recent studies. Our proposed methods use a pre-trained model based on only\ncell images and teach the information of the prompt pairs to the target image\nto be segmented by the attention mechanism, which allows for efficient learning\nwhile reducing the burden of annotation costs. Through experiments conducted on\nthree types of microscopic cell image datasets, we confirmed that the proposed\nmethod improved the Dice score coefficient (DSC) in comparison with the\nconventional methods.",
+      "authors": [
+        "Sota Kato",
+        "Kazuhiro Hotta"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2304.07991v1",
+      "pdf_url": "http://arxiv.org/pdf/2304.07991v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2107.07761v2",
+      "source": "arxiv",
+      "title": "Exploiting generative self-supervised learning for the assessment of\n  biological images with lack of annotations: a COVID-19 case-study",
+      "abstract": "Computer-aided analysis of biological images typically requires extensive\ntraining on large-scale annotated datasets, which is not viable in many\nsituations. In this paper we present GAN-DL, a Discriminator Learner based on\nthe StyleGAN2 architecture, which we employ for self-supervised image\nrepresentation learning in the case of fluorescent biological images. We show\nthat Wasserstein Generative Adversarial Networks combined with linear Support\nVector Machines enable high-throughput compound screening based on raw images.\nWe demonstrate this by classifying active and inactive compounds tested for the\ninhibition of SARS-CoV-2 infection in VERO and HRCE cell lines. In contrast to\nprevious methods, our deep learning based approach does not require any\nannotation besides the one that is normally collected during the sample\npreparation process. We test our technique on the RxRx19a Sars-CoV-2 image\ncollection. The dataset consists of fluorescent images that were generated to\nassess the ability of regulatory-approved or in late-stage clinical trials\ncompound to modulate the in vitro infection from SARS-CoV-2 in both VERO and\nHRCE cell lines. We show that our technique can be exploited not only for\nclassification tasks, but also to effectively derive a dose response curve for\nthe tested treatments, in a self-supervised manner. Lastly, we demonstrate its\ngeneralization capabilities by successfully addressing a zero-shot learning\ntask, consisting in the categorization of four different cell types of the\nRxRx1 fluorescent images collection.",
+      "authors": [
+        "Alessio Mascolini",
+        "Dario Cardamone",
+        "Francesco Ponzio",
+        "Santa Di Cataldo",
+        "Elisa Ficarra"
+      ],
+      "year": 2021,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2107.07761v2",
+      "pdf_url": "http://arxiv.org/pdf/2107.07761v2",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2007.01671v1",
+      "source": "arxiv",
+      "title": "Few-Shot Microscopy Image Cell Segmentation",
+      "abstract": "Automatic cell segmentation in microscopy images works well with the support\nof deep neural networks trained with full supervision. Collecting and\nannotating images, though, is not a sustainable solution for every new\nmicroscopy database and cell type. Instead, we assume that we can access a\nplethora of annotated image data sets from different domains (sources) and a\nlimited number of annotated image data sets from the domain of interest\n(target), where each domain denotes not only different image appearance but\nalso a different type of cell segmentation problem. We pose this problem as\nmeta-learning where the goal is to learn a generic and adaptable few-shot\nlearning model from the available source domain data sets and cell segmentation\ntasks. The model can be afterwards fine-tuned on the few annotated images of\nthe target domain that contains different image appearance and different cell\ntype. In our meta-learning training, we propose the combination of three\nobjective functions to segment the cells, move the segmentation results away\nfrom the classification boundary using cross-domain tasks, and learn an\ninvariant representation between tasks of the source domains. Our experiments\non five public databases show promising results from 1- to 10-shot\nmeta-learning using standard segmentation neural network architectures.",
+      "authors": [
+        "Youssef Dawoud",
+        "Julia Hornauer",
+        "Gustavo Carneiro",
+        "Vasileios Belagiannis"
+      ],
+      "year": 2020,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2007.01671v1",
+      "pdf_url": "http://arxiv.org/pdf/2007.01671v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2503.08603v1",
+      "source": "arxiv",
+      "title": "CellStyle: Improved Zero-Shot Cell Segmentation via Style Transfer",
+      "abstract": "Cell microscopy data are abundant; however, corresponding segmentation\nannotations remain scarce. Moreover, variations in cell types, imaging devices,\nand staining techniques introduce significant domain gaps between datasets. As\na result, even large, pretrained segmentation models trained on diverse\ndatasets (source datasets) struggle to generalize to unseen datasets (target\ndatasets). To overcome this generalization problem, we propose CellStyle, which\nimproves the segmentation quality of such models without requiring labels for\nthe target dataset, thereby enabling zero-shot adaptation. CellStyle transfers\nthe attributes of an unannotated target dataset, such as texture, color, and\nnoise, to the annotated source dataset. This transfer is performed while\npreserving the cell shapes of the source images, ensuring that the existing\nsource annotations can still be used while maintaining the visual\ncharacteristics of the target dataset. The styled synthetic images with the\nexisting annotations enable the finetuning of a generalist segmentation model\nfor application to the unannotated target data. We demonstrate that CellStyle\nsignificantly improves zero-shot cell segmentation performance across diverse\ndatasets by finetuning multiple segmentation models on the style-transferred\ndata. The code will be made publicly available.",
+      "authors": [
+        "Rüveyda Yilmaz",
+        "Zhu Chen",
+        "Yuli Wu",
+        "Johannes Stegmaier"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2503.08603v1",
+      "pdf_url": "http://arxiv.org/pdf/2503.08603v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2501.05269v1",
+      "source": "arxiv",
+      "title": "CellViT++: Energy-Efficient and Adaptive Cell Segmentation and\n  Classification Using Foundation Models",
+      "abstract": "Digital Pathology is a cornerstone in the diagnosis and treatment of\ndiseases. A key task in this field is the identification and segmentation of\ncells in hematoxylin and eosin-stained images. Existing methods for cell\nsegmentation often require extensive annotated datasets for training and are\nlimited to a predefined cell classification scheme. To overcome these\nlimitations, we propose $\\text{CellViT}^{{\\scriptscriptstyle ++}}$, a framework\nfor generalized cell segmentation in digital pathology.\n$\\text{CellViT}^{{\\scriptscriptstyle ++}}$ utilizes Vision Transformers with\nfoundation models as encoders to compute deep cell features and segmentation\nmasks simultaneously. To adapt to unseen cell types, we rely on a\ncomputationally efficient approach. It requires minimal data for training and\nleads to a drastically reduced carbon footprint. We demonstrate excellent\nperformance on seven different datasets, covering a broad spectrum of cell\ntypes, organs, and clinical settings. The framework achieves remarkable\nzero-shot segmentation and data-efficient cell-type classification.\nFurthermore, we show that $\\text{CellViT}^{{\\scriptscriptstyle ++}}$ can\nleverage immunofluorescence stainings to generate training datasets without the\nneed for pathologist annotations. The automated dataset generation approach\nsurpasses the performance of networks trained on manually labeled data,\ndemonstrating its effectiveness in creating high-quality training datasets\nwithout expert annotations. To advance digital pathology,\n$\\text{CellViT}^{{\\scriptscriptstyle ++}}$ is available as an open-source\nframework featuring a user-friendly, web-based interface for visualization and\nannotation. The code is available under\nhttps://github.com/TIO-IKIM/CellViT-plus-plus.",
+      "authors": [
+        "Fabian Hörst",
+        "Moritz Rempe",
+        "Helmut Becker",
+        "Lukas Heine",
+        "Julius Keyl",
+        "Jens Kleesiek"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2501.05269v1",
+      "pdf_url": "http://arxiv.org/pdf/2501.05269v1",
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2503.18170v1",
+      "source": "arxiv",
+      "title": "Self-Attention Diffusion Models for Zero-Shot Biomedical Image\n  Segmentation: Unlocking New Frontiers in Medical Imaging",
+      "abstract": "Producing high-quality segmentation masks for medical images is a fundamental\nchallenge in biomedical image analysis. Recent research has explored\nlarge-scale supervised training to enable segmentation across various medical\nimaging modalities and unsupervised training to facilitate segmentation without\ndense annotations. However, constructing a model capable of segmenting diverse\nmedical images in a zero-shot manner without any annotations remains a\nsignificant hurdle. This paper introduces the Attention Diffusion Zero-shot\nUnsupervised System (ADZUS), a novel approach that leverages self-attention\ndiffusion models for zero-shot biomedical image segmentation. ADZUS harnesses\nthe intrinsic capabilities of pre-trained diffusion models, utilizing their\ngenerative and discriminative potentials to segment medical images without\nrequiring annotated training data or prior domain-specific knowledge. The ADZUS\narchitecture is detailed, with its integration of self-attention mechanisms\nthat facilitate context-aware and detail-sensitive segmentations being\nhighlighted. Experimental results across various medical imaging datasets,\nincluding skin lesion segmentation, chest X-ray infection segmentation, and\nwhite blood cell segmentation, reveal that ADZUS achieves state-of-the-art\nperformance. Notably, ADZUS reached Dice scores ranging from 88.7\\% to 92.9\\%\nand IoU scores from 66.3\\% to 93.3\\% across different segmentation tasks,\ndemonstrating significant improvements in handling novel, unseen medical\nimagery. It is noteworthy that while ADZUS demonstrates high effectiveness, it\ndemands substantial computational resources and extended processing times. The\nmodel's efficacy in zero-shot settings underscores its potential to reduce\nreliance on costly annotations and seamlessly adapt to new medical imaging\ntasks, thereby expanding the diagnostic capabilities of AI-driven medical\nimaging technologies.",
+      "authors": [
+        "Abderrachid Hamrani",
+        "Anuradha Godavarty"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2503.18170v1",
+      "pdf_url": "http://arxiv.org/pdf/2503.18170v1",
+      "citations_count": null,
+      "keywords": []
+    }
+  ],
+  "reviews": [
+    {
+      "paper_id": "http://arxiv.org/abs/2508.04747v1",
+      "summary": {
+        "tldr": "Cell type annotation is a fundamental step in the analysis of single-cell RNA\nsequencing (scRNA-seq) data. In practice, human experts often rely on the\nstructure revealed by principal component analysis (PCA) followed by\n$k$-nearest neighbor ($k$-NN) graph construction to guide a...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Cell type annotation is a fundamental step in the analysis of single-cell RNA\nsequencing (scRNA-seq) data. In practice, human experts often rely on the\nstructure revealed by principal component analys",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2411.06331v1",
+      "summary": {
+        "tldr": "The remarkable success of foundation models has sparked growing interest in\ntheir application to single-cell biology. Models like Geneformer and scGPT\npromise to serve as versatile tools in this specialized field. However,\nrepresenting a cell as a sequence of genes remains an ope...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "The remarkable success of foundation models has sparked growing interest in\ntheir application to single-cell biology. Models like Geneformer and scGPT\npromise to serve as versatile tools in this speci",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2505.12638v2",
+      "summary": {
+        "tldr": "The advent of single-cell Assay for Transposase-Accessible Chromatin using\nsequencing (scATAC-seq) offers an innovative perspective for deciphering\nregulatory mechanisms by assembling a vast repository of single-cell chromatin\naccessibility data. While foundation models have achi...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "The advent of single-cell Assay for Transposase-Accessible Chromatin using\nsequencing (scATAC-seq) offers an innovative perspective for deciphering\nregulatory mechanisms by assembling a vast repositor",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2305.04417v1",
+      "summary": {
+        "tldr": "We evaluated the capability of a state-of-the-art generative pre-trained\ntransformer (GPT) model to perform semantic annotation of short text snippets\n(one to few sentences) coming from legal documents of various types.\nDiscussions of potential uses (e.g., document drafting, summ...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "We evaluated the capability of a state-of-the-art generative pre-trained\ntransformer (GPT) model to perform semantic annotation of short text snippets\n(one to few sentences) coming from legal document",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "overclaiming",
+            "severity": "medium",
+            "rationale": "Claims strong superiority; check against baselines in paper."
+          },
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2304.07991v1",
+      "summary": {
+        "tldr": "Semantic segmentation of microscopic cell images using deep learning is an\nimportant technique, however, it requires a large number of images and ground\ntruth labels for training. To address the above problem, we consider an\nefficient learning framework with as little data as pos...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Semantic segmentation of microscopic cell images using deep learning is an\nimportant technique, however, it requires a large number of images and ground\ntruth labels for training. To address the above",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2107.07761v2",
+      "summary": {
+        "tldr": "Computer-aided analysis of biological images typically requires extensive\ntraining on large-scale annotated datasets, which is not viable in many\nsituations. In this paper we present GAN-DL, a Discriminator Learner based on\nthe StyleGAN2 architecture, which we employ for self-sup...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Computer-aided analysis of biological images typically requires extensive\ntraining on large-scale annotated datasets, which is not viable in many\nsituations. In this paper we present GAN-DL, a Discrim",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2007.01671v1",
+      "summary": {
+        "tldr": "Automatic cell segmentation in microscopy images works well with the support\nof deep neural networks trained with full supervision. Collecting and\nannotating images, though, is not a sustainable solution for every new\nmicroscopy database and cell type. Instead, we assume that we ...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Automatic cell segmentation in microscopy images works well with the support\nof deep neural networks trained with full supervision. Collecting and\nannotating images, though, is not a sustainable solut",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2503.08603v1",
+      "summary": {
+        "tldr": "Cell microscopy data are abundant; however, corresponding segmentation\nannotations remain scarce. Moreover, variations in cell types, imaging devices,\nand staining techniques introduce significant domain gaps between datasets. As\na result, even large, pretrained segmentation mode...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Cell microscopy data are abundant; however, corresponding segmentation\nannotations remain scarce. Moreover, variations in cell types, imaging devices,\nand staining techniques introduce significant dom",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2501.05269v1",
+      "summary": {
+        "tldr": "Digital Pathology is a cornerstone in the diagnosis and treatment of\ndiseases. A key task in this field is the identification and segmentation of\ncells in hematoxylin and eosin-stained images. Existing methods for cell\nsegmentation often require extensive annotated datasets for t...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Digital Pathology is a cornerstone in the diagnosis and treatment of\ndiseases. A key task in this field is the identification and segmentation of\ncells in hematoxylin and eosin-stained images",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2503.18170v1",
+      "summary": {
+        "tldr": "Producing high-quality segmentation masks for medical images is a fundamental\nchallenge in biomedical image analysis. Recent research has explored\nlarge-scale supervised training to enable segmentation across various medical\nimaging modalities and unsupervised training to facilit...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Producing high-quality segmentation masks for medical images is a fundamental\nchallenge in biomedical image analysis. Recent research has explored\nlarge-scale supervised training to enable segmentatio",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    }
+  ],
+  "matrix": {
+    "columns": [
+      "Venue",
+      "Year",
+      "Citations",
+      "Methods",
+      "Results",
+      "Limitations"
+    ],
+    "rows": [
+      "GRIT: Graph-Regularized Logit Refinement for Zero-shot Cell Type\n  Annotation",
+      "GenoHoption: Bridging Gene Network Graphs and Single-Cell Foundation\n  Models",
+      "ChromFound: Towards A Universal Foundation Model for Single-Cell\n  Chromatin Accessibility Data",
+      "Unlocking Practical Applications in Legal Domain: Evaluation of GPT for\n  Zero-Shot Semantic Annotation of Legal Texts",
+      "One-shot and Partially-Supervised Cell Image Segmentation Using Small\n  Visual Prompt",
+      "Exploiting generative self-supervised learning for the assessment of\n  biological images with lack of annotations: a COVID-19 case-study",
+      "Few-Shot Microscopy Image Cell Segmentation",
+      "CellStyle: Improved Zero-Shot Cell Segmentation via Style Transfer",
+      "CellViT++: Energy-Efficient and Adaptive Cell Segmentation and\n  Classification Using Foundation Models",
+      "Self-Attention Diffusion Models for Zero-Shot Biomedical Image\n  Segmentation: Unlocking New Frontiers in Medical Imaging"
+    ],
+    "data": {
+      "GRIT: Graph-Regularized Logit Refinement for Zero-shot Cell Type\n  Annotation": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "GenoHoption: Bridging Gene Network Graphs and Single-Cell Foundation\n  Models": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2024"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "ChromFound: Towards A Universal Foundation Model for Single-Cell\n  Chromatin Accessibility Data": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "Unlocking Practical Applications in Legal Domain: Evaluation of GPT for\n  Zero-Shot Semantic Annotation of Legal Texts": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2023"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "One-shot and Partially-Supervised Cell Image Segmentation Using Small\n  Visual Prompt": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2023"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "Exploiting generative self-supervised learning for the assessment of\n  biological images with lack of annotations: a COVID-19 case-study": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2021"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "Few-Shot Microscopy Image Cell Segmentation": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2020"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "CellStyle: Improved Zero-Shot Cell Segmentation via Style Transfer": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "CellViT++: Energy-Efficient and Adaptive Cell Segmentation and\n  Classification Using Foundation Models": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "Self-Attention Diffusion Models for Zero-Shot Biomedical Image\n  Segmentation: Unlocking New Frontiers in Medical Imaging": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      }
+    }
+  },
+  "synthesis": {
+    "executive_summary": "Reviewed 10 papers across 1 venues. We summarize methods, results, and limitations, and identify common gaps.",
+    "gaps": [
+      "Few works report comparisons against strong baselines."
+    ],
+    "future_work": [
+      "Open-sourcing code and datasets",
+      "Larger, diverse cohorts",
+      "Robust baseline comparisons"
+    ]
+  },
+  "artifacts": {
+    "markdown_path": "outputs\\review_zero-shot-cell-type-annotation-with-geneformer.md",
+    "json_path": "outputs\\review_zero-shot-cell-type-annotation-with-geneformer.json",
+    "csv_path": "outputs\\papers_zero-shot-cell-type-annotation-with-geneformer.csv"
+  },
+  "created_at": "2025-09-13T06:22:03.041082"
+}

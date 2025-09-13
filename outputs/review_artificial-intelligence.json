@@ -1,0 +1,120 @@
+{
+  "topic": "artificial intelligence",
+  "filters": {
+    "start_year": null,
+    "end_year": null,
+    "include_keywords": [
+      "neural networks",
+      "deep learning"
+    ],
+    "exclude_keywords": [],
+    "venues": [],
+    "limit": 10
+  },
+  "raw_papers": [
+    {
+      "id": "http://arxiv.org/abs/2111.11295v1",
+      "source": "arxiv",
+      "title": "Artificial Intelligence Technology analysis using Artificial\n  Intelligence patent through Deep Learning model and vector space model",
+      "abstract": "Thanks to rapid development of artificial intelligence technology in recent\nyears, the current artificial intelligence technology is contributing to many\npart of society. Education, environment, medical care, military, tourism,\neconomy, politics, etc. are having a very large impact on society as a whole.\nFor example, in the field of education, there is an artificial intelligence\ntutoring system that automatically assigns tutors based on student's level. In\nthe field of economics, there are quantitative investment methods that\nautomatically analyze large amounts of data to find investment laws to create\ninvestment models or predict changes in financial markets. As such, artificial\nintelligence technology is being used in various fields. So, it is very\nimportant to know exactly what factors have an important influence on each\nfield of artificial intelligence technology and how the relationship between\neach field is connected. Therefore, it is necessary to analyze artificial\nintelligence technology in each field. In this paper, we analyze patent\ndocuments related to artificial intelligence technology. We propose a method\nfor keyword analysis within factors using artificial intelligence patent data\nsets for artificial intelligence technology analysis. This is a model that\nrelies on feature engineering based on deep learning model named KeyBERT, and\nusing vector space model. A case study of collecting and analyzing artificial\nintelligence patent data was conducted to show how the proposed model can be\napplied to real world problems.",
+      "authors": [
+        "Yongmin Yoo",
+        "Dongjin Lim",
+        "Kyungsun Kim"
+      ],
+      "year": 2021,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2111.11295v1",
+      "pdf_url": "http://arxiv.org/pdf/2111.11295v1",
+      "citations_count": null,
+      "keywords": []
+    }
+  ],
+  "reviews": [
+    {
+      "paper_id": "http://arxiv.org/abs/2111.11295v1",
+      "summary": {
+        "tldr": "Thanks to rapid development of artificial intelligence technology in recent\nyears, the current artificial intelligence technology is contributing to many\npart of society. Education, environment, medical care, military, tourism,\neconomy, politics, etc. are having a very large impa...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Thanks to rapid development of artificial intelligence technology in recent\nyears, the current artificial intelligence technology is contributing to many\npart of society. Education, environment, medic",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    }
+  ],
+  "matrix": {
+    "columns": [
+      "Venue",
+      "Year",
+      "Citations",
+      "Methods",
+      "Results",
+      "Limitations"
+    ],
+    "rows": [
+      "Artificial Intelligence Technology analysis using Artificial\n  Intelligence patent through Deep Learning model and vector space model"
+    ],
+    "data": {
+      "Artificial Intelligence Technology analysis using Artificial\n  Intelligence patent through Deep Learning model and vector space model": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2021"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      }
+    }
+  },
+  "synthesis": {
+    "executive_summary": "Reviewed 1 papers across 1 venues. We summarize methods, results, and limitations, and identify common gaps.",
+    "gaps": [
+      "Few works report comparisons against strong baselines."
+    ],
+    "future_work": [
+      "Open-sourcing code and datasets",
+      "Larger, diverse cohorts",
+      "Robust baseline comparisons"
+    ]
+  },
+  "artifacts": {
+    "markdown_path": "outputs\\review_artificial-intelligence.md",
+    "json_path": "outputs\\review_artificial-intelligence.json",
+    "csv_path": "outputs\\papers_artificial-intelligence.csv"
+  },
+  "created_at": "2025-09-13T13:33:49.181912"
+}

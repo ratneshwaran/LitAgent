@@ -1,0 +1,44 @@
+id,source,title,year,venue,doi,url,pdf_url,citations,authors
+http://arxiv.org/abs/2507.02743v1,arxiv,"Prompt learning with bounding box constraints for medical image
+  segmentation",2025,arXiv,,http://arxiv.org/abs/2507.02743v1,http://arxiv.org/pdf/2507.02743v1,,Mélanie Gaillochet; Mehrdad Noori; Sahar Dastani; Christian Desrosiers; Hervé Lombaert
+http://arxiv.org/abs/2502.03907v1,arxiv,"No Free Lunch in Annotation either: An objective evaluation of
+  foundation models for streamlining annotation in animal tracking",2025,arXiv,,http://arxiv.org/abs/2502.03907v1,http://arxiv.org/pdf/2502.03907v1,,Emil Mededovic; Valdy Laurentius; Yuli Wu; Marcin Kopaczka; Zhu Chen; Mareike Schulz; René Tolba; Johannes Stegmaier
+http://arxiv.org/abs/2503.09860v1,arxiv,"Foundation X: Integrating Classification, Localization, and Segmentation
+  through Lock-Release Pretraining Strategy for Chest X-ray Analysis",2025,arXiv,,http://arxiv.org/abs/2503.09860v1,http://arxiv.org/pdf/2503.09860v1,,Nahid Ul Islam; DongAo Ma; Jiaxuan Pang; Shivasakthi Senthil Velan; Michael Gotway; Jianming Liang
+http://arxiv.org/abs/2506.02914v1,arxiv,"Towards Auto-Annotation from Annotation Guidelines: A Benchmark through
+  3D LiDAR Detection",2025,arXiv,,http://arxiv.org/abs/2506.02914v1,http://arxiv.org/pdf/2506.02914v1,,Yechi Ma; Wei Hua; Shu Kong
+http://arxiv.org/abs/2508.15751v1,arxiv,"Fine-grained Multi-class Nuclei Segmentation with Molecular-empowered
+  All-in-SAM Model",2025,arXiv,,http://arxiv.org/abs/2508.15751v1,http://arxiv.org/pdf/2508.15751v1,,Xueyuan Li; Can Cui; Ruining Deng; Yucheng Tang; Quan Liu; Tianyuan Yao; Shunxing Bao; Naweed Chowdhury; Haichun Yang; Yuankai Huo
+40537825,pubmed,scExtract: leveraging large language models for fully automated single-cell RNA-seq data annotation and prior-informed multi-dataset integration.,2025,Genome biology,,https://pubmed.ncbi.nlm.nih.gov/40537825/,,,Wu Y; Tang F
+http://arxiv.org/abs/2403.09307v3,arxiv,Annotation Free Semantic Segmentation with Vision Foundation Models,2024,arXiv,,http://arxiv.org/abs/2403.09307v3,http://arxiv.org/pdf/2403.09307v3,,Soroush Seifi; Daniel Olmeda Reino; Fabien Despinoy; Rahaf Aljundi
+http://arxiv.org/abs/2403.15218v1,arxiv,"Anytime, Anywhere, Anyone: Investigating the Feasibility of Segment
+  Anything Model for Crowd-Sourcing Medical Image Annotations",2024,arXiv,,http://arxiv.org/abs/2403.15218v1,http://arxiv.org/pdf/2403.15218v1,,Pranav Kulkarni; Adway Kanhere; Dharmam Savani; Andrew Chan; Devina Chatterjee; Paul H. Yi; Vishwa S. Parekh
+http://arxiv.org/abs/2403.07687v1,arxiv,"Annotations on a Budget: Leveraging Geo-Data Similarity to Balance Model
+  Performance and Annotation Cost",2024,arXiv,,http://arxiv.org/abs/2403.07687v1,http://arxiv.org/pdf/2403.07687v1,,Oana Ignat; Longju Bai; Joan Nwatu; Rada Mihalcea
+http://arxiv.org/abs/2401.04464v2,arxiv,PhilEO Bench: Evaluating Geo-Spatial Foundation Models,2024,arXiv,,http://arxiv.org/abs/2401.04464v2,http://arxiv.org/pdf/2401.04464v2,,Casper Fibaek; Luke Camilleri; Andreas Luyts; Nikolaos Dionelis; Bertrand Le Saux
+http://arxiv.org/abs/2406.18239v1,arxiv,"Zero-shot prompt-based classification: topic labeling in times of
+  foundation models in German Tweets",2024,arXiv,,http://arxiv.org/abs/2406.18239v1,http://arxiv.org/pdf/2406.18239v1,,Simon Münker; Kai Kugler; Achim Rettinger
+http://arxiv.org/abs/2402.06560v1,arxiv,"Video Annotator: A framework for efficiently building video classifiers
+  using vision-language models and active learning",2024,arXiv,,http://arxiv.org/abs/2402.06560v1,http://arxiv.org/pdf/2402.06560v1,,Amir Ziai; Aneesh Vartakavi
+http://arxiv.org/abs/2402.08075v1,arxiv,"Efficient and Scalable Fine-Tune of Language Models for Genome
+  Understanding",2024,arXiv,,http://arxiv.org/abs/2402.08075v1,http://arxiv.org/pdf/2402.08075v1,,Huixin Zhan; Ying Nian Wu; Zijun Zhang
+http://arxiv.org/abs/2408.05618v1,arxiv,"UrFound: Towards Universal Retinal Foundation Models via
+  Knowledge-Guided Masked Modeling",2024,arXiv,,http://arxiv.org/abs/2408.05618v1,http://arxiv.org/pdf/2408.05618v1,,Kai Yu; Yang Zhou; Yang Bai; Zhi Da Soh; Xinxing Xu; Rick Siow Mong Goh; Ching-Yu Cheng; Yong Liu
+http://arxiv.org/abs/2309.08108v1,arxiv,"Foundation Model Assisted Automatic Speech Emotion Recognition:
+  Transcribing, Annotating, and Augmenting",2023,arXiv,,http://arxiv.org/abs/2309.08108v1,http://arxiv.org/pdf/2309.08108v1,,Tiantian Feng; Shrikanth Narayanan
+http://arxiv.org/abs/2311.08077v2,arxiv,"Zero-Shot Segmentation of Eye Features Using the Segment Anything Model
+  (SAM)",2023,arXiv,,http://arxiv.org/abs/2311.08077v2,http://arxiv.org/pdf/2311.08077v2,,Virmarie Maquiling; Sean Anthony Byrne; Diederick C. Niehorster; Marcus Nyström; Enkelejda Kasneci
+http://arxiv.org/abs/2112.07475v2,arxiv,Two Contrasting Data Annotation Paradigms for Subjective NLP Tasks,2021,arXiv,,http://arxiv.org/abs/2112.07475v2,http://arxiv.org/pdf/2112.07475v2,,Paul Röttger; Bertie Vidgen; Dirk Hovy; Janet B. Pierrehumbert
+http://arxiv.org/abs/2501.18474v1,arxiv,"Tuning Vision Foundation Model via Test-Time Prompt-Guided Training for
+  VFSS Segmentations",2025,arXiv,,http://arxiv.org/abs/2501.18474v1,http://arxiv.org/pdf/2501.18474v1,,Chengxi Zeng; David Smithard; Alberto M Gambaruto; Tilo Burghardt
+http://arxiv.org/abs/2508.21096v1,arxiv,"ROBUST-MIPS: A Combined Skeletal Pose and Instance Segmentation Dataset
+  for Laparoscopic Surgical Instruments",2025,arXiv,,http://arxiv.org/abs/2508.21096v1,http://arxiv.org/pdf/2508.21096v1,,Zhe Han; Charlie Budd; Gongyu Zhang; Huanyu Tian; Christos Bergeles; Tom Vercauteren
+http://arxiv.org/abs/2505.23726v1,arxiv,FMG-Det: Foundation Model Guided Robust Object Detection,2025,arXiv,,http://arxiv.org/abs/2505.23726v1,http://arxiv.org/pdf/2505.23726v1,,Darryl Hannan; Timothy Doster; Henry Kvinge; Adam Attarian; Yijing Watkins
+40894586,pubmed,scELMo: Embeddings from Language Models are Good Learners for Single-cell Data Analysis.,2025,bioRxiv : the preprint server for biology,,https://pubmed.ncbi.nlm.nih.gov/40894586/,,,Liu T; Chen T; Zheng W; Luo X; Chen Y; Zhao H
+40427668,pubmed,FPCAM: A Weighted Dictionary-Driven Model for Single-Cell Annotation in Pulmonary Fibrosis.,2025,Biology,,https://pubmed.ncbi.nlm.nih.gov/40427668/,,,Liu G; Shi Y; Huang H; Xiao N; Liu C; Zhao H; Xing Y; Cai L
+http://arxiv.org/abs/2405.20109v2,arxiv,"FMARS: Annotating Remote Sensing Images for Disaster Management using
+  Foundation Models",2024,arXiv,,http://arxiv.org/abs/2405.20109v2,http://arxiv.org/pdf/2405.20109v2,,Edoardo Arnaudo; Jacopo Lungo Vaschetti; Lorenzo Innocenti; Luca Barco; Davide Lisi; Vanina Fissore; Claudio Rossi
+http://arxiv.org/abs/2404.13239v1,arxiv,"Beyond Pixel-Wise Supervision for Medical Image Segmentation: From
+  Traditional Models to Foundation Models",2024,arXiv,,http://arxiv.org/abs/2404.13239v1,http://arxiv.org/pdf/2404.13239v1,,Yuyan Shi; Jialu Ma; Jin Yang; Shasha Wang; Yichi Zhang
+http://arxiv.org/abs/2404.11957v1,arxiv,"The devil is in the object boundary: towards annotation-free instance
+  segmentation using Foundation Models",2024,arXiv,,http://arxiv.org/abs/2404.11957v1,http://arxiv.org/pdf/2404.11957v1,,Cheng Shi; Sibei Yang

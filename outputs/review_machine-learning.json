@@ -1,0 +1,390 @@
+{
+  "topic": "machine learning",
+  "filters": {
+    "start_year": null,
+    "end_year": null,
+    "include_keywords": [],
+    "exclude_keywords": [],
+    "venues": [],
+    "limit": 5
+  },
+  "raw_papers": [
+    {
+      "id": "40943960",
+      "source": "pubmed",
+      "title": "Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.",
+      "abstract": null,
+      "authors": [
+        "Kucukakcali Z",
+        "Cicek IB",
+        "Akbulut S"
+      ],
+      "year": 2025,
+      "venue": "Journal of clinical medicine",
+      "doi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40943960/",
+      "pdf_url": null,
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "40943850",
+      "source": "pubmed",
+      "title": "Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.",
+      "abstract": null,
+      "authors": [
+        "Cetin S",
+        "Ulgen A",
+        "Pasin O",
+        "Sıvgın H",
+        "Cetin M"
+      ],
+      "year": 2025,
+      "venue": "Journal of clinical medicine",
+      "doi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40943850/",
+      "pdf_url": null,
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "40943716",
+      "source": "pubmed",
+      "title": "Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.",
+      "abstract": null,
+      "authors": [
+        "Hyun K",
+        "Kim JJ",
+        "Im KS",
+        "Han SC",
+        "Ryu JH"
+      ],
+      "year": 2025,
+      "venue": "Journal of clinical medicine",
+      "doi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40943716/",
+      "pdf_url": null,
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "40943452",
+      "source": "pubmed",
+      "title": "Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.",
+      "abstract": null,
+      "authors": [
+        "Liu B",
+        "Zhu L",
+        "Zhang C",
+        "Wang D",
+        "Liu H",
+        "Liu J",
+        "Sun J",
+        "Feng X",
+        "Yang W"
+      ],
+      "year": 2025,
+      "venue": "International journal of molecular sciences",
+      "doi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40943452/",
+      "pdf_url": null,
+      "citations_count": null,
+      "keywords": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2301.09753v1",
+      "source": "arxiv",
+      "title": "Towards Modular Machine Learning Solution Development: Benefits and\n  Trade-offs",
+      "abstract": "Machine learning technologies have demonstrated immense capabilities in\nvarious domains. They play a key role in the success of modern businesses.\nHowever, adoption of machine learning technologies has a lot of untouched\npotential. Cost of developing custom machine learning solutions that solve\nunique business problems is a major inhibitor to far-reaching adoption of\nmachine learning technologies. We recognize that the monolithic nature\nprevalent in today's machine learning applications stands in the way of\nefficient and cost effective customized machine learning solution development.\nIn this work we explore the benefits of modular machine learning solutions and\ndiscuss how modular machine learning solutions can overcome some of the major\nsolution engineering limitations of monolithic machine learning solutions. We\nanalyze the trade-offs between modular and monolithic machine learning\nsolutions through three deep learning problems; one text based and the two\nimage based. Our experimental results show that modular machine learning\nsolutions have a promising potential to reap the solution engineering\nadvantages of modularity while gaining performance and data advantages in a way\nthe monolithic machine learning solutions do not permit.",
+      "authors": [
+        "Samiyuru Menik",
+        "Lakshmish Ramaswamy"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2301.09753v1",
+      "pdf_url": "http://arxiv.org/pdf/2301.09753v1",
+      "citations_count": null,
+      "keywords": []
+    }
+  ],
+  "reviews": [
+    {
+      "paper_id": "40943960",
+      "summary": {
+        "tldr": "Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.0,
+        "quotes": []
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "40943850",
+      "summary": {
+        "tldr": "Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.0,
+        "quotes": []
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "40943716",
+      "summary": {
+        "tldr": "Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.0,
+        "quotes": []
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "40943452",
+      "summary": {
+        "tldr": "Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.0,
+        "quotes": []
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2301.09753v1",
+      "summary": {
+        "tldr": "Machine learning technologies have demonstrated immense capabilities in\nvarious domains. They play a key role in the success of modern businesses.\nHowever, adoption of machine learning technologies has a lot of untouched\npotential. Cost of developing custom machine learning solut...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Machine learning technologies have demonstrated immense capabilities in\nvarious domains. They play a key role in the success of modern businesses",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    }
+  ],
+  "matrix": {
+    "columns": [
+      "Venue",
+      "Year",
+      "Citations",
+      "Methods",
+      "Results",
+      "Limitations"
+    ],
+    "rows": [
+      "Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.",
+      "Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.",
+      "Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.",
+      "Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.",
+      "Towards Modular Machine Learning Solution Development: Benefits and\n  Trade-offs"
+    ],
+    "data": {
+      "Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.": {
+        "Venue": {
+          "value": "Journal of clinical medicine"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.": {
+        "Venue": {
+          "value": "Journal of clinical medicine"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.": {
+        "Venue": {
+          "value": "Journal of clinical medicine"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.": {
+        "Venue": {
+          "value": "International journal of molecular sciences"
+        },
+        "Year": {
+          "value": "2025"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      },
+      "Towards Modular Machine Learning Solution Development: Benefits and\n  Trade-offs": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2023"
+        },
+        "Citations": {
+          "value": ""
+        },
+        "Methods": {
+          "value": ""
+        },
+        "Results": {
+          "value": ""
+        },
+        "Limitations": {
+          "value": ""
+        }
+      }
+    }
+  },
+  "synthesis": {
+    "executive_summary": "Reviewed 5 papers across 3 venues. We summarize methods, results, and limitations, and identify common gaps.",
+    "gaps": [
+      "Few works report comparisons against strong baselines."
+    ],
+    "future_work": [
+      "Open-sourcing code and datasets",
+      "Larger, diverse cohorts",
+      "Robust baseline comparisons"
+    ]
+  },
+  "artifacts": {
+    "markdown_path": "outputs\\review_machine-learning.md",
+    "json_path": "outputs\\review_machine-learning.json",
+    "csv_path": "outputs\\papers_machine-learning.csv"
+  },
+  "created_at": "2025-09-13T13:24:38.584386"
+}

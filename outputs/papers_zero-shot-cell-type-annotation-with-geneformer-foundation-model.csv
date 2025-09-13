@@ -1,0 +1,18 @@
+id,source,title,year,venue,doi,url,pdf_url,citations,authors
+http://arxiv.org/abs/2411.06331v1,arxiv,"GenoHoption: Bridging Gene Network Graphs and Single-Cell Foundation
+  Models",2024,arXiv,,http://arxiv.org/abs/2411.06331v1,http://arxiv.org/pdf/2411.06331v1,,Jiabei Cheng; Jiachen Li; Kaiyuan Yang; Hongbin Shen; Ye Yuan
+http://arxiv.org/abs/2402.12405v1,arxiv,"scInterpreter: Training Large Language Models to Interpret scRNA-seq
+  Data for Cell Type Annotation",2024,arXiv,,http://arxiv.org/abs/2402.12405v1,http://arxiv.org/pdf/2402.12405v1,,Cong Li; Meng Xiao; Pengfei Wang; Guihai Feng; Xin Li; Yuanchun Zhou
+http://arxiv.org/abs/2505.12638v2,arxiv,"ChromFound: Towards A Universal Foundation Model for Single-Cell
+  Chromatin Accessibility Data",2025,arXiv,,http://arxiv.org/abs/2505.12638v2,http://arxiv.org/pdf/2505.12638v2,,Yifeng Jiao; Yuchen Liu; Yu Zhang; Xin Guo; Yushuai Wu; Chen Jiang; Jiyang Li; Hongwei Zhang; Limei Han; Xin Gao; Yuan Qi; Yuan Cheng
+http://arxiv.org/abs/2508.15751v1,arxiv,"Fine-grained Multi-class Nuclei Segmentation with Molecular-empowered
+  All-in-SAM Model",2025,arXiv,,http://arxiv.org/abs/2508.15751v1,http://arxiv.org/pdf/2508.15751v1,,Xueyuan Li; Can Cui; Ruining Deng; Yucheng Tang; Quan Liu; Tianyuan Yao; Shunxing Bao; Naweed Chowdhury; Haichun Yang; Yuankai Huo
+http://arxiv.org/abs/2508.04747v1,arxiv,"GRIT: Graph-Regularized Logit Refinement for Zero-shot Cell Type
+  Annotation",2025,arXiv,,http://arxiv.org/abs/2508.04747v1,http://arxiv.org/pdf/2508.04747v1,,Tianxiang Hu; Chenyi Zhou; Jiaxiang Liu; Jiongxin Wang; Ruizhe Chen; Haoxiang Xia; Gaoang Wang; Jian Wu; Zuozhu Liu
+http://arxiv.org/abs/2507.04270v3,arxiv,ZERO: Industry-ready Vision Foundation Model with Multi-modal Prompts,2025,arXiv,,http://arxiv.org/abs/2507.04270v3,http://arxiv.org/pdf/2507.04270v3,,Sangbum Choi; Kyeongryeol Go; Taewoong Jang
+http://arxiv.org/abs/2505.05612v1,arxiv,"scDrugMap: Benchmarking Large Foundation Models for Drug Response
+  Prediction",2025,arXiv,,http://arxiv.org/abs/2505.05612v1,http://arxiv.org/pdf/2505.05612v1,,Qing Wang; Yining Pan; Minghao Zhou; Zijia Tang; Yanfei Wang; Guangyu Wang; Qianqian Song
+http://arxiv.org/abs/2412.13478v2,arxiv,"Efficient Fine-Tuning of Single-Cell Foundation Models Enables Zero-Shot
+  Molecular Perturbation Prediction",2024,arXiv,,http://arxiv.org/abs/2412.13478v2,http://arxiv.org/pdf/2412.13478v2,,Sepideh Maleki; Jan-Christian Huetter; Kangway V. Chuang; David Richmond; Gabriele Scalia; Tommaso Biancalani
+http://arxiv.org/abs/2408.12373v2,arxiv,Cell-ontology guided transcriptome foundation model,2024,arXiv,,http://arxiv.org/abs/2408.12373v2,http://arxiv.org/pdf/2408.12373v2,,Xinyu Yuan; Zhihao Zhan; Zuobai Zhang; Manqi Zhou; Jianan Zhao; Boyu Han; Yue Li; Jian Tang
+http://arxiv.org/abs/2402.01188v4,arxiv,Segment Any Change,2024,arXiv,,http://arxiv.org/abs/2402.01188v4,http://arxiv.org/pdf/2402.01188v4,,Zhuo Zheng; Yanfei Zhong; Liangpei Zhang; Stefano Ermon
