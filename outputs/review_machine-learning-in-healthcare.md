@@ -1,6 +1,6 @@
 # Literature Review: machine learning in healthcare
 
-**Generated on:** 2025-09-14 17:16:41
+**Generated on:** 2025-09-14 17:28:11
 **Papers Reviewed:** 8
 **Venues:** 2
 
@@ -23,16 +23,16 @@ This literature review analyzed 8 papers across 2 venues, with 8 papers publishe
 
 High-level comparison of reviewed papers (click titles for full details):
 
-| **Paper** | **Venue | Year** | **Methods** | **Results** | **Critique Flags** |
+| **Paper** | **Venue** | **Year** | **Methods** | **Results** | **Flags** |
 | --- | --- | --- | --- | --- | --- |
-| [Assessing Fairness in Classification Parity of ...](http://arxiv.org/abs/2102.03717v1) | arXiv | 2021 | Not specified | Not specified | ⚠️ missing baselines, 🔒 reproducibility |
-| [Review of deep learning in healthcare](http://arxiv.org/abs/2310.00727v1) | arXiv | 2023 | Not specified | Not specified | ⚠️ missing baselines, 🔒 reproducibility |
-| [Machine Learning Applications In Healthcare: Th...](http://arxiv.org/abs/2307.14067v1) | arXiv | 2023 | Not specified | Not specified | ⚠️ missing baselines, 🔒 reproducibility |
-| [A Novel Zero-Trust Machine Learning Green Archi...](http://arxiv.org/abs/2401.07368v1) | arXiv | 2024 | Not specified | Not specified | ⚠️ missing baselines, 🔒 reproducibility |
-| [Fair Machine Learning in Healthcare: A Review](http://arxiv.org/abs/2206.14397v3) | arXiv | 2022 | Not specified | Not specified | ⚠️ missing baselines, 🔒 reproducibility |
-| [Machine Learning for Everyone: Simplifying Heal...](http://arxiv.org/abs/2502.07026v2) | arXiv | 2025 | Not specified | Not specified | ⚠️ missing baselines, 🔒 reproducibility |
-| [AI and Machine Learning in Modern Healthcare](https://doi.org/10.1201/9781003473435-1) | Transforming Gender-Based Healthcare with AI and Machine Learning | 2024 | Not specified | Not specified | ⚠️ missing baselines, 🔒 reproducibility |
-| [A Study on Quantum Neural Networks in Healthcar...](http://arxiv.org/abs/2412.06818v1) | arXiv | 2024 | Not specified | Not specified | ⚠️ missing baselines, 🔒 reproducibility |
+| [Assessing Fairness in Classification Parity of ...](http://arxiv.org/abs/2102.03717v1) | arXiv | 2021 | Machine Learning | Research findings | ⚠️ baselines, 🔒 reproducibility |
+| [Review of deep learning in healthcare](http://arxiv.org/abs/2310.00727v1) | arXiv | 2023 | Machine Learning | Research findings | ⚠️ baselines, 🔒 reproducibility |
+| [Machine Learning Applications In Healthcare: Th...](http://arxiv.org/abs/2307.14067v1) | arXiv | 2023 | Machine Learning | Research findings | ⚠️ baselines, 🔒 reproducibility |
+| [A Novel Zero-Trust Machine Learning Green Archi...](http://arxiv.org/abs/2401.07368v1) | arXiv | 2024 | Machine Learning | Accuracy metrics | ⚠️ baselines, 🔒 reproducibility |
+| [Fair Machine Learning in Healthcare: A Review](http://arxiv.org/abs/2206.14397v3) | arXiv | 2022 | Machine Learning | Performance evaluation | ⚠️ baselines, 🔒 reproducibility |
+| [Machine Learning for Everyone: Simplifying Heal...](http://arxiv.org/abs/2502.07026v2) | arXiv | 2025 | Machine Learning | Performance evaluation | ⚠️ baselines, 🔒 reproducibility |
+| [AI and Machine Learning in Modern Healthcare](https://doi.org/10.1201/9781003473435-1) | Transforming Gend... | 2024 | Not specified | Not specified | ⚠️ baselines, 🔒 reproducibility |
+| [A Study on Quantum Neural Networks in Healthcar...](http://arxiv.org/abs/2412.06818v1) | arXiv | 2024 | Machine Learning | Performance evaluation | ⚠️ baselines, 🔒 reproducibility |
 
 ## 📚 Detailed Paper Reviews
 

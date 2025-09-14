@@ -127,10 +127,11 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
               <thead>
                 <tr className="border-b">
                   <th className="text-left p-2 font-semibold">Paper</th>
-                  <th className="text-left p-2 font-semibold">Venue | Year</th>
+                  <th className="text-left p-2 font-semibold">Venue</th>
+                  <th className="text-left p-2 font-semibold">Year</th>
                   <th className="text-left p-2 font-semibold">Methods</th>
                   <th className="text-left p-2 font-semibold">Results</th>
-                  <th className="text-left p-2 font-semibold">Critique Flags</th>
+                  <th className="text-left p-2 font-semibold">Flags</th>
                 </tr>
               </thead>
               <tbody>
@@ -156,7 +157,10 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
                       </div>
                     </td>
                     <td className="p-2 text-sm text-muted-foreground">
-                      {paper.venue || 'Unknown'} | {paper.year || 'N/A'}
+                      {paper.venue || 'Unknown'}
+                    </td>
+                    <td className="p-2 text-sm text-muted-foreground">
+                      {paper.year || 'N/A'}
                     </td>
                     <td className="p-2 text-sm">
                       <div className="max-w-xs">

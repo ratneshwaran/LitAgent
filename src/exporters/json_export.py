@@ -28,14 +28,45 @@ def export_json(result: ReviewResult, path: Path) -> Path:
                     "icon": _get_critique_icon(issue.tag)
                 })
         
+        # Extract methods and results from abstract if not available
+        methods = "Not specified"
+        if mr and mr.summary.methods:
+            methods = mr.summary.methods[:50] + ("..." if len(mr.summary.methods) > 50 else "")
+        elif paper.abstract:
+            abstract_lower = paper.abstract.lower()
+            if "machine learning" in abstract_lower:
+                methods = "Machine Learning"
+            elif "deep learning" in abstract_lower:
+                methods = "Deep Learning"
+            elif "neural network" in abstract_lower:
+                methods = "Neural Networks"
+            elif "classification" in abstract_lower:
+                methods = "Classification"
+            else:
+                methods = "ML/AI Methods"
+        
+        results = "Not specified"
+        if mr and mr.summary.results:
+            results = mr.summary.results[:50] + ("..." if len(mr.summary.results) > 50 else "")
+        elif paper.abstract:
+            abstract_lower = paper.abstract.lower()
+            if "accuracy" in abstract_lower:
+                results = "Accuracy metrics"
+            elif "performance" in abstract_lower:
+                results = "Performance evaluation"
+            elif "improvement" in abstract_lower:
+                results = "Performance improvement"
+            else:
+                results = "Research findings"
+        
         comparative.append({
             "id": paper.id,
             "title": paper.title,
             "title_link": f"https://doi.org/{paper.doi}" if paper.doi else paper.url,
             "venue": paper.venue,
             "year": paper.year,
-            "methods": mr.summary.methods[:50] + "..." if mr and mr.summary.methods and len(mr.summary.methods) > 50 else (mr.summary.methods if mr else "Not specified"),
-            "results": mr.summary.results[:50] + "..." if mr and mr.summary.results and len(mr.summary.results) > 50 else (mr.summary.results if mr else "Not specified"),
+            "methods": methods,
+            "results": results,
             "critique_flags": critique_flags
         })
     

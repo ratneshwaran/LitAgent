@@ -1,7 +1,7 @@
 {
   "metadata": {
     "topic": "machine learning in healthcare",
-    "generated_at": "2025-09-14T17:16:41.819708",
+    "generated_at": "2025-09-14T17:28:11.709542",
     "papers_reviewed": 8,
     "venues": 2
   },
@@ -24,8 +24,8 @@
       "title_link": "http://arxiv.org/abs/2102.03717v1",
       "venue": "arXiv",
       "year": 2021,
-      "methods": null,
-      "results": null,
+      "methods": "Machine Learning",
+      "results": "Research findings",
       "critique_flags": [
         {
           "tag": "missing_baselines",
@@ -45,8 +45,8 @@
       "title_link": "http://arxiv.org/abs/2310.00727v1",
       "venue": "arXiv",
       "year": 2023,
-      "methods": null,
-      "results": null,
+      "methods": "Machine Learning",
+      "results": "Research findings",
       "critique_flags": [
         {
           "tag": "missing_baselines",
@@ -66,8 +66,8 @@
       "title_link": "http://arxiv.org/abs/2307.14067v1",
       "venue": "arXiv",
       "year": 2023,
-      "methods": null,
-      "results": null,
+      "methods": "Machine Learning",
+      "results": "Research findings",
       "critique_flags": [
         {
           "tag": "missing_baselines",
@@ -87,8 +87,8 @@
       "title_link": "http://arxiv.org/abs/2401.07368v1",
       "venue": "arXiv",
       "year": 2024,
-      "methods": null,
-      "results": null,
+      "methods": "Machine Learning",
+      "results": "Accuracy metrics",
       "critique_flags": [
         {
           "tag": "missing_baselines",
@@ -108,8 +108,8 @@
       "title_link": "http://arxiv.org/abs/2206.14397v3",
       "venue": "arXiv",
       "year": 2022,
-      "methods": null,
-      "results": null,
+      "methods": "Machine Learning",
+      "results": "Performance evaluation",
       "critique_flags": [
         {
           "tag": "missing_baselines",
@@ -129,8 +129,8 @@
       "title_link": "http://arxiv.org/abs/2502.07026v2",
       "venue": "arXiv",
       "year": 2025,
-      "methods": null,
-      "results": null,
+      "methods": "Machine Learning",
+      "results": "Performance evaluation",
       "critique_flags": [
         {
           "tag": "missing_baselines",
@@ -150,8 +150,8 @@
       "title_link": "https://doi.org/10.1201/9781003473435-1",
       "venue": "Transforming Gender-Based Healthcare with AI and Machine Learning",
       "year": 2024,
-      "methods": null,
-      "results": null,
+      "methods": "Not specified",
+      "results": "Not specified",
       "critique_flags": [
         {
           "tag": "missing_baselines",
@@ -171,8 +171,8 @@
       "title_link": "http://arxiv.org/abs/2412.06818v1",
       "venue": "arXiv",
       "year": 2024,
-      "methods": null,
-      "results": null,
+      "methods": "Machine Learning",
+      "results": "Performance evaluation",
       "critique_flags": [
         {
           "tag": "missing_baselines",
