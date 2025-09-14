@@ -1,0 +1,107 @@
+{
+  "machine learning": [
+    "machine learning",
+    "artificial intelligence",
+    "deep learning",
+    "neural networks",
+    "supervised learning",
+    "unsupervised learning",
+    "reinforcement learning"
+  ],
+  "healthcare": [
+    "healthcare",
+    "medical",
+    "clinical",
+    "health",
+    "medicine",
+    "patient care",
+    "clinical decision support"
+  ],
+  "cancer": [
+    "cancer",
+    "oncology",
+    "tumor",
+    "neoplasm",
+    "carcinoma",
+    "malignancy",
+    "cancer treatment"
+  ],
+  "diabetes": [
+    "diabetes",
+    "diabetic",
+    "glucose",
+    "insulin",
+    "diabetes mellitus",
+    "type 1 diabetes",
+    "type 2 diabetes"
+  ],
+  "cardiovascular": [
+    "cardiovascular",
+    "heart",
+    "cardiac",
+    "vascular",
+    "cardiovascular disease",
+    "heart disease",
+    "stroke"
+  ],
+  "mental health": [
+    "mental health",
+    "psychiatry",
+    "psychology",
+    "depression",
+    "anxiety",
+    "mental disorder",
+    "psychiatric"
+  ],
+  "covid": [
+    "covid",
+    "sars-cov-2",
+    "coronavirus",
+    "pandemic",
+    "covid-19",
+    "coronavirus disease"
+  ],
+  "drug": [
+    "drug",
+    "pharmaceutical",
+    "medication",
+    "therapy",
+    "treatment",
+    "pharmacology",
+    "drug discovery"
+  ],
+  "diagnosis": [
+    "diagnosis",
+    "diagnostic",
+    "screening",
+    "detection",
+    "diagnostic imaging",
+    "medical diagnosis"
+  ],
+  "treatment": [
+    "treatment",
+    "therapy",
+    "intervention",
+    "management",
+    "therapeutic",
+    "clinical trial"
+  ],
+  "imaging": [
+    "imaging",
+    "medical imaging",
+    "radiology",
+    "mri",
+    "ct scan",
+    "ultrasound",
+    "x-ray"
+  ],
+  "genomics": [
+    "genomics",
+    "genetics",
+    "dna",
+    "gene",
+    "genome",
+    "genetic testing",
+    "precision medicine"
+  ]
+}

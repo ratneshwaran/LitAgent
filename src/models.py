@@ -6,6 +6,19 @@ from typing import List, Optional, Literal, Dict, Any
 from pydantic import BaseModel, Field
 
 
+class SearchFilters(BaseModel):
+	start_year: Optional[int] = None
+	end_year: Optional[int] = None
+	include_keywords: List[str] = Field(default_factory=list)
+	exclude_keywords: List[str] = Field(default_factory=list)
+	venues: List[str] = Field(default_factory=list)
+	limit: int = 20
+	must_have_pdf: bool = False
+	oa_only: bool = False
+	review_filter: Literal["off", "soft", "hard"] = "off"
+	enabled_sources: List[str] = Field(default_factory=list)
+
+
 class Filters(BaseModel):
 	start_year: Optional[int] = None
 	end_year: Optional[int] = None
@@ -15,9 +28,23 @@ class Filters(BaseModel):
 	limit: int = 20
 
 
+class ScoreComponents(BaseModel):
+	bm25: float = 0.0
+	rrf: float = 0.0
+	dense: float = 0.0
+	recency: float = 0.0
+	final: float = 0.0
+
+
+class Provenance(BaseModel):
+	source: str
+	rank_in_source: int
+	query_id: str
+
+
 class Paper(BaseModel):
 	id: str
-	source: Literal["arxiv", "pubmed", "crossref"]
+	source: Literal["arxiv", "pubmed", "crossref", "openalex", "semanticscholar", "europe_pmc", "biorxiv", "medrxiv", "dblp", "scholar"]
 	title: str
 	abstract: Optional[str] = None
 	authors: List[str] = Field(default_factory=list)
@@ -28,6 +55,9 @@ class Paper(BaseModel):
 	pdf_url: Optional[str] = None
 	citations_count: Optional[int] = None
 	keywords: List[str] = Field(default_factory=list)
+	score_components: Optional[ScoreComponents] = None
+	reasons: List[str] = Field(default_factory=list)
+	provenance: List[Provenance] = Field(default_factory=list)
 
 
 class Quote(BaseModel):
@@ -109,3 +139,20 @@ class ReviewResult(BaseModel):
 class ErrorInfo(BaseModel):
 	message: str
 	details: Optional[Any] = None
+
+
+class QueryBundle(BaseModel):
+	exact_query: str
+	expanded_query: str
+	domain_query: str
+	mesh_terms: List[str] = Field(default_factory=list)
+	related_terms: List[str] = Field(default_factory=list)
+
+
+class SearchDiagnostics(BaseModel):
+	query_bundle: QueryBundle
+	per_source_counts: Dict[str, int]
+	dedupe_stats: Dict[str, int]
+	fusion_params: Dict[str, Any]
+	search_duration: float
+	api_retries: Dict[str, int]

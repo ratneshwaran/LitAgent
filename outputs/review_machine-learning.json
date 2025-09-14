@@ -10,88 +10,6 @@
   },
   "raw_papers": [
     {
-      "id": "40943960",
-      "source": "pubmed",
-      "title": "Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.",
-      "abstract": null,
-      "authors": [
-        "Kucukakcali Z",
-        "Cicek IB",
-        "Akbulut S"
-      ],
-      "year": 2025,
-      "venue": "Journal of clinical medicine",
-      "doi": null,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40943960/",
-      "pdf_url": null,
-      "citations_count": null,
-      "keywords": []
-    },
-    {
-      "id": "40943850",
-      "source": "pubmed",
-      "title": "Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.",
-      "abstract": null,
-      "authors": [
-        "Cetin S",
-        "Ulgen A",
-        "Pasin O",
-        "Sıvgın H",
-        "Cetin M"
-      ],
-      "year": 2025,
-      "venue": "Journal of clinical medicine",
-      "doi": null,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40943850/",
-      "pdf_url": null,
-      "citations_count": null,
-      "keywords": []
-    },
-    {
-      "id": "40943716",
-      "source": "pubmed",
-      "title": "Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.",
-      "abstract": null,
-      "authors": [
-        "Hyun K",
-        "Kim JJ",
-        "Im KS",
-        "Han SC",
-        "Ryu JH"
-      ],
-      "year": 2025,
-      "venue": "Journal of clinical medicine",
-      "doi": null,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40943716/",
-      "pdf_url": null,
-      "citations_count": null,
-      "keywords": []
-    },
-    {
-      "id": "40943452",
-      "source": "pubmed",
-      "title": "Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.",
-      "abstract": null,
-      "authors": [
-        "Liu B",
-        "Zhu L",
-        "Zhang C",
-        "Wang D",
-        "Liu H",
-        "Liu J",
-        "Sun J",
-        "Feng X",
-        "Yang W"
-      ],
-      "year": 2025,
-      "venue": "International journal of molecular sciences",
-      "doi": null,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40943452/",
-      "pdf_url": null,
-      "citations_count": null,
-      "keywords": []
-    },
-    {
       "id": "http://arxiv.org/abs/2301.09753v1",
       "source": "arxiv",
       "title": "Towards Modular Machine Learning Solution Development: Benefits and\n  Trade-offs",
@@ -106,118 +24,97 @@
       "url": "http://arxiv.org/abs/2301.09753v1",
       "pdf_url": "http://arxiv.org/pdf/2301.09753v1",
       "citations_count": null,
-      "keywords": []
+      "keywords": [],
+      "score_components": null,
+      "reasons": [],
+      "provenance": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2204.07492v2",
+      "source": "arxiv",
+      "title": "A Machine Learning Tutorial for Operational Meteorology, Part I:\n  Traditional Machine Learning",
+      "abstract": "Recently, the use of machine learning in meteorology has increased greatly.\nWhile many machine learning methods are not new, university classes on machine\nlearning are largely unavailable to meteorology students and are not required\nto become a meteorologist. The lack of formal instruction has contributed to\nperception that machine learning methods are 'black boxes' and thus end-users\nare hesitant to apply the machine learning methods in their every day workflow.\nTo reduce the opaqueness of machine learning methods and lower hesitancy\ntowards machine learning in meteorology, this paper provides a survey of some\nof the most common machine learning methods. A familiar meteorological example\nis used to contextualize the machine learning methods while also discussing\nmachine learning topics using plain language. The following machine learning\nmethods are demonstrated: linear regression; logistic regression; decision\ntrees; random forest; gradient boosted decision trees; naive Bayes; and support\nvector machines. Beyond discussing the different methods, the paper also\ncontains discussions on the general machine learning process as well as best\npractices to enable readers to apply machine learning to their own datasets.\nFurthermore, all code (in the form of Jupyter notebooks and Google Colaboratory\nnotebooks) used to make the examples in the paper is provided in an effort to\ncatalyse the use of machine learning in meteorology.",
+      "authors": [
+        "Randy J. Chase",
+        "David R. Harrison",
+        "Amanda Burke",
+        "Gary M. Lackmann",
+        "Amy McGovern"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2204.07492v2",
+      "pdf_url": "http://arxiv.org/pdf/2204.07492v2",
+      "citations_count": null,
+      "keywords": [],
+      "score_components": null,
+      "reasons": [],
+      "provenance": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2312.03120v1",
+      "source": "arxiv",
+      "title": "The Landscape of Modern Machine Learning: A Review of Machine,\n  Distributed and Federated Learning",
+      "abstract": "With the advance of the powerful heterogeneous, parallel and distributed\ncomputing systems and ever increasing immense amount of data, machine learning\nhas become an indispensable part of cutting-edge technology, scientific\nresearch and consumer products. In this study, we present a review of modern\nmachine and deep learning. We provide a high-level overview for the latest\nadvanced machine learning algorithms, applications, and frameworks. Our\ndiscussion encompasses parallel distributed learning, deep learning as well as\nfederated learning. As a result, our work serves as an introductory text to the\nvast field of modern machine learning.",
+      "authors": [
+        "Omer Subasi",
+        "Oceane Bel",
+        "Joseph Manzano",
+        "Kevin Barker"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2312.03120v1",
+      "pdf_url": "http://arxiv.org/pdf/2312.03120v1",
+      "citations_count": null,
+      "keywords": [],
+      "score_components": null,
+      "reasons": [],
+      "provenance": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2206.07090v2",
+      "source": "arxiv",
+      "title": "Parallelization of Machine Learning Algorithms Respectively on Single\n  Machine and Spark",
+      "abstract": "With the rapid development of big data technologies, how to dig out useful\ninformation from massive data becomes an essential problem. However, using\nmachine learning algorithms to analyze large data may be time-consuming and\ninefficient on the traditional single machine. To solve these problems, this\npaper has made some research on the parallelization of several classic machine\nlearning algorithms respectively on the single machine and the big data\nplatform Spark. We compare the runtime and efficiency of traditional machine\nlearning algorithms with parallelized machine learning algorithms respectively\non the single machine and Spark platform. The research results have shown\nsignificant improvement in runtime and efficiency of parallelized machine\nlearning algorithms.",
+      "authors": [
+        "Jiajun Shen"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2206.07090v2",
+      "pdf_url": "http://arxiv.org/pdf/2206.07090v2",
+      "citations_count": null,
+      "keywords": [],
+      "score_components": null,
+      "reasons": [],
+      "provenance": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2012.04105v1",
+      "source": "arxiv",
+      "title": "The Tribes of Machine Learning and the Realm of Computer Architecture",
+      "abstract": "Machine learning techniques have influenced the field of computer\narchitecture like many other fields. This paper studies how the fundamental\nmachine learning techniques can be applied towards computer architecture\nproblems. We also provide a detailed survey of computer architecture research\nthat employs different machine learning methods. Finally, we present some\nfuture opportunities and the outstanding challenges that need to be overcome to\nexploit full potential of machine learning for computer architecture.",
+      "authors": [
+        "Ayaz Akram",
+        "Jason Lowe-Power"
+      ],
+      "year": 2020,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2012.04105v1",
+      "pdf_url": "http://arxiv.org/pdf/2012.04105v1",
+      "citations_count": null,
+      "keywords": [],
+      "score_components": null,
+      "reasons": [],
+      "provenance": []
     }
   ],
   "reviews": [
-    {
-      "paper_id": "40943960",
-      "summary": {
-        "tldr": "Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.",
-        "methods": null,
-        "results": null,
-        "limitations": null,
-        "citations": null,
-        "grounding_score": 0.0,
-        "quotes": []
-      },
-      "critique": {
-        "issues": [
-          {
-            "tag": "missing_baselines",
-            "severity": "low",
-            "rationale": "Results do not clearly compare against established baselines."
-          },
-          {
-            "tag": "reproducibility",
-            "severity": "medium",
-            "rationale": "No mention of code/data availability or reproducibility."
-          }
-        ],
-        "overall_note": null
-      }
-    },
-    {
-      "paper_id": "40943850",
-      "summary": {
-        "tldr": "Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.",
-        "methods": null,
-        "results": null,
-        "limitations": null,
-        "citations": null,
-        "grounding_score": 0.0,
-        "quotes": []
-      },
-      "critique": {
-        "issues": [
-          {
-            "tag": "missing_baselines",
-            "severity": "low",
-            "rationale": "Results do not clearly compare against established baselines."
-          },
-          {
-            "tag": "reproducibility",
-            "severity": "medium",
-            "rationale": "No mention of code/data availability or reproducibility."
-          }
-        ],
-        "overall_note": null
-      }
-    },
-    {
-      "paper_id": "40943716",
-      "summary": {
-        "tldr": "Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.",
-        "methods": null,
-        "results": null,
-        "limitations": null,
-        "citations": null,
-        "grounding_score": 0.0,
-        "quotes": []
-      },
-      "critique": {
-        "issues": [
-          {
-            "tag": "missing_baselines",
-            "severity": "low",
-            "rationale": "Results do not clearly compare against established baselines."
-          },
-          {
-            "tag": "reproducibility",
-            "severity": "medium",
-            "rationale": "No mention of code/data availability or reproducibility."
-          }
-        ],
-        "overall_note": null
-      }
-    },
-    {
-      "paper_id": "40943452",
-      "summary": {
-        "tldr": "Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.",
-        "methods": null,
-        "results": null,
-        "limitations": null,
-        "citations": null,
-        "grounding_score": 0.0,
-        "quotes": []
-      },
-      "critique": {
-        "issues": [
-          {
-            "tag": "missing_baselines",
-            "severity": "low",
-            "rationale": "Results do not clearly compare against established baselines."
-          },
-          {
-            "tag": "reproducibility",
-            "severity": "medium",
-            "rationale": "No mention of code/data availability or reproducibility."
-          }
-        ],
-        "overall_note": null
-      }
-    },
     {
       "paper_id": "http://arxiv.org/abs/2301.09753v1",
       "summary": {
@@ -249,6 +146,134 @@
         ],
         "overall_note": null
       }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2204.07492v2",
+      "summary": {
+        "tldr": "Recently, the use of machine learning in meteorology has increased greatly.\nWhile many machine learning methods are not new, university classes on machine\nlearning are largely unavailable to meteorology students and are not required\nto become a meteorologist. The lack of formal i...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Recently, the use of machine learning in meteorology has increased greatly. While many machine learning methods are not new, university classes on machine\nlearning are largely unavailable to meteorolo",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2312.03120v1",
+      "summary": {
+        "tldr": "With the advance of the powerful heterogeneous, parallel and distributed\ncomputing systems and ever increasing immense amount of data, machine learning\nhas become an indispensable part of cutting-edge technology, scientific\nresearch and consumer products. In this study, we presen...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "With the advance of the powerful heterogeneous, parallel and distributed\ncomputing systems and ever increasing immense amount of data, machine learning\nhas become an indispensable part of cutting-edge",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2206.07090v2",
+      "summary": {
+        "tldr": "With the rapid development of big data technologies, how to dig out useful\ninformation from massive data becomes an essential problem. However, using\nmachine learning algorithms to analyze large data may be time-consuming and\ninefficient on the traditional single machine. To solv...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "With the rapid development of big data technologies, how to dig out useful\ninformation from massive data becomes an essential problem. However, using\nmachine learning algorithms to analyze large data ",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
+    },
+    {
+      "paper_id": "http://arxiv.org/abs/2012.04105v1",
+      "summary": {
+        "tldr": "Machine learning techniques have influenced the field of computer\narchitecture like many other fields. This paper studies how the fundamental\nmachine learning techniques can be applied towards computer architecture\nproblems. We also provide a detailed survey of computer architect...",
+        "methods": null,
+        "results": null,
+        "limitations": null,
+        "citations": null,
+        "grounding_score": 0.2,
+        "quotes": [
+          {
+            "text": "Machine learning techniques have influenced the field of computer\narchitecture like many other fields. This paper studies how the fundamental\nmachine learning techniques can be applied towards compute",
+            "section": "abstract"
+          }
+        ]
+      },
+      "critique": {
+        "issues": [
+          {
+            "tag": "missing_baselines",
+            "severity": "low",
+            "rationale": "Results do not clearly compare against established baselines."
+          },
+          {
+            "tag": "reproducibility",
+            "severity": "medium",
+            "rationale": "No mention of code/data availability or reproducibility."
+          }
+        ],
+        "overall_note": null
+      }
     }
   ],
   "matrix": {
@@ -261,93 +286,13 @@
       "Limitations"
     ],
     "rows": [
-      "Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.",
-      "Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.",
-      "Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.",
-      "Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.",
-      "Towards Modular Machine Learning Solution Development: Benefits and\n  Trade-offs"
+      "Towards Modular Machine Learning Solution Development: Benefits and\n  Trade-offs",
+      "A Machine Learning Tutorial for Operational Meteorology, Part I:\n  Traditional Machine Learning",
+      "The Landscape of Modern Machine Learning: A Review of Machine,\n  Distributed and Federated Learning",
+      "Parallelization of Machine Learning Algorithms Respectively on Single\n  Machine and Spark",
+      "The Tribes of Machine Learning and the Realm of Computer Architecture"
     ],
     "data": {
-      "Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.": {
-        "Venue": {
-          "value": "Journal of clinical medicine"
-        },
-        "Year": {
-          "value": "2025"
-        },
-        "Citations": {
-          "value": ""
-        },
-        "Methods": {
-          "value": ""
-        },
-        "Results": {
-          "value": ""
-        },
-        "Limitations": {
-          "value": ""
-        }
-      },
-      "Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.": {
-        "Venue": {
-          "value": "Journal of clinical medicine"
-        },
-        "Year": {
-          "value": "2025"
-        },
-        "Citations": {
-          "value": ""
-        },
-        "Methods": {
-          "value": ""
-        },
-        "Results": {
-          "value": ""
-        },
-        "Limitations": {
-          "value": ""
-        }
-      },
-      "Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.": {
-        "Venue": {
-          "value": "Journal of clinical medicine"
-        },
-        "Year": {
-          "value": "2025"
-        },
-        "Citations": {
-          "value": ""
-        },
-        "Methods": {
-          "value": ""
-        },
-        "Results": {
-          "value": ""
-        },
-        "Limitations": {
-          "value": ""
-        }
-      },
-      "Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.": {
-        "Venue": {
-          "value": "International journal of molecular sciences"
-        },
-        "Year": {
-          "value": "2025"
-        },
-        "Citations": {
-          "value": ""
-        },
-        "Methods": {
-          "value": ""
-        },
-        "Results": {
-          "value": ""
-        },
-        "Limitations": {
-          "value": ""
-        }
-      },
       "Towards Modular Machine Learning Solution Development: Benefits and\n  Trade-offs": {
         "Venue": {
           "value": "arXiv"
@@ -356,29 +301,110 @@
           "value": "2023"
         },
         "Citations": {
-          "value": ""
+          "value": "N/A"
         },
         "Methods": {
-          "value": ""
+          "value": "Method details not available in abstract"
         },
         "Results": {
-          "value": ""
+          "value": "Our experimental results show that modular machine learning\nsolutions have a promising potential to reap the solution engineering\nadvantages"
         },
         "Limitations": {
-          "value": ""
+          "value": "In this work we explore the benefits of modular machine learning solutions and\ndiscuss how modular machine learning solutions can overcome s"
+        }
+      },
+      "A Machine Learning Tutorial for Operational Meteorology, Part I:\n  Traditional Machine Learning": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2022"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "While many machine learning methods are not new, university classes on machine\nlearning are largely unavailable to meteorology students and "
+        },
+        "Results": {
+          "value": "Results not detailed in abstract"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "The Landscape of Modern Machine Learning: A Review of Machine,\n  Distributed and Federated Learning": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2023"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "We provide a high-level overview for the latest\nadvanced machine learning algorithms, applications, and frameworks"
+        },
+        "Results": {
+          "value": "As a result, our work serves as an introductory text to the\nvast field of modern machine learning"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "Parallelization of Machine Learning Algorithms Respectively on Single\n  Machine and Spark": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2022"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "However, using\nmachine learning algorithms to analyze large data may be time-consuming and\ninefficient on the traditional single machine"
+        },
+        "Results": {
+          "value": "The research results have shown\nsignificant improvement in runtime and efficiency of parallelized machine\nlearning algorithms"
+        },
+        "Limitations": {
+          "value": "Limitations not mentioned in abstract"
+        }
+      },
+      "The Tribes of Machine Learning and the Realm of Computer Architecture": {
+        "Venue": {
+          "value": "arXiv"
+        },
+        "Year": {
+          "value": "2020"
+        },
+        "Citations": {
+          "value": "N/A"
+        },
+        "Methods": {
+          "value": "We also provide a detailed survey of computer architecture research\nthat employs different machine learning methods"
+        },
+        "Results": {
+          "value": "Results not detailed in abstract"
+        },
+        "Limitations": {
+          "value": "Finally, we present some\nfuture opportunities and the outstanding challenges that need to be overcome to\nexploit full potential of machine l"
         }
       }
     }
   },
   "synthesis": {
-    "executive_summary": "Reviewed 5 papers across 3 venues. We summarize methods, results, and limitations, and identify common gaps.",
+    "executive_summary": "This literature review analyzed 5 papers across 1 venues, with 5 papers published since 2020. The analysis reveals key trends, methodological approaches, and identifies critical gaps in the current research landscape.",
     "gaps": [
-      "Few works report comparisons against strong baselines."
+      "Insufficient comparison against established baselines"
     ],
     "future_work": [
-      "Open-sourcing code and datasets",
-      "Larger, diverse cohorts",
-      "Robust baseline comparisons"
+      "Transition from preprint to peer-reviewed publications",
+      "Open-sourcing code and datasets for reproducibility",
+      "Larger, diverse datasets and multi-institutional studies",
+      "Standardized evaluation frameworks and metrics"
     ]
   },
   "artifacts": {
@@ -386,5 +412,5 @@
     "json_path": "outputs\\review_machine-learning.json",
     "csv_path": "outputs\\papers_machine-learning.csv"
   },
-  "created_at": "2025-09-13T13:24:38.584386"
+  "created_at": "2025-09-14T17:01:47.825245"
 }

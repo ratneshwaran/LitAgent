@@ -1,7 +1,10 @@
 id,source,title,year,venue,doi,url,pdf_url,citations,authors
-40943960,pubmed,Explainable Machine Learning for the Early Clinical Detection of Ovarian Cancer Using Contrastive Explanations.,2025,Journal of clinical medicine,,https://pubmed.ncbi.nlm.nih.gov/40943960/,,,Kucukakcali Z; Cicek IB; Akbulut S
-40943850,pubmed,Determination of Malignancy Risk Factors Using Gallstone Data and Comparing Machine Learning Methods to Predict Malignancy.,2025,Journal of clinical medicine,,https://pubmed.ncbi.nlm.nih.gov/40943850/,,,Cetin S; Ulgen A; Pasin O; Sıvgın H; Cetin M
-40943716,pubmed,Visual and Predictive Assessment of Pneumothorax Recurrence in Adolescents Using Machine Learning on Chest CT.,2025,Journal of clinical medicine,,https://pubmed.ncbi.nlm.nih.gov/40943716/,,,Hyun K; Kim JJ; Im KS; Han SC; Ryu JH
-40943452,pubmed,Machine Learning Integration of Bulk and Single-Cell RNA-Seq Data Reveals Cathepsin B as a Central PANoptosis Regulator in Influenza.,2025,International journal of molecular sciences,,https://pubmed.ncbi.nlm.nih.gov/40943452/,,,Liu B; Zhu L; Zhang C; Wang D; Liu H; Liu J; Sun J; Feng X; Yang W
 http://arxiv.org/abs/2301.09753v1,arxiv,"Towards Modular Machine Learning Solution Development: Benefits and
   Trade-offs",2023,arXiv,,http://arxiv.org/abs/2301.09753v1,http://arxiv.org/pdf/2301.09753v1,,Samiyuru Menik; Lakshmish Ramaswamy
+http://arxiv.org/abs/2204.07492v2,arxiv,"A Machine Learning Tutorial for Operational Meteorology, Part I:
+  Traditional Machine Learning",2022,arXiv,,http://arxiv.org/abs/2204.07492v2,http://arxiv.org/pdf/2204.07492v2,,Randy J. Chase; David R. Harrison; Amanda Burke; Gary M. Lackmann; Amy McGovern
+http://arxiv.org/abs/2312.03120v1,arxiv,"The Landscape of Modern Machine Learning: A Review of Machine,
+  Distributed and Federated Learning",2023,arXiv,,http://arxiv.org/abs/2312.03120v1,http://arxiv.org/pdf/2312.03120v1,,Omer Subasi; Oceane Bel; Joseph Manzano; Kevin Barker
+http://arxiv.org/abs/2206.07090v2,arxiv,"Parallelization of Machine Learning Algorithms Respectively on Single
+  Machine and Spark",2022,arXiv,,http://arxiv.org/abs/2206.07090v2,http://arxiv.org/pdf/2206.07090v2,,Jiajun Shen
+http://arxiv.org/abs/2012.04105v1,arxiv,The Tribes of Machine Learning and the Realm of Computer Architecture,2020,arXiv,,http://arxiv.org/abs/2012.04105v1,http://arxiv.org/pdf/2012.04105v1,,Ayaz Akram; Jason Lowe-Power

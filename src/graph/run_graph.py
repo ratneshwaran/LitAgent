@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Tuple
 
-from ..models import Filters, ReviewRequest
+from ..models import Filters, SearchFilters, ReviewRequest
 from ..config import get_settings
 from .build_graph import build_graph
 

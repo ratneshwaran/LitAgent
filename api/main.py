@@ -9,7 +9,7 @@ from uuid import uuid4
 from pathlib import Path
 from datetime import datetime
 
-from src.models import Filters
+from src.models import Filters, SearchFilters
 from src.graph.run_graph import run_review
 
 
@@ -39,6 +39,11 @@ class RunPayload(BaseModel):
 	venues: str | None = None
 	limit: int = 20
 	provider: Literal["openai", "anthropic"] | None = None
+	# New advanced options
+	must_have_pdf: bool = False
+	oa_only: bool = False
+	review_filter: Literal["off", "soft", "hard"] = "off"
+	enabled_sources: str | None = None  # Comma-separated list
 
 
 app = FastAPI(title="Literature Review Agent API")
@@ -55,6 +60,11 @@ _JOBS: Dict[str, Job] = {}
 
 
 def _to_filters(p: RunPayload) -> Filters:
+	# Parse enabled sources
+	enabled_sources = []
+	if p.enabled_sources:
+		enabled_sources = [s.strip() for s in p.enabled_sources.split(",") if s.strip()]
+	
 	return Filters(
 		start_year=p.start_year,
 		end_year=p.end_year,
