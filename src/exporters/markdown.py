@@ -7,32 +7,70 @@ from ..models import ReviewResult, MiniReview, Paper
 
 
 def _md_matrix(result: ReviewResult) -> str:
-    cols = result.matrix.columns
-    rows = result.matrix.rows
-    data = result.matrix.data
+    """Create a concise comparative analysis table with max 5 columns"""
+    by_id = {r.paper_id: r for r in result.reviews}
     
-    # Create a more readable header
-    header = "| **Paper** | " + " | ".join([f"**{col}**" for col in cols]) + " |\n"
-    sep = "|" + " --- |" * (len(cols) + 1) + "\n"
+    # Build concise table with key information
+    header = "| **Paper** | **Venue | Year** | **Methods** | **Results** | **Critique Flags** |\n"
+    sep = "| --- | --- | --- | --- | --- | --- |\n"
     lines = [header, sep]
     
-    for r in rows:
-        # Truncate long paper titles for better readability
-        paper_title = r.replace("|", "-")
-        if len(paper_title) > 60:
-            paper_title = paper_title[:57] + "..."
+    for paper in result.raw_papers:
+        mr = by_id.get(paper.id)
         
-        cells = []
-        for c in cols:
-            cell_value = data[r][c].value.replace("\n", " ").strip()
-            # Handle empty cells with better formatting
-            if not cell_value:
-                cell_value = "—"
-            elif len(cell_value) > 50:
-                cell_value = cell_value[:47] + "..."
-            cells.append(cell_value)
+        # Paper title with link
+        paper_title = paper.title.replace("|", "-")
+        if len(paper_title) > 50:
+            paper_title = paper_title[:47] + "..."
         
-        lines.append("| " + paper_title + " | " + " | ".join(cells) + " |\n")
+        # Add link if available
+        if paper.doi:
+            paper_cell = f"[{paper_title}](https://doi.org/{paper.doi})"
+        elif paper.url:
+            paper_cell = f"[{paper_title}]({paper.url})"
+        else:
+            paper_cell = paper_title
+        
+        # Venue and year
+        venue_year = f"{paper.venue or 'Unknown'} | {paper.year or 'N/A'}"
+        
+        # Methods (truncated)
+        methods = ""
+        if mr and mr.summary.methods:
+            methods = mr.summary.methods[:50] + ("..." if len(mr.summary.methods) > 50 else "")
+        else:
+            methods = "Not specified"
+        
+        # Results (truncated)
+        results = ""
+        if mr and mr.summary.results:
+            results = mr.summary.results[:50] + ("..." if len(mr.summary.results) > 50 else "")
+        else:
+            results = "Not specified"
+        
+        # Critique flags with icons
+        critique_flags = []
+        if mr and mr.critique.issues:
+            for issue in mr.critique.issues:
+                if "baseline" in issue.tag.lower():
+                    critique_flags.append("⚠️ missing baselines")
+                elif "reproducibility" in issue.tag.lower():
+                    critique_flags.append("🔒 reproducibility")
+                elif "data" in issue.tag.lower():
+                    critique_flags.append("📊 data issues")
+                elif "evaluation" in issue.tag.lower():
+                    critique_flags.append("📈 evaluation")
+                else:
+                    critique_flags.append(f"⚠️ {issue.tag}")
+        
+        critique_cell = ", ".join(critique_flags[:2])  # Max 2 flags
+        if len(critique_flags) > 2:
+            critique_cell += f" (+{len(critique_flags) - 2} more)"
+        
+        if not critique_cell:
+            critique_cell = "✅ No major issues"
+        
+        lines.append(f"| {paper_cell} | {venue_year} | {methods} | {results} | {critique_cell} |\n")
     
     return "".join(lines)
 
@@ -47,31 +85,122 @@ essential_sections = [
 
 
 def _md_paper_section(paper: Paper, mr: MiniReview) -> str:
+    """Create a clean card-style section for each paper"""
     lines: List[str] = []
-    lines.append(f"### {paper.title}\n\n")
-    meta = [paper.venue or "", str(paper.year or ""), "; ".join(paper.authors)]
-    lines.append(f"{', '.join([m for m in meta if m])}\n\n")
-    for title, fn in essential_sections:
-        val = fn(mr)
-        if val:
-            lines.append(f"**{title}**\n\n{val}\n\n")
+    
+    # Title with link
+    if paper.doi:
+        title_link = f"[{paper.title}](https://doi.org/{paper.doi})"
+    elif paper.url:
+        title_link = f"[{paper.title}]({paper.url})"
+    else:
+        title_link = paper.title
+    
+    lines.append(f"### {title_link}\n")
+    
+    # Metadata line
+    meta_parts = []
+    if paper.venue:
+        meta_parts.append(f"**Venue:** {paper.venue}")
+    if paper.year:
+        meta_parts.append(f"**Year:** {paper.year}")
+    if paper.authors:
+        authors_str = ", ".join(paper.authors[:3])
+        if len(paper.authors) > 3:
+            authors_str += " et al."
+        meta_parts.append(f"**Authors:** {authors_str}")
+    
+    if meta_parts:
+        lines.append(" | ".join(meta_parts) + "\n")
+    
+    lines.append("\n")
+    
+    # TL;DR (2-3 sentences max)
+    if mr.summary.tldr:
+        tldr = mr.summary.tldr
+        # Truncate to 2-3 sentences
+        sentences = tldr.split('. ')
+        if len(sentences) > 3:
+            tldr = '. '.join(sentences[:3]) + "..."
+        lines.append(f"**TL;DR:** {tldr}\n\n")
+    
+    # Methods as bullet list
+    if mr.summary.methods:
+        methods_bullets = _format_as_bullets(mr.summary.methods)
+        lines.append(f"**Methods:**\n{methods_bullets}\n")
+    
+    # Results as bullet list
+    if mr.summary.results:
+        results_bullets = _format_as_bullets(mr.summary.results)
+        lines.append(f"**Results:**\n{results_bullets}\n")
+    
+    # Limitations as bullet list
+    if mr.summary.limitations:
+        limitations_bullets = _format_as_bullets(mr.summary.limitations)
+        lines.append(f"**Limitations:**\n{limitations_bullets}\n")
+    
+    # Critique flags with severity
+    if mr.critique.issues:
+        lines.append("**Critique Flags:**\n")
+        for issue in mr.critique.issues:
+            severity_icon = _get_severity_icon(issue.severity)
+            lines.append(f"- {severity_icon} **{issue.tag}:** {issue.rationale}\n")
+        lines.append("\n")
+    
+    # Key quotes in blockquote style
     if mr.summary.quotes:
-        lines.append("**Grounding quotes**\n\n")
+        lines.append("**Key Quotes:**\n")
         for q in mr.summary.quotes:
-            sec = f" ({q.section})" if q.section else ""
-            lines.append(f"> {q.text}{sec}\n\n")
+            section_marker = f" *({q.section})*" if q.section else ""
+            lines.append(f"> {q.text}{section_marker}\n\n")
+    
+    lines.append("---\n\n")
     return "".join(lines)
 
 
+def _format_as_bullets(text: str) -> str:
+    """Convert text into bullet points"""
+    # Split by sentences and create bullets
+    sentences = [s.strip() for s in text.split('.') if s.strip()]
+    bullets = []
+    for sentence in sentences:
+        if len(sentence) > 10:  # Only include substantial sentences
+            bullets.append(f"- {sentence}")
+    return "\n".join(bullets) if bullets else "- " + text
+
+
+def _get_severity_icon(severity: str) -> str:
+    """Get icon for critique severity"""
+    severity_lower = severity.lower()
+    if "high" in severity_lower:
+        return "🔴"
+    elif "medium" in severity_lower or "med" in severity_lower:
+        return "🟡"
+    else:
+        return "🟢"
+
+
 def _md_references(papers: List[Paper]) -> str:
-    lines = ["### References\n\n"]
-    for p in papers:
-        authors = ", ".join(p.authors)
+    """Format references as a numbered list with clickable links"""
+    lines = ["## 📖 References\n\n"]
+    for i, p in enumerate(papers, 1):
+        authors = ", ".join(p.authors) if p.authors else "Unknown authors"
         year = f" ({p.year})" if p.year else ""
         venue = f" {p.venue}." if p.venue else ""
-        doi = f" doi:{p.doi}" if p.doi else ""
-        url = f" {p.url}" if p.url else ""
-        lines.append(f"- {authors}.{year} {p.title}.{venue}{doi}{url}\n")
+        
+        # Create clickable link
+        if p.doi:
+            link = f"https://doi.org/{p.doi}"
+        elif p.url:
+            link = p.url
+        else:
+            link = None
+        
+        if link:
+            lines.append(f"{i}. [{authors}{year} {p.title}.{venue}]({link})\n")
+        else:
+            lines.append(f"{i}. {authors}{year} {p.title}.{venue}\n")
+    
     lines.append("\n")
     return "".join(lines)
 
@@ -90,64 +219,39 @@ def export_markdown(result: ReviewResult, path: Path) -> Path:
     parts.append("## 📋 Executive Summary\n\n")
     parts.append(f"{result.synthesis.executive_summary}\n\n")
     
-    # Key insights section
+    # Key insights section with icons
     parts.append("## 🔍 Key Insights\n\n")
     if result.synthesis.gaps:
-        parts.append("### Identified Gaps\n")
-        parts.extend([f"- {g}\n" for g in result.synthesis.gaps])
+        parts.append("### 🔍 Identified Gaps\n")
+        for gap in result.synthesis.gaps:
+            parts.append(f"- {gap}\n")
         parts.append("\n")
     
     if result.synthesis.future_work:
-        parts.append("### Future Research Directions\n")
-        parts.extend([f"- {f}\n" for f in result.synthesis.future_work])
+        parts.append("### 🚀 Future Research Directions\n")
+        for future in result.synthesis.future_work:
+            parts.append(f"- {future}\n")
         parts.append("\n")
     
-    # Comparative matrix with better presentation
+    # Comparative matrix with concise presentation
     parts.append("## 📊 Comparative Analysis\n\n")
-    parts.append("The following table provides a comprehensive comparison of the reviewed papers:\n\n")
+    parts.append("High-level comparison of reviewed papers (click titles for full details):\n\n")
     parts.append(_md_matrix(result) + "\n")
     
-    # Mini-reviews with better organization
+    # Detailed reviews with card-style sections
     parts.append("## 📚 Detailed Paper Reviews\n\n")
     by_id = {r.paper_id: r for r in result.reviews}
     
-    # Sort papers by relevance score if available
+    # Sort papers by citations for better organization
     sorted_papers = sorted(result.raw_papers, key=lambda p: p.citations_count or 0, reverse=True)
     
     for i, p in enumerate(sorted_papers, 1):
         mr = by_id.get(p.id)
         if mr:
             parts.append(f"### {i}. {p.title}\n\n")
-            meta_parts = []
-            if p.venue:
-                meta_parts.append(f"**Venue:** {p.venue}")
-            if p.year:
-                meta_parts.append(f"**Year:** {p.year}")
-            if p.citations_count:
-                meta_parts.append(f"**Citations:** {p.citations_count}")
-            if p.authors:
-                meta_parts.append(f"**Authors:** {', '.join(p.authors[:3])}{' et al.' if len(p.authors) > 3 else ''}")
-            
-            if meta_parts:
-                parts.append(" | ".join(meta_parts) + "\n\n")
-            
-            # Add summary sections with better formatting
-            for title, fn in essential_sections:
-                val = fn(mr)
-                if val and val.strip():
-                    parts.append(f"**{title}:**\n\n{val}\n\n")
-            
-            # Add grounding quotes if available
-            if mr.summary.quotes:
-                parts.append("**Key Quotes:**\n\n")
-                for q in mr.summary.quotes:
-                    sec = f" ({q.section})" if q.section else ""
-                    parts.append(f"> {q.text}{sec}\n\n")
-            
-            parts.append("---\n\n")
+            parts.append(_md_paper_section(p, mr))
     
-    # References with better formatting
-    parts.append("## 📖 References\n\n")
+    # References with numbered list and clickable links
     parts.append(_md_references(result.raw_papers))
 
     content = "".join(parts)

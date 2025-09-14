@@ -1,46 +1,583 @@
 {
-  "topic": "machine learning in healthcare",
-  "filters": {
-    "start_year": null,
-    "end_year": null,
-    "include_keywords": [
-      "deep learning"
-    ],
-    "exclude_keywords": [],
-    "venues": [
-      "Nature"
-    ],
-    "limit": 20
+  "metadata": {
+    "topic": "machine learning in healthcare",
+    "generated_at": "2025-09-14T17:16:41.819708",
+    "papers_reviewed": 8,
+    "venues": 2
   },
-  "raw_papers": [],
-  "reviews": [],
-  "matrix": {
-    "columns": [
-      "Venue",
-      "Year",
-      "Citations",
-      "Methods",
-      "Results",
-      "Limitations"
-    ],
-    "rows": [],
-    "data": {}
-  },
-  "synthesis": {
-    "executive_summary": "This literature review analyzed 0 papers across 0 venues, with 0 papers published since 2020. The analysis reveals key trends, methodological approaches, and identifies critical gaps in the current research landscape.",
+  "executive_summary": "This literature review analyzed 8 papers across 2 venues, with 8 papers published since 2020. The analysis reveals key trends, methodological approaches, and identifies critical gaps in the current research landscape.",
+  "key_insights": {
     "gaps": [
       "Insufficient comparison against established baselines"
     ],
     "future_work": [
+      "Transition from preprint to peer-reviewed publications",
       "Open-sourcing code and datasets for reproducibility",
       "Larger, diverse datasets and multi-institutional studies",
       "Standardized evaluation frameworks and metrics"
     ]
   },
-  "artifacts": {
-    "markdown_path": "outputs\\review_machine-learning-in-healthcare.md",
-    "json_path": "outputs\\review_machine-learning-in-healthcare.json",
-    "csv_path": "outputs\\papers_machine-learning-in-healthcare.csv"
-  },
-  "created_at": "2025-09-14T16:50:33.181761"
+  "comparative": [
+    {
+      "id": "http://arxiv.org/abs/2102.03717v1",
+      "title": "Assessing Fairness in Classification Parity of Machine Learning Models\n  in Healthcare",
+      "title_link": "http://arxiv.org/abs/2102.03717v1",
+      "venue": "arXiv",
+      "year": 2021,
+      "methods": null,
+      "results": null,
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "severity": "low",
+          "icon": "⚠️"
+        },
+        {
+          "tag": "reproducibility",
+          "severity": "medium",
+          "icon": "🔒"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2310.00727v1",
+      "title": "Review of deep learning in healthcare",
+      "title_link": "http://arxiv.org/abs/2310.00727v1",
+      "venue": "arXiv",
+      "year": 2023,
+      "methods": null,
+      "results": null,
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "severity": "low",
+          "icon": "⚠️"
+        },
+        {
+          "tag": "reproducibility",
+          "severity": "medium",
+          "icon": "🔒"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2307.14067v1",
+      "title": "Machine Learning Applications In Healthcare: The State Of Knowledge and\n  Future Directions",
+      "title_link": "http://arxiv.org/abs/2307.14067v1",
+      "venue": "arXiv",
+      "year": 2023,
+      "methods": null,
+      "results": null,
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "severity": "low",
+          "icon": "⚠️"
+        },
+        {
+          "tag": "reproducibility",
+          "severity": "medium",
+          "icon": "🔒"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2401.07368v1",
+      "title": "A Novel Zero-Trust Machine Learning Green Architecture for Healthcare\n  IoT Cybersecurity: Review, Analysis, and Implementation",
+      "title_link": "http://arxiv.org/abs/2401.07368v1",
+      "venue": "arXiv",
+      "year": 2024,
+      "methods": null,
+      "results": null,
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "severity": "low",
+          "icon": "⚠️"
+        },
+        {
+          "tag": "reproducibility",
+          "severity": "medium",
+          "icon": "🔒"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2206.14397v3",
+      "title": "Fair Machine Learning in Healthcare: A Review",
+      "title_link": "http://arxiv.org/abs/2206.14397v3",
+      "venue": "arXiv",
+      "year": 2022,
+      "methods": null,
+      "results": null,
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "severity": "low",
+          "icon": "⚠️"
+        },
+        {
+          "tag": "reproducibility",
+          "severity": "medium",
+          "icon": "🔒"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2502.07026v2",
+      "title": "Machine Learning for Everyone: Simplifying Healthcare Analytics with\n  BigQuery ML",
+      "title_link": "http://arxiv.org/abs/2502.07026v2",
+      "venue": "arXiv",
+      "year": 2025,
+      "methods": null,
+      "results": null,
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "severity": "low",
+          "icon": "⚠️"
+        },
+        {
+          "tag": "reproducibility",
+          "severity": "medium",
+          "icon": "🔒"
+        }
+      ]
+    },
+    {
+      "id": "10.1201/9781003473435-1",
+      "title": "AI and Machine Learning in Modern Healthcare",
+      "title_link": "https://doi.org/10.1201/9781003473435-1",
+      "venue": "Transforming Gender-Based Healthcare with AI and Machine Learning",
+      "year": 2024,
+      "methods": null,
+      "results": null,
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "severity": "low",
+          "icon": "⚠️"
+        },
+        {
+          "tag": "reproducibility",
+          "severity": "medium",
+          "icon": "🔒"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2412.06818v1",
+      "title": "A Study on Quantum Neural Networks in Healthcare 5.0",
+      "title_link": "http://arxiv.org/abs/2412.06818v1",
+      "venue": "arXiv",
+      "year": 2024,
+      "methods": null,
+      "results": null,
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "severity": "low",
+          "icon": "⚠️"
+        },
+        {
+          "tag": "reproducibility",
+          "severity": "medium",
+          "icon": "🔒"
+        }
+      ]
+    }
+  ],
+  "detailed": [
+    {
+      "id": "http://arxiv.org/abs/2102.03717v1",
+      "title": "Assessing Fairness in Classification Parity of Machine Learning Models\n  in Healthcare",
+      "title_link": "http://arxiv.org/abs/2102.03717v1",
+      "venue": "arXiv",
+      "year": 2021,
+      "authors": [
+        "Ming Yuan",
+        "Vikas Kumar",
+        "Muhammad Aurangzeb Ahmad",
+        "Ankur Teredesai"
+      ],
+      "tldr": "Fairness in AI and machine learning systems has become a fundamental problem\nin the accountability of AI systems. While the need for accountability of AI\nmodels is near ubiquitous, healthcare in particular is a challenging field\nwhere accountability of such systems takes upon add...",
+      "methods": [],
+      "results": [],
+      "limitations": [],
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "rationale": "Results do not clearly compare against established baselines.",
+          "severity": "low",
+          "icon": "🟢"
+        },
+        {
+          "tag": "reproducibility",
+          "rationale": "No mention of code/data availability or reproducibility.",
+          "severity": "medium",
+          "icon": "🟡"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Fairness in AI and machine learning systems has become a fundamental problem\nin the accountability of AI systems. While the need for accountability of AI\nmodels is near ubiquitous, healthcare in parti",
+          "section": "abstract"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2310.00727v1",
+      "title": "Review of deep learning in healthcare",
+      "title_link": "http://arxiv.org/abs/2310.00727v1",
+      "venue": "arXiv",
+      "year": 2023,
+      "authors": [
+        "Hasan Hejbari Zargar",
+        "Saha Hejbari Zargar",
+        "Raziye Mehri"
+      ],
+      "tldr": "Given the growing complexity of healthcare data over the last several years,\nusing machine learning techniques like Deep Neural Network (DNN) models has\ngained increased appeal. In order to extract hidden patterns and other valuable\ninformation from the huge quantity of health da...",
+      "methods": [],
+      "results": [],
+      "limitations": [],
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "rationale": "Results do not clearly compare against established baselines.",
+          "severity": "low",
+          "icon": "🟢"
+        },
+        {
+          "tag": "reproducibility",
+          "rationale": "No mention of code/data availability or reproducibility.",
+          "severity": "medium",
+          "icon": "🟡"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Given the growing complexity of healthcare data over the last several years,\nusing machine learning techniques like Deep Neural Network (DNN) models has\ngained increased appeal. In order to extract hi",
+          "section": "abstract"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2307.14067v1",
+      "title": "Machine Learning Applications In Healthcare: The State Of Knowledge and\n  Future Directions",
+      "title_link": "http://arxiv.org/abs/2307.14067v1",
+      "venue": "arXiv",
+      "year": 2023,
+      "authors": [
+        "Mrinmoy Roy",
+        "Sarwar J. Minar",
+        "Porarthi Dhar",
+        "A T M Omor Faruq"
+      ],
+      "tldr": "Detection of easily missed hidden patterns with fast processing power makes\nmachine learning (ML) indispensable to today's healthcare system. Though many\nML applications have already been discovered and many are still under\ninvestigation, only a few have been adopted by current h...",
+      "methods": [],
+      "results": [],
+      "limitations": [],
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "rationale": "Results do not clearly compare against established baselines.",
+          "severity": "low",
+          "icon": "🟢"
+        },
+        {
+          "tag": "reproducibility",
+          "rationale": "No mention of code/data availability or reproducibility.",
+          "severity": "medium",
+          "icon": "🟡"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Detection of easily missed hidden patterns with fast processing power makes\nmachine learning (ML) indispensable to today's healthcare system. Though many\nML applications have already been discovered a",
+          "section": "abstract"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2401.07368v1",
+      "title": "A Novel Zero-Trust Machine Learning Green Architecture for Healthcare\n  IoT Cybersecurity: Review, Analysis, and Implementation",
+      "title_link": "http://arxiv.org/abs/2401.07368v1",
+      "venue": "arXiv",
+      "year": 2024,
+      "authors": [
+        "Zag ElSayed",
+        "Nelly Elsayed",
+        "Sajjad Bay"
+      ],
+      "tldr": "The integration of Internet of Things (IoT) devices in healthcare\napplications has revolutionized patient care, monitoring, and data management.\nThe Global IoT in Healthcare Market value is $252.2 Billion in 2023. However,\nthe rapid involvement of these devices brings information...",
+      "methods": [],
+      "results": [],
+      "limitations": [],
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "rationale": "Results do not clearly compare against established baselines.",
+          "severity": "low",
+          "icon": "🟢"
+        },
+        {
+          "tag": "reproducibility",
+          "rationale": "No mention of code/data availability or reproducibility.",
+          "severity": "medium",
+          "icon": "🟡"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "The integration of Internet of Things (IoT) devices in healthcare\napplications has revolutionized patient care, monitoring, and data management. The Global IoT in Healthcare Market value is $252",
+          "section": "abstract"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2206.14397v3",
+      "title": "Fair Machine Learning in Healthcare: A Review",
+      "title_link": "http://arxiv.org/abs/2206.14397v3",
+      "venue": "arXiv",
+      "year": 2022,
+      "authors": [
+        "Qizhang Feng",
+        "Mengnan Du",
+        "Na Zou",
+        "Xia Hu"
+      ],
+      "tldr": "The digitization of healthcare data coupled with advances in computational\ncapabilities has propelled the adoption of machine learning (ML) in healthcare.\nHowever, these methods can perpetuate or even exacerbate existing disparities,\nleading to fairness concerns such as the unequ...",
+      "methods": [],
+      "results": [],
+      "limitations": [],
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "rationale": "Results do not clearly compare against established baselines.",
+          "severity": "low",
+          "icon": "🟢"
+        },
+        {
+          "tag": "reproducibility",
+          "rationale": "No mention of code/data availability or reproducibility.",
+          "severity": "medium",
+          "icon": "🟡"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "The digitization of healthcare data coupled with advances in computational\ncapabilities has propelled the adoption of machine learning (ML) in healthcare. However, these methods can perpetuate or even",
+          "section": "abstract"
+        }
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2502.07026v2",
+      "title": "Machine Learning for Everyone: Simplifying Healthcare Analytics with\n  BigQuery ML",
+      "title_link": "http://arxiv.org/abs/2502.07026v2",
+      "venue": "arXiv",
+      "year": 2025,
+      "authors": [
+        "Mohammad Amir Salari",
+        "Bahareh Rahmani"
+      ],
+      "tldr": "Machine learning (ML) transforms healthcare by enabling predictive analytics,\npersonalized treatments, and improved patient outcomes. However, traditional ML\nworkflows often require specialized skills, infrastructure, and resources,\nlimiting accessibility for many healthcare prof...",
+      "methods": [],
+      "results": [],
+      "limitations": [],
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "rationale": "Results do not clearly compare against established baselines.",
+          "severity": "low",
+          "icon": "🟢"
+        },
+        {
+          "tag": "reproducibility",
+          "rationale": "No mention of code/data availability or reproducibility.",
+          "severity": "medium",
+          "icon": "🟡"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Machine learning (ML) transforms healthcare by enabling predictive analytics,\npersonalized treatments, and improved patient outcomes. However, traditional ML\nworkflows often require specialized skills",
+          "section": "abstract"
+        }
+      ]
+    },
+    {
+      "id": "10.1201/9781003473435-1",
+      "title": "AI and Machine Learning in Modern Healthcare",
+      "title_link": "https://doi.org/10.1201/9781003473435-1",
+      "venue": "Transforming Gender-Based Healthcare with AI and Machine Learning",
+      "year": 2024,
+      "authors": [
+        "Sharad Chauhan",
+        "Mrinal Paliwal",
+        "Nandita Manchanda",
+        "Meenu Gupta"
+      ],
+      "tldr": "AI and Machine Learning in Modern Healthcare",
+      "methods": [],
+      "results": [],
+      "limitations": [],
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "rationale": "Results do not clearly compare against established baselines.",
+          "severity": "low",
+          "icon": "🟢"
+        },
+        {
+          "tag": "reproducibility",
+          "rationale": "No mention of code/data availability or reproducibility.",
+          "severity": "medium",
+          "icon": "🟡"
+        }
+      ],
+      "quotes": []
+    },
+    {
+      "id": "http://arxiv.org/abs/2412.06818v1",
+      "title": "A Study on Quantum Neural Networks in Healthcare 5.0",
+      "title_link": "http://arxiv.org/abs/2412.06818v1",
+      "venue": "arXiv",
+      "year": 2024,
+      "authors": [
+        "Sanjay Chakraborty"
+      ],
+      "tldr": "The working environment in healthcare analytics is transforming with the\nemergence of healthcare 5.0 and the advancements in quantum neural networks. In\naddition to analyzing a comprehensive set of case studies, we also review\nrelevant literature from the fields of quantum comput...",
+      "methods": [],
+      "results": [],
+      "limitations": [],
+      "critique_flags": [
+        {
+          "tag": "missing_baselines",
+          "rationale": "Results do not clearly compare against established baselines.",
+          "severity": "low",
+          "icon": "🟢"
+        },
+        {
+          "tag": "reproducibility",
+          "rationale": "No mention of code/data availability or reproducibility.",
+          "severity": "medium",
+          "icon": "🟡"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "The working environment in healthcare analytics is transforming with the\nemergence of healthcare 5. 0 and the advancements in quantum neural networks",
+          "section": "abstract"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "http://arxiv.org/abs/2102.03717v1",
+      "title": "Assessing Fairness in Classification Parity of Machine Learning Models\n  in Healthcare",
+      "authors": [
+        "Ming Yuan",
+        "Vikas Kumar",
+        "Muhammad Aurangzeb Ahmad",
+        "Ankur Teredesai"
+      ],
+      "year": 2021,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2102.03717v1"
+    },
+    {
+      "id": "http://arxiv.org/abs/2310.00727v1",
+      "title": "Review of deep learning in healthcare",
+      "authors": [
+        "Hasan Hejbari Zargar",
+        "Saha Hejbari Zargar",
+        "Raziye Mehri"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2310.00727v1"
+    },
+    {
+      "id": "http://arxiv.org/abs/2307.14067v1",
+      "title": "Machine Learning Applications In Healthcare: The State Of Knowledge and\n  Future Directions",
+      "authors": [
+        "Mrinmoy Roy",
+        "Sarwar J. Minar",
+        "Porarthi Dhar",
+        "A T M Omor Faruq"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2307.14067v1"
+    },
+    {
+      "id": "http://arxiv.org/abs/2401.07368v1",
+      "title": "A Novel Zero-Trust Machine Learning Green Architecture for Healthcare\n  IoT Cybersecurity: Review, Analysis, and Implementation",
+      "authors": [
+        "Zag ElSayed",
+        "Nelly Elsayed",
+        "Sajjad Bay"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2401.07368v1"
+    },
+    {
+      "id": "http://arxiv.org/abs/2206.14397v3",
+      "title": "Fair Machine Learning in Healthcare: A Review",
+      "authors": [
+        "Qizhang Feng",
+        "Mengnan Du",
+        "Na Zou",
+        "Xia Hu"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2206.14397v3"
+    },
+    {
+      "id": "http://arxiv.org/abs/2502.07026v2",
+      "title": "Machine Learning for Everyone: Simplifying Healthcare Analytics with\n  BigQuery ML",
+      "authors": [
+        "Mohammad Amir Salari",
+        "Bahareh Rahmani"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2502.07026v2"
+    },
+    {
+      "id": "10.1201/9781003473435-1",
+      "title": "AI and Machine Learning in Modern Healthcare",
+      "authors": [
+        "Sharad Chauhan",
+        "Mrinal Paliwal",
+        "Nandita Manchanda",
+        "Meenu Gupta"
+      ],
+      "year": 2024,
+      "venue": "Transforming Gender-Based Healthcare with AI and Machine Learning",
+      "doi": "10.1201/9781003473435-1",
+      "url": "https://doi.org/10.1201/9781003473435-1"
+    },
+    {
+      "id": "http://arxiv.org/abs/2412.06818v1",
+      "title": "A Study on Quantum Neural Networks in Healthcare 5.0",
+      "authors": [
+        "Sanjay Chakraborty"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "doi": null,
+      "url": "http://arxiv.org/abs/2412.06818v1"
+    }
+  ]
 }

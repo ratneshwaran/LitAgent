@@ -9,6 +9,37 @@ import { Badge } from './ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
 import Loader from './Loader'
 import ErrorBanner from './ErrorBanner'
+import DetailedAnalysis from './DetailedAnalysis'
+
+// Component to fetch and display detailed analysis from JSON
+function DetailedAnalysisFromUrl({ jobId }: { jobId: string }) {
+	const [data, setData] = useState<any>(null)
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState('')
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const base = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
+				const response = await fetch(`${base}/download/${jobId}/json`)
+				if (!response.ok) throw new Error('Failed to fetch JSON data')
+				const jsonData = await response.json()
+				setData(jsonData)
+			} catch (err) {
+				setError(err instanceof Error ? err.message : 'Failed to load data')
+			} finally {
+				setLoading(false)
+			}
+		}
+		fetchData()
+	}, [jobId])
+
+	if (loading) return <Loader />
+	if (error) return <ErrorBanner message={error} />
+	if (!data) return <div>No data available</div>
+
+	return <DetailedAnalysis data={data} />
+}
 
 export default function ReportView(){
 	const { jobId } = useParams<{jobId: string}>()
@@ -175,21 +206,25 @@ export default function ReportView(){
 					</TabsContent>
 
 					<TabsContent value="details" className="mt-6">
-						<Card className="border-0 bg-card/50 backdrop-blur-sm">
-							<CardHeader>
-								<CardTitle>Detailed Analysis</CardTitle>
-								<CardDescription>
-									Comprehensive breakdown of papers, methods, and findings
-								</CardDescription>
-							</CardHeader>
-							<CardContent>
-								<div className="text-center py-12 text-muted-foreground">
-									<Table className="h-12 w-12 mx-auto mb-4 opacity-50" />
-									<p>Detailed analysis view coming soon</p>
-									<p className="text-sm">This will show individual paper summaries, comparative analysis, and research gaps</p>
-								</div>
-							</CardContent>
-						</Card>
+						{job.json_path ? (
+							<DetailedAnalysisFromUrl jobId={job.job_id} />
+						) : (
+							<Card className="border-0 bg-card/50 backdrop-blur-sm">
+								<CardHeader>
+									<CardTitle>Detailed Analysis</CardTitle>
+									<CardDescription>
+										Comprehensive breakdown of papers, methods, and findings
+									</CardDescription>
+								</CardHeader>
+								<CardContent>
+									<div className="text-center py-12 text-muted-foreground">
+										<Table className="h-12 w-12 mx-auto mb-4 opacity-50" />
+										<p>Detailed analysis not available</p>
+										<p className="text-sm">JSON data is required for detailed analysis</p>
+									</div>
+								</CardContent>
+							</Card>
+						)}
 					</TabsContent>
 
 					<TabsContent value="raw" className="mt-6">
