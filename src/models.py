@@ -81,8 +81,9 @@ class CritiqueIssue(BaseModel):
 		"weak_sample",
 		"missing_baselines",
 		"reproducibility",
+		"good_reproducibility",
 	]
-	severity: Literal["low", "medium", "high"]
+	severity: Literal["low", "medium", "high", "positive"]
 	rationale: str
 
 

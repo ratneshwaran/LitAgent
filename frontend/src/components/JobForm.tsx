@@ -8,6 +8,7 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import SearchPanel from './SearchPanel'
 
 export default function JobForm(){
 	const nav = useNavigate()
@@ -21,6 +22,7 @@ export default function JobForm(){
 	const [provider, setProvider] = useState<'openai'|'anthropic'>('openai')
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState('')
+	const [description, setDescription] = useState('')
 
 	async function submit(e: React.FormEvent){
 		e.preventDefault()
@@ -41,6 +43,14 @@ export default function JobForm(){
 		}
 	}
 
+	const handleTopicChange = (newTopic: string) => {
+		setTopic(newTopic)
+	}
+
+	const handleDescriptionChange = (newDescription: string) => {
+		setDescription(newDescription)
+	}
+
 	return (
 		<Card className="w-full max-w-4xl mx-auto shadow-xl border-0 bg-card/50 backdrop-blur-sm">
 			<CardHeader className="text-center pb-6">
@@ -52,18 +62,16 @@ export default function JobForm(){
 			
 			<CardContent>
 				<form onSubmit={submit} className="space-y-6">
-					{/* Topic Input */}
-					<div className="space-y-2">
-						<Label htmlFor="topic" className="text-sm font-medium">
+					{/* Research Topic */}
+					<div className="space-y-4">
+						<Label className="text-sm font-medium">
 							Research Topic *
 						</Label>
-						<Input
-							id="topic"
-							value={topic}
-							onChange={e => setTopic(e.target.value)}
-							placeholder="e.g., machine learning in healthcare, quantum computing applications"
-							required
-							className="h-12 text-base"
+						<SearchPanel 
+							onTopicChange={handleTopicChange}
+							onDescriptionChange={handleDescriptionChange}
+							initialTopic={topic}
+							initialDescription={description}
 						/>
 					</div>
 

@@ -162,12 +162,18 @@ def _get_critique_icon(tag: str) -> str:
     tag_lower = tag.lower()
     if "baseline" in tag_lower:
         return "⚠️"
-    elif "reproducibility" in tag_lower:
+    elif "reproducibility" in tag_lower and "good" not in tag_lower:
         return "🔒"
+    elif "good_reproducibility" in tag_lower:
+        return "✅"
     elif "data" in tag_lower:
         return "📊"
     elif "evaluation" in tag_lower:
         return "📈"
+    elif "overclaiming" in tag_lower:
+        return "⚠️"
+    elif "weak_sample" in tag_lower:
+        return "📉"
     else:
         return "⚠️"
 

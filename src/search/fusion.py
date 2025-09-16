@@ -47,7 +47,7 @@ def dedupe_papers(papers: List[Paper]) -> Tuple[List[Paper], Dict[str, int]]:
             if _fuzzy_title_similarity(normalized_title, existing_title) > 0.92:
                 # Prefer paper with more complete information
                 if (len(paper.abstract or "") > len(existing_paper.abstract or "") or
-                    paper.citations_count > (existing_paper.citations_count or 0)):
+                    (paper.citations_count or 0) > (existing_paper.citations_count or 0)):
                     # Replace existing paper
                     seen_titles[existing_title] = paper
                 is_duplicate = True

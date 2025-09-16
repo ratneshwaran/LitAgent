@@ -73,11 +73,36 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
+      {/* Executive Summary */}
+      <Card className="border-l-4 border-l-blue-500">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-xl">
+            📋 Executive Summary
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="text-center p-4 bg-blue-50 rounded-lg">
+              <div className="text-2xl font-bold text-blue-600">{data.detailed.length}</div>
+              <div className="text-sm text-blue-800">Papers Analyzed</div>
+            </div>
+            <div className="text-center p-4 bg-green-50 rounded-lg">
+              <div className="text-2xl font-bold text-green-600">{data.key_insights.gaps.length}</div>
+              <div className="text-sm text-green-800">Research Gaps</div>
+            </div>
+            <div className="text-center p-4 bg-purple-50 rounded-lg">
+              <div className="text-2xl font-bold text-purple-600">{data.key_insights.future_work.length}</div>
+              <div className="text-sm text-purple-800">Future Directions</div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Key Insights */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 text-xl">
             🔍 Key Insights
           </CardTitle>
         </CardHeader>
@@ -119,70 +144,77 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
       {/* Comparative Analysis Table */}
       <Card>
         <CardHeader>
-          <CardTitle>📊 Comparative Analysis</CardTitle>
+          <CardTitle className="flex items-center gap-2 text-xl">
+            📊 Comparative Analysis
+          </CardTitle>
+          <p className="text-sm text-muted-foreground">
+            High-level comparison of reviewed papers (click titles for full details)
+          </p>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b">
-                  <th className="text-left p-2 font-semibold">Paper</th>
-                  <th className="text-left p-2 font-semibold">Venue</th>
-                  <th className="text-left p-2 font-semibold">Year</th>
-                  <th className="text-left p-2 font-semibold">Methods</th>
-                  <th className="text-left p-2 font-semibold">Results</th>
-                  <th className="text-left p-2 font-semibold">Flags</th>
+                <tr className="border-b bg-gray-50">
+                  <th className="text-left p-4 font-semibold">Paper</th>
+                  <th className="text-left p-4 font-semibold">Venue</th>
+                  <th className="text-left p-4 font-semibold">Year</th>
+                  <th className="text-left p-4 font-semibold">Methods</th>
+                  <th className="text-left p-4 font-semibold">Results</th>
+                  <th className="text-left p-4 font-semibold">Flags</th>
                 </tr>
               </thead>
               <tbody>
                 {data.comparative.map((paper, index) => (
-                  <tr key={paper.id} className="border-b hover:bg-muted/50">
-                    <td className="p-2">
-                      <div className="max-w-xs">
+                  <tr key={paper.id} className="border-b hover:bg-gray-50 transition-colors">
+                    <td className="p-4">
+                      <div className="max-w-sm">
                         {paper.title_link ? (
                           <a 
                             href={paper.title_link} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-800 underline flex items-center gap-1"
+                            className="text-blue-600 hover:text-blue-800 underline flex items-center gap-1 font-medium"
                           >
-                            {paper.title.length > 50 ? `${paper.title.substring(0, 47)}...` : paper.title}
+                            {paper.title.length > 60 ? `${paper.title.substring(0, 57)}...` : paper.title}
                             <ExternalLink className="h-3 w-3" />
                           </a>
                         ) : (
-                          <span className="text-foreground">
-                            {paper.title.length > 50 ? `${paper.title.substring(0, 47)}...` : paper.title}
+                          <span className="text-foreground font-medium">
+                            {paper.title.length > 60 ? `${paper.title.substring(0, 57)}...` : paper.title}
                           </span>
                         )}
                       </div>
                     </td>
-                    <td className="p-2 text-sm text-muted-foreground">
-                      {paper.venue || 'Unknown'}
+                    <td className="p-4 text-sm text-muted-foreground">
+                      <Badge variant="outline" className="text-xs">
+                        {paper.venue || 'Unknown'}
+                      </Badge>
                     </td>
-                    <td className="p-2 text-sm text-muted-foreground">
+                    <td className="p-4 text-sm text-muted-foreground">
                       {paper.year || 'N/A'}
                     </td>
-                    <td className="p-2 text-sm">
+                    <td className="p-4 text-sm">
                       <div className="max-w-xs">
-                        {paper.methods && paper.methods.length > 50 
-                          ? `${paper.methods.substring(0, 47)}...` 
+                        {paper.methods && paper.methods.length > 60 
+                          ? `${paper.methods.substring(0, 57)}...` 
                           : paper.methods || 'Not specified'
                         }
                       </div>
                     </td>
-                    <td className="p-2 text-sm">
+                    <td className="p-4 text-sm">
                       <div className="max-w-xs">
-                        {paper.results && paper.results.length > 50 
-                          ? `${paper.results.substring(0, 47)}...` 
+                        {paper.results && paper.results.length > 60 
+                          ? `${paper.results.substring(0, 57)}...` 
                           : paper.results || 'Not specified'
                         }
                       </div>
                     </td>
-                    <td className="p-2">
+                    <td className="p-4">
                       <div className="flex flex-wrap gap-1">
                         {paper.critique_flags && paper.critique_flags.length > 0 ? (
-                          paper.critique_flags.slice(0, 2).map((flag, flagIndex) => (
-                            <Badge key={flagIndex} variant="outline" className="text-xs">
+                          paper.critique_flags.slice(0, 2).map((flag: CritiqueFlag, flagIndex: number) => (
+                            <Badge key={flagIndex} variant={getSeverityColor(flag.severity)} className="text-xs">
                               {flag.icon} {flag.tag}
                             </Badge>
                           ))
@@ -210,7 +242,12 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
       {/* Detailed Paper Reviews */}
       <Card>
         <CardHeader>
-          <CardTitle>📚 Detailed Paper Reviews</CardTitle>
+          <CardTitle className="flex items-center gap-2 text-xl">
+            📚 Detailed Paper Reviews
+          </CardTitle>
+          <p className="text-sm text-muted-foreground">
+            Click the expand button to view detailed analysis for each paper
+          </p>
         </CardHeader>
         <CardContent className="space-y-4">
           {data.detailed.map((paper, index) => (
@@ -220,11 +257,11 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="border-l-4 border-l-blue-500">
+              <Card className="border-l-4 border-l-blue-500 hover:shadow-md transition-shadow">
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <CardTitle className="text-lg mb-2">
+                      <CardTitle className="text-lg mb-3">
                         {index + 1}. {paper.title_link ? (
                           <a 
                             href={paper.title_link} 
@@ -240,49 +277,69 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
                         )}
                       </CardTitle>
                       
-                      <div className="flex flex-wrap gap-2 text-sm text-muted-foreground mb-3">
-                        {paper.venue && <span>Venue: {paper.venue}</span>}
-                        {paper.year && <span>Year: {paper.year}</span>}
+                      <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mb-3">
+                        {paper.venue && (
+                          <Badge variant="outline" className="text-xs">
+                            📍 {paper.venue}
+                          </Badge>
+                        )}
+                        {paper.year && (
+                          <Badge variant="outline" className="text-xs">
+                            📅 {paper.year}
+                          </Badge>
+                        )}
                         {paper.authors && paper.authors.length > 0 && (
-                          <span>Authors: {paper.authors.slice(0, 3).join(', ')}{paper.authors.length > 3 ? ' et al.' : ''}</span>
+                          <Badge variant="outline" className="text-xs">
+                            👥 {paper.authors.slice(0, 2).join(', ')}{paper.authors.length > 2 ? ' et al.' : ''}
+                          </Badge>
                         )}
                       </div>
                     </div>
                     
                     <Button
-                      variant="ghost"
+                      variant="outline"
                       size="sm"
                       onClick={() => togglePaper(paper.id)}
                       className="ml-4"
                     >
                       {expandedPapers.has(paper.id) ? (
-                        <ChevronDown className="h-4 w-4" />
+                        <>
+                          <ChevronDown className="h-4 w-4 mr-1" />
+                          Collapse
+                        </>
                       ) : (
-                        <ChevronRight className="h-4 w-4" />
+                        <>
+                          <ChevronRight className="h-4 w-4 mr-1" />
+                          Expand
+                        </>
                       )}
                     </Button>
                   </div>
                 </CardHeader>
                 
                 {expandedPapers.has(paper.id) && (
-                  <CardContent className="pt-0 space-y-4">
+                  <CardContent className="pt-0 space-y-6">
                     {/* TL;DR */}
                     {paper.tldr && (
-                      <div>
-                        <h4 className="font-semibold mb-2">TL;DR</h4>
-                        <p className="text-sm text-muted-foreground">{paper.tldr}</p>
+                      <div className="bg-blue-50 p-4 rounded-lg">
+                        <h4 className="font-semibold mb-2 flex items-center gap-2">
+                          📝 TL;DR
+                        </h4>
+                        <p className="text-sm text-gray-700">{paper.tldr}</p>
                       </div>
                     )}
                     
                     {/* Methods */}
                     {paper.methods && paper.methods.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold mb-2">Methods</h4>
-                        <ul className="space-y-1">
+                      <div className="bg-green-50 p-4 rounded-lg">
+                        <h4 className="font-semibold mb-3 flex items-center gap-2">
+                          🔬 Methods
+                        </h4>
+                        <ul className="space-y-2">
                           {paper.methods.map((method, methodIndex) => (
                             <li key={methodIndex} className="flex items-start gap-2 text-sm">
-                              <span className="text-muted-foreground">•</span>
-                              <span>{method}</span>
+                              <span className="text-green-600 font-bold">•</span>
+                              <span className="text-gray-700">{method}</span>
                             </li>
                           ))}
                         </ul>
@@ -291,12 +348,14 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
                     
                     {/* Results */}
                     {paper.results && paper.results.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold mb-2">Results</h4>
-                        <ul className="space-y-1">
+                      <div className="bg-purple-50 p-4 rounded-lg">
+                        <h4 className="font-semibold mb-3 flex items-center gap-2">
+                          📊 Results
+                        </h4>
+                        <ul className="space-y-2">
                           {paper.results.map((result, resultIndex) => (
                             <li key={resultIndex} className="flex items-start gap-2 text-sm">
-                              <span className="text-muted-foreground">•</span>
+                              <span className="text-purple-600 font-bold">•</span>
                               <span>{result}</span>
                             </li>
                           ))}
@@ -306,13 +365,15 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
                     
                     {/* Limitations */}
                     {paper.limitations && paper.limitations.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold mb-2">Limitations</h4>
-                        <ul className="space-y-1">
+                      <div className="bg-orange-50 p-4 rounded-lg">
+                        <h4 className="font-semibold mb-3 flex items-center gap-2">
+                          ⚠️ Limitations
+                        </h4>
+                        <ul className="space-y-2">
                           {paper.limitations.map((limitation, limitationIndex) => (
                             <li key={limitationIndex} className="flex items-start gap-2 text-sm">
-                              <span className="text-muted-foreground">•</span>
-                              <span>{limitation}</span>
+                              <span className="text-orange-600 font-bold">•</span>
+                              <span className="text-gray-700">{limitation}</span>
                             </li>
                           ))}
                         </ul>
@@ -321,16 +382,18 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
                     
                     {/* Critique Flags */}
                     {paper.critique_flags && paper.critique_flags.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold mb-2">Critique Flags</h4>
-                        <div className="space-y-2">
+                      <div className="bg-red-50 p-4 rounded-lg">
+                        <h4 className="font-semibold mb-3 flex items-center gap-2">
+                          🚨 Critique Flags
+                        </h4>
+                        <div className="space-y-3">
                           {paper.critique_flags.map((flag, flagIndex) => (
-                            <div key={flagIndex} className="flex items-start gap-2">
-                              <Badge variant={getSeverityColor(flag.severity)} className="text-xs">
+                            <div key={flagIndex} className="flex items-start gap-3">
+                              <Badge variant={getSeverityColor(flag.severity)} className="text-xs flex-shrink-0">
                                 {getCritiqueIcon(flag.tag)}
                                 <span className="ml-1">{flag.tag}</span>
                               </Badge>
-                              <span className="text-sm text-muted-foreground">{flag.rationale}</span>
+                              <span className="text-sm text-gray-700">{flag.rationale}</span>
                             </div>
                           ))}
                         </div>
@@ -339,14 +402,16 @@ export default function DetailedAnalysis({ data }: DetailedAnalysisProps) {
                     
                     {/* Key Quotes */}
                     {paper.quotes && paper.quotes.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold mb-2">Key Quotes</h4>
-                        <div className="space-y-3">
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <h4 className="font-semibold mb-3 flex items-center gap-2">
+                          💬 Key Quotes
+                        </h4>
+                        <div className="space-y-4">
                           {paper.quotes.map((quote, quoteIndex) => (
-                            <blockquote key={quoteIndex} className="border-l-4 border-blue-200 pl-4 italic text-sm">
-                              "{quote.text}"
+                            <blockquote key={quoteIndex} className="border-l-4 border-blue-400 pl-4 italic text-sm bg-white p-3 rounded-r-lg">
+                              <span className="text-gray-700">"{quote.text}"</span>
                               {quote.section && (
-                                <cite className="block mt-1 text-xs text-muted-foreground not-italic">
+                                <cite className="block mt-2 text-xs text-blue-600 not-italic font-medium">
                                   — {quote.section}
                                 </cite>
                               )}

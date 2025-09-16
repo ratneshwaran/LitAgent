@@ -4,7 +4,7 @@ from typing import List, Optional
 import httpx
 from xml.etree import ElementTree as ET
 
-from ..models import Paper, Filters
+from ..models import Paper, SearchFilters
 from ..utils.logging import get_logger
 
 logger = get_logger(__name__)
@@ -68,7 +68,7 @@ def _fetch_summaries(ids: List[str]) -> List[Paper]:
     return papers
 
 
-def search_pubmed(query: str, filters: Filters) -> List[Paper]:
+def search_pubmed(query: str, filters: SearchFilters) -> List[Paper]:
     term = query
     if filters.start_year or filters.end_year:
         start = filters.start_year or 1900

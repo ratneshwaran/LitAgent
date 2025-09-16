@@ -99,12 +99,18 @@ def _md_matrix(result: ReviewResult) -> str:
             for issue in mr.critique.issues:
                 if "baseline" in issue.tag.lower():
                     critique_flags.append("⚠️ baselines")
-                elif "reproducibility" in issue.tag.lower():
+                elif "reproducibility" in issue.tag.lower() and issue.severity != "positive":
                     critique_flags.append("🔒 reproducibility")
+                elif "good_reproducibility" in issue.tag.lower():
+                    critique_flags.append("✅ reproducible")
                 elif "data" in issue.tag.lower():
                     critique_flags.append("📊 data")
                 elif "evaluation" in issue.tag.lower():
                     critique_flags.append("📈 evaluation")
+                elif "overclaiming" in issue.tag.lower():
+                    critique_flags.append("⚠️ overclaiming")
+                elif "weak_sample" in issue.tag.lower():
+                    critique_flags.append("📉 small sample")
                 else:
                     critique_flags.append(f"⚠️ {issue.tag}")
         

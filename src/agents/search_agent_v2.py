@@ -16,10 +16,14 @@ from ..tools.openalex_tool import search_openalex
 from ..tools.semantic_scholar_tool import search_semantic_scholar
 from ..tools.europe_pmc_tool import search_europe_pmc
 from ..tools.scholar_provider import search_scholar
-from ..tools.unpaywall_tool import enrich_papers_with_oa
+# from ..tools.unpaywall_tool import enrich_papers_with_oa  # Disabled for performance
 from ..tools.arxiv_tool import search_arxiv
 from ..tools.pubmed_tool import search_pubmed
 from ..tools.crossref_tool import search_crossref
+from ..tools.biorxiv_tool import search_biorxiv
+from ..tools.medrxiv_tool import search_medrxiv
+from ..tools.dblp_tool import search_dblp
+from ..tools.google_scholar_tool import search_google_scholar
 
 # Import search modules
 from ..search.query_builder import build_query_bundle, save_query_bundle
@@ -49,6 +53,14 @@ def _search_source(source_name: str, query: str, filters: SearchFilters) -> List
             return search_pubmed(query, filters)
         elif source_name == "crossref":
             return search_crossref(query, filters)
+        elif source_name == "biorxiv":
+            return search_biorxiv(query, filters)
+        elif source_name == "medrxiv":
+            return search_medrxiv(query, filters)
+        elif source_name == "dblp":
+            return search_dblp(query, filters)
+        elif source_name == "google_scholar":
+            return search_google_scholar(query, filters)
         else:
             logger.warning(f"Unknown source: {source_name}")
             return []
@@ -246,9 +258,8 @@ def run_search_v2(topic: str, filters: SearchFilters) -> Tuple[List[Paper], Sear
     deduped_papers, dedupe_stats = dedupe_papers(all_papers)
     logger.info(f"After deduplication: {len(deduped_papers)} papers")
     
-    # Step 4: Enrich with open access URLs
-    if config.enable_sources.get("unpaywall", True):
-        deduped_papers = enrich_papers_with_oa(deduped_papers)
+    # Step 4: Skip Unpaywall enrichment for performance
+    # Unpaywall enrichment is disabled to improve search speed
     
     # Step 5: Apply filters
     filtered_papers = _apply_soft_filters(deduped_papers, filters)

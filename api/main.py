@@ -11,6 +11,8 @@ from datetime import datetime
 
 from src.models import Filters, SearchFilters
 from src.graph.run_graph import run_review
+from src.search.semantic_search import semantic_search, hybrid_search
+from src.agents.search_agent import run_search
 
 
 class JobStatus(BaseModel):
@@ -131,3 +133,86 @@ async def download(job_id: str, kind: Literal["md", "json", "csv"]):
 	if not path or not Path(path).exists():
 		raise HTTPException(status_code=404, detail="File not available")
 	return FileResponse(path, filename=Path(path).name)
+
+
+@app.get("/api/search")
+async def search_papers(
+	q: str,
+	description: Optional[str] = None,
+	mode: Literal["title", "semantic", "hybrid"] = "title",
+	k: int = 20,
+	start_year: Optional[int] = None,
+	end_year: Optional[int] = None,
+	include_keywords: Optional[str] = None,
+	exclude_keywords: Optional[str] = None,
+	venues: Optional[str] = None,
+	must_have_pdf: bool = False,
+	oa_only: bool = False,
+	review_filter: Literal["off", "soft", "hard"] = "off"
+):
+	"""Search for papers using different modes"""
+	if not q or len(q.strip()) < 3:
+		raise HTTPException(status_code=400, detail="Query must be at least 3 characters long")
+	
+	# Parse filters
+	search_filters = SearchFilters(
+		start_year=start_year,
+		end_year=end_year,
+		include_keywords=[s.strip() for s in (include_keywords.split(",") if include_keywords else []) if s.strip()],
+		exclude_keywords=[s.strip() for s in (exclude_keywords.split(",") if exclude_keywords else []) if s.strip()],
+		venues=[s.strip() for s in (venues.split(",") if venues else []) if s.strip()],
+		limit=k,
+		must_have_pdf=must_have_pdf,
+		oa_only=oa_only,
+		review_filter=review_filter
+	)
+	
+	try:
+		if mode == "title":
+			# Use existing title-based search
+			legacy_filters = Filters(
+				start_year=start_year,
+				end_year=end_year,
+				include_keywords=search_filters.include_keywords,
+				exclude_keywords=search_filters.exclude_keywords,
+				venues=search_filters.venues,
+				limit=k
+			)
+			papers = run_search(q, legacy_filters)
+		elif mode == "semantic":
+			papers = semantic_search(q, search_filters, k=k)
+		elif mode == "hybrid":
+			description_query = description or ""
+			papers = hybrid_search(q, description_query, search_filters, k=k)
+		else:
+			raise HTTPException(status_code=400, detail="Invalid search mode")
+		
+		# Convert papers to response format
+		results = []
+		for paper in papers:
+			result = {
+				"id": paper.id,
+				"title": paper.title,
+				"abstract": paper.abstract,
+				"authors": paper.authors,
+				"year": paper.year,
+				"venue": paper.venue,
+				"doi": paper.doi,
+				"url": paper.url,
+				"pdf_url": paper.pdf_url,
+				"citations_count": paper.citations_count,
+				"source": paper.source,
+				"relevance_score": paper.score_components.final if paper.score_components else 0.0,
+				"reasons": paper.reasons
+			}
+			results.append(result)
+		
+		return {
+			"query": q,
+			"mode": mode,
+			"total_results": len(results),
+			"papers": results
+		}
+		
+	except Exception as e:
+		raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")

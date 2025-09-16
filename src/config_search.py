@@ -35,17 +35,19 @@ class SearchConfig:
 def get_search_config() -> SearchConfig:
     load_dotenv()
     
-    # Source configuration
+    # Source configuration - optimized for speed and reliability
     enable_sources = {
-        "openalex": os.getenv("ENABLE_OPENALEX", "true").lower() == "true",
-        "semanticscholar": os.getenv("ENABLE_SEMANTICSCHOLAR", "true").lower() == "true",
+        "openalex": os.getenv("ENABLE_OPENALEX", "false").lower() == "true",  # Disabled due to rate limiting
+        "semanticscholar": os.getenv("ENABLE_SEMANTICSCHOLAR", "false").lower() == "true",  # Disabled due to API issues
         "crossref": os.getenv("ENABLE_CROSSREF", "true").lower() == "true",
         "arxiv": os.getenv("ENABLE_ARXIV", "true").lower() == "true",
         "europe_pmc": os.getenv("ENABLE_EUROPE_PMC", "true").lower() == "true",
         "biorxiv": os.getenv("ENABLE_BIORXIV", "true").lower() == "true",
         "medrxiv": os.getenv("ENABLE_MEDRXIV", "true").lower() == "true",
-        "dblp": os.getenv("ENABLE_DBLP", "true").lower() == "true",
-        "scholar": os.getenv("ENABLE_SCHOLAR", "true").lower() == "true",
+        "dblp": os.getenv("ENABLE_DBLP", "false").lower() == "true",  # Disabled for speed
+        "scholar": os.getenv("ENABLE_SCHOLAR", "false").lower() == "true",  # Disabled for speed
+        "google_scholar": os.getenv("ENABLE_GOOGLE_SCHOLAR", "false").lower() == "true",  # Disabled for speed
+        "pubmed": os.getenv("ENABLE_PUBMED", "true").lower() == "true",
     }
     
     return SearchConfig(
