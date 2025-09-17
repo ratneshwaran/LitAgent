@@ -220,15 +220,16 @@ def run_search_v2(topic: str, filters: SearchFilters) -> Tuple[List[Paper], Sear
     # Step 1: Build query bundle
     query_bundle = build_query_bundle(topic, filters)
     
-    # Step 2: Search all sources with all queries
+    # Step 2: Search all sources with all queries (two-pass: precision then recall)
     all_papers = []
     papers_by_source = {}
     api_retries = {}
     
+    # Try precision-first ordering to reduce generic drift
     queries = [
+        ("domain", query_bundle.domain_query),
         ("exact", query_bundle.exact_query),
-        ("expanded", query_bundle.expanded_query),
-        ("domain", query_bundle.domain_query)
+        ("expanded", query_bundle.expanded_query)
     ]
     
     for query_type, query in queries:
@@ -252,6 +253,11 @@ def run_search_v2(topic: str, filters: SearchFilters) -> Tuple[List[Paper], Sear
                 papers_by_source[source] = []
             papers_by_source[source].extend(papers)
             all_papers.extend(papers)
+
+        # Early stopping: if we already have enough high-precision hits, skip expanded round later
+        if query_type == "domain" and len(all_papers) >= max(150, filters.limit * 4):
+            logger.info("Sufficient precision results collected; truncating query rounds")
+            break
     
     # Step 3: Deduplication
     logger.info(f"Before deduplication: {len(all_papers)} papers")
@@ -265,18 +271,39 @@ def run_search_v2(topic: str, filters: SearchFilters) -> Tuple[List[Paper], Sear
     filtered_papers = _apply_soft_filters(deduped_papers, filters)
     
     # Step 6: Ranking pipeline
-    # Stage 1: RRF fusion
-    fusion_results = reciprocal_rank_fusion(papers_by_source, k=60)
+    # Stage 1: RRF fusion (use configurable top_k)
+    fusion_k = get_search_config().fusion_top_k
+    fusion_results = reciprocal_rank_fusion(papers_by_source, k=fusion_k)
     
-    # Stage 2: BM25 scoring
+    # Stage 2: BM25 scoring + prompt coverage boost
     bm25_results = calculate_bm25_scores(fusion_results, topic)
+    from ..search.fusion import apply_prompt_coverage_boost
+    bm25_results = apply_prompt_coverage_boost(bm25_results, topic)
+
+    # Stage 2b: Strict include enforcement (all include keywords must appear in title or abstract)
+    if filters.include_keywords:
+        strict = []
+        include_terms = [kw.lower() for kw in filters.include_keywords if kw.strip()]
+        for p in bm25_results:
+            text = f"{p.title} {p.abstract or ''}".lower()
+            if all(term in text for term in include_terms):
+                strict.append(p)
+        # If too strict (no papers), relax slightly to N-1 matches
+        if not strict and include_terms:
+            for p in bm25_results:
+                text = f"{p.title} {p.abstract or ''}".lower()
+                matched = sum(1 for t in include_terms if t in text)
+                if matched >= max(1, len(include_terms) - 1):
+                    strict.append(p)
+        bm25_results = strict or bm25_results
     
     # Stage 3: Recency scoring
     recency_results = calculate_recency_scores(bm25_results)
     
-    # Stage 4: Dense re-ranking (top 200)
-    top_200 = recency_results[:200]
-    dense_results = calculate_dense_scores(top_200, topic)
+    # Stage 4: Dense re-ranking (top window derived from fusion_k, capped)
+    dense_window = min(400, max(200, fusion_k))
+    top_window = recency_results[:dense_window]
+    dense_results = calculate_dense_scores(top_window, topic)
     
     # Stage 5: Final scoring
     final_results = calculate_final_scores(dense_results)
@@ -294,7 +321,7 @@ def run_search_v2(topic: str, filters: SearchFilters) -> Tuple[List[Paper], Sear
         query_bundle=query_bundle,
         per_source_counts=per_source_counts,
         dedupe_stats=dedupe_stats,
-        fusion_params={"k": 60, "weights": {"rrf": 0.6, "dense": 0.25, "recency": 0.15}},
+        fusion_params={"k": fusion_k, "weights": {"rrf": 0.6, "dense": 0.25, "recency": 0.15}},
         search_duration=time.time() - start_time,
         api_retries=api_retries
     )

@@ -59,50 +59,64 @@ def search_semantic_scholar(query: str, filters: SearchFilters) -> List[Paper]:
     papers = []
     limit = min(100, config.search_max_per_source)
     
-    # Build search parameters
-    search_params = {
+    # Build base search parameters
+    base_params = {
         "query": _build_s2_query(query, filters),
-        "limit": limit,
+        "limit": min(100, limit),
         "fields": "paperId,title,abstract,authors,year,venue,doi,url,openAccessPdf,citationCount,isOpenAccess"
     }
     
     try:
-        # Rate limiting
-        time.sleep(0.1)  # 10 requests per second max
+        # Semantic Scholar Graph API supports pagination via offset+limit
+        fetched = 0
+        offset = 0
+        while fetched < limit:
+            # Rate limiting
+            time.sleep(0.1)  # 10 requests per second max
+            params = {**base_params, "offset": offset}
+            response = _make_request(S2_API, params)
+            data = response.get("data", [])
+            if not data:
+                break
+            for item in data:
+                # Extract authors
+                authors = []
+                for author in item.get("authors", []):
+                    author_name = author.get("name", "")
+                    if author_name:
+                        authors.append(author_name)
+                
+                # Get PDF URL
+                pdf_url = None
+                if item.get("openAccessPdf", {}).get("url"):
+                    pdf_url = item["openAccessPdf"]["url"]
+                
+                paper = Paper(
+                    id=item.get("paperId", ""),
+                    source="semanticscholar",
+                    title=item.get("title", ""),
+                    abstract=item.get("abstract", ""),
+                    authors=authors,
+                    year=item.get("year"),
+                    venue=item.get("venue", ""),
+                    doi=item.get("doi"),
+                    url=item.get("url"),
+                    pdf_url=pdf_url,
+                    citations_count=item.get("citationCount", 0),
+                    keywords=[],
+                    reasons=[f"Semantic Scholar match for: {query}"]
+                )
+                # Apply OA/PDF post-filtering
+                if filters.must_have_pdf and not paper.pdf_url:
+                    pass
+                elif filters.oa_only and not (item.get("isOpenAccess") or item.get("openAccessPdf")):
+                    pass
+                else:
+                    papers.append(paper)
+            
+            fetched = len(papers)
+            offset += base_params["limit"]
         
-        response = _make_request(S2_API, search_params)
-        
-        for item in response.get("data", []):
-            # Extract authors
-            authors = []
-            for author in item.get("authors", []):
-                author_name = author.get("name", "")
-                if author_name:
-                    authors.append(author_name)
-            
-            # Get PDF URL
-            pdf_url = None
-            if item.get("openAccessPdf", {}).get("url"):
-                pdf_url = item["openAccessPdf"]["url"]
-            
-            paper = Paper(
-                id=item.get("paperId", ""),
-                source="semanticscholar",
-                title=item.get("title", ""),
-                abstract=item.get("abstract", ""),
-                authors=authors,
-                year=item.get("year"),
-                venue=item.get("venue", ""),
-                doi=item.get("doi"),
-                url=item.get("url"),
-                pdf_url=pdf_url,
-                citations_count=item.get("citationCount", 0),
-                keywords=[],
-                reasons=[f"Semantic Scholar match for: {query}"]
-            )
-            
-            papers.append(paper)
-            
     except Exception as e:
         logger.warning(f"Semantic Scholar search failed: {e}")
     

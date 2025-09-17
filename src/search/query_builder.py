@@ -64,7 +64,12 @@ def _build_exact_query(topic: str, filters: SearchFilters) -> str:
         else:
             key_phrases.append(keyword)
     
-    return " AND ".join(key_phrases)
+    # Add site/domain hints to broaden matches in general scholarly indexes
+    broadeners = [
+        "(paper OR article OR study OR research)",
+        "(title OR abstract)",
+    ]
+    return " AND ".join(key_phrases + broadeners)
 
 
 def _build_expanded_query(topic: str, filters: SearchFilters) -> str:
@@ -104,7 +109,8 @@ def _build_expanded_query(topic: str, filters: SearchFilters) -> str:
         exclude_query = " AND NOT ".join(filters.exclude_keywords)
         expanded_query = f"({expanded_query}) AND NOT ({exclude_query})"
     
-    return expanded_query
+    # Prefer presence in title/abstract where supported by providers
+    return f"title:({expanded_query}) OR abstract:({expanded_query})"
 
 
 def _build_domain_query(topic: str, filters: SearchFilters) -> str:

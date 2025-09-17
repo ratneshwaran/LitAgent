@@ -98,7 +98,11 @@ def semantic_search(query: str, filters: SearchFilters, k: int = 20) -> List[Pap
             return _fallback_to_traditional_search(query, filters, k)
         
         # Get query embedding
-        query_embedding = get_query_embedding(query)
+        try:
+            query_embedding = get_query_embedding(query)
+        except Exception as e:
+            logger.warning(f"Embedding retrieval failed ({e}); falling back to traditional search.")
+            return _fallback_to_traditional_search(query, filters, k)
         
         # Search embedding store
         results = embedding_store.search(query_embedding, k=k * 2)  # Get more for filtering

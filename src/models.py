@@ -12,7 +12,7 @@ class SearchFilters(BaseModel):
 	include_keywords: List[str] = Field(default_factory=list)
 	exclude_keywords: List[str] = Field(default_factory=list)
 	venues: List[str] = Field(default_factory=list)
-	limit: int = 20
+	limit: int = 50
 	must_have_pdf: bool = False
 	oa_only: bool = False
 	review_filter: Literal["off", "soft", "hard"] = "off"

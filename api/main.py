@@ -13,6 +13,7 @@ from src.models import Filters, SearchFilters
 from src.graph.run_graph import run_review
 from src.search.semantic_search import semantic_search, hybrid_search
 from src.agents.search_agent import run_search
+from src.agents.search_agent_v2 import run_search_v2
 
 
 class JobStatus(BaseModel):
@@ -30,6 +31,22 @@ class Job(BaseModel):
 	json_path: Optional[str] = None
 	csv_path: Optional[str] = None
 	message: Optional[str] = None
+
+
+class QARequest(BaseModel):
+	question: str
+	paper_ids: List[str]
+	mode: Literal["concise", "detailed"] = "concise"
+
+
+class QAAnswer(BaseModel):
+	answer: str
+	citations: List[Dict[str, str]]
+
+
+class RelatedRequest(BaseModel):
+	paper_id: str
+	k: int = 10
 
 
 class RunPayload(BaseModel):
@@ -137,10 +154,10 @@ async def download(job_id: str, kind: Literal["md", "json", "csv"]):
 
 @app.get("/api/search")
 async def search_papers(
-	q: str,
-	description: Optional[str] = None,
-	mode: Literal["title", "semantic", "hybrid"] = "title",
-	k: int = 20,
+    q: str,
+    description: Optional[str] = None,
+    mode: Literal["title", "semantic", "hybrid"] = "title",
+    k: int = 50,
 	start_year: Optional[int] = None,
 	end_year: Optional[int] = None,
 	include_keywords: Optional[str] = None,
@@ -166,19 +183,34 @@ async def search_papers(
 		oa_only=oa_only,
 		review_filter=review_filter
 	)
+
+	# Auto-derive include keywords from NL query if none provided
+	if not search_filters.include_keywords:
+		# Extract quoted phrases first
+		import re
+		quoted = re.findall(r'"([^"]+)"', q)
+		# Extract salient tokens (>=5 chars, not stopwords)
+		stop = {"the","and","that","with","from","using","about","into","their","within","study","papers","paper","research","for","into","into","this","those","these","into"}
+		words = [w for w in re.split(r"[^a-zA-Z0-9]+", q.lower()) if len(w) >= 5 and w not in stop]
+		candidates = list(dict.fromkeys([*quoted, *words]))[:5]
+		if candidates:
+			search_filters.include_keywords = candidates
 	
 	try:
 		if mode == "title":
-			# Use existing title-based search
-			legacy_filters = Filters(
-				start_year=start_year,
-				end_year=end_year,
-				include_keywords=search_filters.include_keywords,
-				exclude_keywords=search_filters.exclude_keywords,
-				venues=search_filters.venues,
-				limit=k
-			)
-			papers = run_search(q, legacy_filters)
+			# Use V2 multi-source pipeline for better recall and ranking
+			papers, _diagnostics = run_search_v2(q, search_filters)
+			if not papers:
+				# Fallback to legacy title-based search if V2 returns empty
+				legacy_filters = Filters(
+					start_year=start_year,
+					end_year=end_year,
+					include_keywords=search_filters.include_keywords,
+					exclude_keywords=search_filters.exclude_keywords,
+					venues=search_filters.venues,
+					limit=k
+				)
+				papers = run_search(q, legacy_filters)
 		elif mode == "semantic":
 			papers = semantic_search(q, search_filters, k=k)
 		elif mode == "hybrid":
@@ -202,11 +234,12 @@ async def search_papers(
 				"pdf_url": paper.pdf_url,
 				"citations_count": paper.citations_count,
 				"source": paper.source,
-				"relevance_score": paper.score_components.final if paper.score_components else 0.0,
+				"relevance_score": (paper.score_components.final if paper.score_components else 0.0),
 				"reasons": paper.reasons
 			}
 			results.append(result)
 		
+		# Ensure results are already ranked by backend; do not resort here
 		return {
 			"query": q,
 			"mode": mode,
@@ -216,3 +249,71 @@ async def search_papers(
 		
 	except Exception as e:
 		raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
+
+
+@app.post("/api/qa", response_model=QAAnswer)
+async def qa(payload: QARequest):
+	"""Heuristic QA over current papers (no external LLM required)."""
+	if not payload.paper_ids or not payload.question.strip():
+		raise HTTPException(status_code=400, detail="paper_ids and question are required")
+
+	# For simplicity, re-use title search to fetch paper metadata quickly
+	filters = Filters(limit=200)
+	papers = run_search(" ".join(payload.paper_ids), filters)
+	# Build small, focused synthesis
+	q_lower = payload.question.lower()
+	selected = []
+	for p in papers:
+		blob = f"{p.title} {p.abstract or ''} {p.venue or ''}"
+		if any(tok in blob.lower() for tok in q_lower.split()[:6]):
+			selected.append(p)
+			if len(selected) >= 15:
+				break
+
+	if not selected:
+		return QAAnswer(answer="No direct matches found in current results.", citations=[])
+
+	# Extract simple signals
+	methods = []
+	findings = []
+	citations = []
+	for p in selected:
+		text = (p.abstract or "")
+		if any(k in text.lower() for k in ["randomized", "rct", "survey", "meta-analysis", "cohort", "case-control", "qualitative", "experiment"]):
+			methods.append(f"- {p.title}: {p.venue or ''} {p.year or ''}")
+		if any(k in text.lower() for k in ["improv", "increase", "decrease", "significant", "association", "effect"]):
+			findings.append(f"- {p.title} ({p.year or ''})")
+		citations.append({"id": p.id, "title": p.title, "url": p.url or (p.doi and f"https://doi.org/{p.doi}") or ""})
+
+	sections = []
+	if methods:
+		sections.append("Methods observed:\n" + "\n".join(methods))
+	if findings:
+		sections.append("Key findings:\n" + "\n".join(findings))
+	if not sections:
+		sections.append("Synthesized summary based on abstracts. No specific methods/findings keywords detected.")
+
+	answer = "\n\n".join(sections)
+	if payload.mode == "detailed":
+		answer += "\n\nCaveats: heuristic QA without external LLM; refine your question or apply filters for sharper answers."
+
+	return QAAnswer(answer=answer, citations=citations[:20])
+
+
+@app.post("/api/related")
+async def related(payload: RelatedRequest):
+	"""Return related papers for a given paper by reusing title/abstract as a query."""
+	if not payload.paper_id:
+		raise HTTPException(status_code=400, detail="paper_id is required")
+
+	# Naive approach: treat ID as a query; in future, look up metadata cache and search by title+abstract
+	filters = Filters(limit=max(5, min(50, payload.k)))
+	results = run_search(str(payload.paper_id), filters)
+	return [{
+		"id": p.id,
+		"title": p.title,
+		"year": p.year,
+		"venue": p.venue,
+		"url": p.url,
+		"doi": p.doi
+	} for p in results]

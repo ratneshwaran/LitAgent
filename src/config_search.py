@@ -37,16 +37,16 @@ def get_search_config() -> SearchConfig:
     
     # Source configuration - optimized for speed and reliability
     enable_sources = {
-        "openalex": os.getenv("ENABLE_OPENALEX", "false").lower() == "true",  # Disabled due to rate limiting
-        "semanticscholar": os.getenv("ENABLE_SEMANTICSCHOLAR", "false").lower() == "true",  # Disabled due to API issues
+        "openalex": os.getenv("ENABLE_OPENALEX", "true").lower() == "true",
+        "semanticscholar": os.getenv("ENABLE_SEMANTICSCHOLAR", "true").lower() == "true",
         "crossref": os.getenv("ENABLE_CROSSREF", "true").lower() == "true",
         "arxiv": os.getenv("ENABLE_ARXIV", "true").lower() == "true",
         "europe_pmc": os.getenv("ENABLE_EUROPE_PMC", "true").lower() == "true",
         "biorxiv": os.getenv("ENABLE_BIORXIV", "true").lower() == "true",
         "medrxiv": os.getenv("ENABLE_MEDRXIV", "true").lower() == "true",
-        "dblp": os.getenv("ENABLE_DBLP", "false").lower() == "true",  # Disabled for speed
-        "scholar": os.getenv("ENABLE_SCHOLAR", "false").lower() == "true",  # Disabled for speed
-        "google_scholar": os.getenv("ENABLE_GOOGLE_SCHOLAR", "false").lower() == "true",  # Disabled for speed
+        "dblp": os.getenv("ENABLE_DBLP", "true").lower() == "true",
+        "scholar": os.getenv("ENABLE_SCHOLAR", "false").lower() == "true",
+        "google_scholar": os.getenv("ENABLE_GOOGLE_SCHOLAR", "false").lower() == "true",
         "pubmed": os.getenv("ENABLE_PUBMED", "true").lower() == "true",
     }
     
@@ -58,7 +58,7 @@ def get_search_config() -> SearchConfig:
         serpapi_key=os.getenv("SERPAPI_KEY"),
         serper_api_key=os.getenv("SERPER_API_KEY"),
         unpaywall_email=os.getenv("UNPAYWALL_EMAIL"),
-        search_max_per_source=int(os.getenv("SEARCH_MAX_PER_SOURCE", "50")),
+        search_max_per_source=int(os.getenv("SEARCH_MAX_PER_SOURCE", "80")),
         fusion_top_k=int(os.getenv("FUSION_TOP_K", "200")),
         rerank_embedding_provider=os.getenv("RERANK_EMBEDDING_PROVIDER", "openai"),
         strict_filters=os.getenv("STRICT_FILTERS", "false").lower() == "true",

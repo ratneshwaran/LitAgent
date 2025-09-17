@@ -53,8 +53,8 @@ def search_europe_pmc(query: str, filters: SearchFilters) -> List[Paper]:
     papers = []
     page_size = min(100, config.search_max_per_source)
     
-    # Build search parameters
-    search_params = {
+    # Build base search parameters
+    base_params = {
         "query": _build_europe_pmc_query(query, filters),
         "format": "json",
         "pageSize": page_size,
@@ -63,44 +63,62 @@ def search_europe_pmc(query: str, filters: SearchFilters) -> List[Paper]:
     }
     
     try:
-        # Rate limiting
-        time.sleep(0.1)  # 10 requests per second max
-        
-        response = _make_request(EUROPE_PMC_API, search_params)
-        
-        for item in response.get("resultList", {}).get("result", []):
-            # Extract authors
-            authors = []
-            for author in item.get("authorList", {}).get("author", []):
-                if isinstance(author, dict):
-                    author_name = author.get("fullName", "")
-                    if author_name:
-                        authors.append(author_name)
+        total_target = config.search_max_per_source
+        page = 1
+        while len(papers) < total_target:
+            # Rate limiting
+            time.sleep(0.1)  # 10 requests per second max
+            params = {**base_params, "page": page}
+            response = _make_request(EUROPE_PMC_API, params)
+            results = response.get("resultList", {}).get("result", [])
+            if not results:
+                break
+            for item in results:
+                # Extract authors
+                authors = []
+                for author in item.get("authorList", {}).get("author", []):
+                    if isinstance(author, dict):
+                        author_name = author.get("fullName", "")
+                        if author_name:
+                            authors.append(author_name)
             
-            # Get PDF URL if available
-            pdf_url = None
-            for link in item.get("fullTextUrlList", {}).get("fullTextUrl", []):
-                if link.get("documentStyle") == "pdf" and link.get("availability") == "Open access":
-                    pdf_url = link.get("url")
+                # Get PDF URL if available
+                pdf_url = None
+                for link in item.get("fullTextUrlList", {}).get("fullTextUrl", []):
+                    if link.get("documentStyle") == "pdf" and link.get("availability") == "Open access":
+                        pdf_url = link.get("url")
+                        break
+            
+                # Prefer stable URL; fall back to DOI link if PMID is missing
+                pmid = item.get("pmid")
+                doi = item.get("doi")
+                url = f"https://europepmc.org/article/MED/{pmid}" if pmid else (f"https://doi.org/{doi}" if doi else None)
+
+                paper = Paper(
+                    id=item.get("id", ""),
+                    source="europe_pmc",
+                    title=item.get("title", ""),
+                    abstract=item.get("abstractText", ""),
+                    authors=authors,
+                    year=int(item.get("pubYear", 0)) if item.get("pubYear") else None,
+                    venue=item.get("journalTitle", ""),
+                    doi=doi,
+                    url=url,
+                    pdf_url=pdf_url,
+                    citations_count=item.get("citedByCount", 0),
+                    keywords=[],
+                    reasons=[f"Europe PMC match for: {query}"]
+                )
+                # Apply must_have_pdf post-filter
+                if filters.must_have_pdf and not paper.pdf_url:
+                    pass
+                else:
+                    papers.append(paper)
+
+                if len(papers) >= total_target:
                     break
-            
-            paper = Paper(
-                id=item.get("id", ""),
-                source="europe_pmc",
-                title=item.get("title", ""),
-                abstract=item.get("abstractText", ""),
-                authors=authors,
-                year=int(item.get("pubYear", 0)) if item.get("pubYear") else None,
-                venue=item.get("journalTitle", ""),
-                doi=item.get("doi"),
-                url=item.get("pmid") and f"https://europepmc.org/article/MED/{item['pmid']}",
-                pdf_url=pdf_url,
-                citations_count=item.get("citedByCount", 0),
-                keywords=[],
-                reasons=[f"Europe PMC match for: {query}"]
-            )
-            
-            papers.append(paper)
+
+            page += 1
             
     except Exception as e:
         logger.warning(f"Europe PMC search failed: {e}")

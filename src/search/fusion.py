@@ -112,12 +112,59 @@ def calculate_bm25_scores(papers: List[Paper], query: str) -> List[Paper]:
     scores = bm25.get_scores(query_terms)
     
     # Update papers with BM25 scores
+    query_terms = query.lower().split()
     for paper, score in zip(papers, scores):
         if not paper.score_components:
             from ..models import ScoreComponents
             paper.score_components = ScoreComponents()
-        paper.score_components.bm25 = score
+        # Base BM25
+        bm25_score = float(score)
+        
+        # Title match boost: reward direct matches in title
+        title_tokens = (paper.title or "").lower().split()
+        if title_tokens and query_terms:
+            title_matches = sum(1 for t in query_terms if any(t in w for w in title_tokens))
+            ratio = title_matches / max(1, len(set(query_terms)))
+            bm25_score += 0.5 * ratio  # modest but meaningful
+        
+        paper.score_components.bm25 = bm25_score
     
+    return papers
+
+
+def _tokenize(text: str) -> List[str]:
+    return [t for t in text.lower().split() if t.isalpha() or any(c.isalnum() for c in t)]
+
+
+def apply_prompt_coverage_boost(papers: List[Paper], query: str) -> List[Paper]:
+    """Boost papers whose title/abstract cover more of the user's prompt terms and phrases.
+
+    - Unigrams: fraction of unique prompt tokens covered
+    - Bigrams: fraction of consecutive prompt token pairs found
+    Adds small, stable boosts to bm25 to improve prompt faithfulness.
+    """
+    stop = {"the","and","or","for","with","without","on","in","of","to","a","an","by","about","using","use","study","papers","research"}
+    q_tokens = [t for t in _tokenize(query) if t not in stop and len(t) > 2]
+    if not q_tokens:
+        return papers
+    q_uni = list(dict.fromkeys(q_tokens))
+    q_bi = [" ".join(q_tokens[i:i+2]) for i in range(len(q_tokens)-1)]
+
+    for p in papers:
+        text = f"{p.title} {p.abstract or ''}".lower()
+        if not p.score_components:
+            from ..models import ScoreComponents
+            p.score_components = ScoreComponents()
+        # Unigram coverage
+        covered = sum(1 for t in q_uni if t in text)
+        uni_cov = covered / max(1, len(q_uni))
+        # Bigram coverage
+        bi_cov = 0.0
+        if q_bi:
+            bi_cov = sum(1 for bg in q_bi if bg in text) / max(1, len(q_bi))
+        # Boost capped to avoid overwhelming BM25
+        boost = 0.4 * uni_cov + 0.3 * bi_cov
+        p.score_components.bm25 = (p.score_components.bm25 or 0.0) + boost
     return papers
 
 
@@ -196,21 +243,66 @@ def calculate_dense_scores(papers: List[Paper], query: str) -> List[Paper]:
     return papers
 
 
+def _venue_quality_score(venue: str | None) -> float:
+    if not venue:
+        return 0.0
+    quality: Dict[str, float] = {
+        "nature": 1.0,
+        "science": 1.0,
+        "cell": 0.95,
+        "jama": 0.9,
+        "new england journal of medicine": 0.95,
+        "nejm": 0.95,
+        "lancet": 0.95,
+        "nature methods": 0.85,
+        "nature communications": 0.8,
+        "icml": 0.8,
+        "neurips": 0.85,
+        "cvpr": 0.8,
+        "medical image analysis": 0.8,
+        "nature reviews": 0.9,
+    }
+    v = venue.lower()
+    return max((score for key, score in quality.items() if key in v), default=0.0)
+
+
 def calculate_final_scores(papers: List[Paper]) -> List[Paper]:
-    """Calculate final combined scores"""
+    """Calculate final combined scores with venue and citation boosts.
+
+    Conservative weighting to avoid overfitting to any single signal.
+    """
+    # Precompute citation normalization denominator
+    import math
+    max_citations = max((p.citations_count or 0) for p in papers) or 1
+    norm_den = math.log1p(max(1000, max_citations))
+
     for paper in papers:
         if not paper.score_components:
             from ..models import ScoreComponents
             paper.score_components = ScoreComponents()
-        
-        # Final score: 0.6*rrf + 0.25*dense + 0.15*recency
-        final_score = (
-            0.6 * paper.score_components.rrf +
-            0.25 * paper.score_components.dense +
-            0.15 * paper.score_components.recency
-        )
-        paper.score_components.final = final_score
-    
+
+        # Base score from fusion signals
+        rrf = paper.score_components.rrf or 0.0
+        dense = paper.score_components.dense or 0.0
+        recency = paper.score_components.recency or 0.0
+        bm25 = paper.score_components.bm25 or 0.0
+
+        # Emphasize lexical relevance (title/abstract) a bit more for prompt faithfulness
+        base = 0.45 * rrf + 0.15 * dense + 0.3 * bm25 + 0.1 * recency
+
+        # Venue boost (0..0.1)
+        venue_boost = 0.1 * _venue_quality_score(paper.venue)
+
+        # Citation boost using log normalization (0..0.1)
+        citations = paper.citations_count or 0
+        citations_boost = 0.1 * (math.log1p(citations) / norm_den)
+
+        # PDF/DOI availability slight boosts (each up to 0.02/0.01)
+        pdf_boost = 0.02 if getattr(paper, "pdf_url", None) else 0.0
+        doi_boost = 0.01 if paper.doi else 0.0
+
+        paper.score_components.final = base + venue_boost + citations_boost + pdf_boost + doi_boost
+
     return papers
 
 
