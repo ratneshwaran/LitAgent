@@ -45,8 +45,9 @@ class QAAnswer(BaseModel):
 
 
 class RelatedRequest(BaseModel):
-	paper_id: str
-	k: int = 10
+    paper_id: Optional[str] = None
+    query: Optional[str] = None
+    k: int = 10
 
 
 class RunPayload(BaseModel):
@@ -188,13 +189,32 @@ async def search_papers(
 	if not search_filters.include_keywords:
 		# Extract quoted phrases first
 		import re
-		quoted = re.findall(r'"([^"]+)"', q)
-		# Extract salient tokens (>=5 chars, not stopwords)
-		stop = {"the","and","that","with","from","using","about","into","their","within","study","papers","paper","research","for","into","into","this","those","these","into"}
-		words = [w for w in re.split(r"[^a-zA-Z0-9]+", q.lower()) if len(w) >= 5 and w not in stop]
-		candidates = list(dict.fromkeys([*quoted, *words]))[:5]
-		if candidates:
-			search_filters.include_keywords = candidates
+		q_lower = q.lower()
+		quoted = re.findall(r'"([^"]+)"', q_lower)
+		# Extract salient tokens (>=4 chars, not stopwords)
+		stop = {
+			"the","and","that","with","from","using","about","into","their","within",
+			"study","studies","papers","paper","research","for","on","in","of","to",
+			"this","those","these","please","find","show","give","need","want","me",
+		}
+		words = [w for w in re.split(r"[^a-zA-Z0-9]+", q_lower) if len(w) >= 4 and w not in stop]
+		# Add common bigrams of interest (e.g., cell annotation)
+		tokens = [t for t in re.split(r"[^a-zA-Z0-9]+", q_lower) if t]
+		bigrams = [f"{tokens[i]} {tokens[i+1]}" for i in range(len(tokens)-1)]
+		phrases = []
+		for bg in bigrams:
+			if any(k in bg for k in ["cell annotation","case control","meta analysis","zero shot","few shot"]):
+				phrases.append(bg)
+		candidates = list(dict.fromkeys([*quoted, *phrases, *words]))[:6]
+		# Normalize zero-shot variants
+		norm = []
+		for c in candidates:
+			if c.replace(" ", "") == "zeroshot" or c == "zero-shot" or c == "zero shot":
+				norm.extend(["zero-shot","zero shot","zeroshot"])
+			else:
+				norm.append(c)
+		if norm:
+			search_filters.include_keywords = list(dict.fromkeys(norm))
 	
 	try:
 		if mode == "title":
@@ -302,18 +322,120 @@ async def qa(payload: QARequest):
 
 @app.post("/api/related")
 async def related(payload: RelatedRequest):
-	"""Return related papers for a given paper by reusing title/abstract as a query."""
-	if not payload.paper_id:
-		raise HTTPException(status_code=400, detail="paper_id is required")
+    """Return related papers using either an explicit query or by resolving a paper_id.
 
-	# Naive approach: treat ID as a query; in future, look up metadata cache and search by title+abstract
-	filters = Filters(limit=max(5, min(50, payload.k)))
-	results = run_search(str(payload.paper_id), filters)
-	return [{
-		"id": p.id,
-		"title": p.title,
-		"year": p.year,
-		"venue": p.venue,
-		"url": p.url,
-		"doi": p.doi
-	} for p in results]
+    - If `query` is provided, we use it directly (prefer title + abstract from the client).
+    - Else, if `paper_id` is provided, we try to resolve metadata from the embedding store
+      to build a query from title + abstract. If that fails, we fall back to using the id
+      text itself as a query (legacy behavior).
+    """
+    if not payload.paper_id and not payload.query:
+        raise HTTPException(status_code=400, detail="query or paper_id is required")
+
+    # Determine query text
+    q_text: Optional[str] = None
+    if payload.query and payload.query.strip():
+        q_text = payload.query.strip()
+    elif payload.paper_id:
+        # Try resolving from embedding store for richer context
+        try:
+            from src.search.embedding_store import get_embedding_store
+            store = get_embedding_store()
+            rec = store.get_paper_by_id(payload.paper_id)
+            if rec:
+                # rec has title and abstract attributes
+                q_text = f"{rec.title} {getattr(rec, 'abstract', '') or ''}".strip()
+        except Exception:
+            # Best-effort only; ignore resolution errors
+            pass
+
+    if not q_text:
+        # Fallback legacy: use the id string
+        q_text = str(payload.paper_id or "").strip()
+
+    # Build filters and execute search
+    search_k = max(5, min(50, payload.k))
+    search_filters = SearchFilters(limit=search_k)
+    try:
+        papers, _diag = run_search_v2(q_text, search_filters)
+        if not papers:
+            papers = run_search(q_text, Filters(limit=search_k))
+    except Exception:
+        papers = run_search(q_text, Filters(limit=search_k))
+
+    # Map and exclude the original paper if present
+    mapped = []
+    for p in papers:
+        if payload.paper_id and p.id == payload.paper_id:
+            continue
+        mapped.append({
+            "id": p.id,
+            "title": p.title,
+            "year": p.year,
+            "venue": p.venue,
+            "url": p.url,
+            "doi": p.doi
+        })
+
+    # Build lightweight insights from titles/abstracts
+    try:
+        blob_parts: List[str] = [q_text]
+        for p in papers:
+            blob_parts.append(p.title or "")
+            if p.abstract:
+                blob_parts.append(p.abstract)
+        blob = " \n ".join([b for b in blob_parts if b])
+        blob_lower = blob.lower()
+
+        # Themes
+        themes: List[str] = []
+        def add_theme(flag: bool, label: str) -> None:
+            if flag and label not in themes:
+                themes.append(label)
+        add_theme("zero-shot" in blob_lower or "zeroshot" in blob_lower, "Zero-shot methods")
+        add_theme("few-shot" in blob_lower or "fewshot" in blob_lower, "Few-shot/low-data learning")
+        add_theme("meta-analysis" in blob_lower, "Meta-analyses")
+        add_theme("benchmark" in blob_lower or "dataset" in blob_lower, "Benchmarking and datasets")
+        add_theme("clinical" in blob_lower or "patient" in blob_lower, "Clinical applications")
+        add_theme("transfer" in blob_lower or "generalization" in blob_lower, "Transfer/generalization")
+
+        # Gaps
+        gaps: List[str] = []
+        if "replication" not in blob_lower and "reproduc" not in blob_lower:
+            gaps.append("Limited replication/reproducibility evidence")
+        if "code" not in blob_lower:
+            gaps.append("Few papers advertise code availability")
+        if "data" not in blob_lower and "dataset" not in blob_lower:
+            gaps.append("Data availability not consistently discussed")
+        if "real-world" not in blob_lower and "clinical" not in blob_lower and "deployment" not in blob_lower:
+            gaps.append("Limited real-world validation")
+
+        # Future work suggestions
+        future_work: List[str] = []
+        if any(t in themes for t in ["Benchmarking and datasets"]):
+            future_work.append("Create stronger, standardized benchmarks and datasets")
+        if any(t in themes for t in ["Transfer/generalization"]):
+            future_work.append("Evaluate generalization across domains and distributions")
+        future_work.append("Improve transparency: share code, data, and evaluation scripts")
+        future_work.append("Conduct preregistered or larger, well-powered studies")
+
+        # Short summary
+        total = len(mapped)
+        span_years = [p.year for p in papers if p.year]
+        span = f"{min(span_years)}–{max(span_years)}" if span_years else "unspecified years"
+        summary = (
+            f"Found {total} related works ({span}). Prominent themes: "
+            + ", ".join(themes[:4]) + ". "
+            + ("Common gaps: " + ", ".join(gaps[:3]) + "." if gaps else "")
+        )
+
+        insights = {
+            "themes": themes,
+            "gaps": gaps,
+            "future_work": future_work,
+            "summary": summary,
+        }
+    except Exception:
+        insights = {"themes": [], "gaps": [], "future_work": [], "summary": ""}
+
+    return {"related": mapped[:search_k], "insights": insights}

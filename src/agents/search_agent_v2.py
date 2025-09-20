@@ -34,6 +34,21 @@ from ..search.fusion import (
 )
 
 logger = get_logger(__name__)
+def _normalize_text(text: str) -> str:
+    import re
+    t = (text or "").lower()
+    t = t.replace("-", " ")
+    t = re.sub(r"[^a-z0-9\s]", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
+
+def _kw_variants(term: str) -> List[str]:
+    t = (term or "").lower().strip()
+    if not t:
+        return []
+    variants = {t, t.replace("-", " "), t.replace(" ", "-"), t.replace(" ", "")}
+    return list(variants)
+
 
 
 def _search_source(source_name: str, query: str, filters: SearchFilters) -> List[Paper]:
@@ -283,16 +298,26 @@ def run_search_v2(topic: str, filters: SearchFilters) -> Tuple[List[Paper], Sear
     # Stage 2b: Strict include enforcement (all include keywords must appear in title or abstract)
     if filters.include_keywords:
         strict = []
-        include_terms = [kw.lower() for kw in filters.include_keywords if kw.strip()]
+        include_terms = [kw for kw in filters.include_keywords if kw.strip()]
         for p in bm25_results:
-            text = f"{p.title} {p.abstract or ''}".lower()
-            if all(term in text for term in include_terms):
+            text = _normalize_text(f"{p.title} {p.abstract or ''}")
+            ok = True
+            for term in include_terms:
+                variants = _kw_variants(term)
+                if not any(v in text for v in variants):
+                    ok = False
+                    break
+            if ok:
                 strict.append(p)
         # If too strict (no papers), relax slightly to N-1 matches
         if not strict and include_terms:
             for p in bm25_results:
-                text = f"{p.title} {p.abstract or ''}".lower()
-                matched = sum(1 for t in include_terms if t in text)
+                text = _normalize_text(f"{p.title} {p.abstract or ''}")
+                matched = 0
+                for term in include_terms:
+                    variants = _kw_variants(term)
+                    if any(v in text for v in variants):
+                        matched += 1
                 if matched >= max(1, len(include_terms) - 1):
                     strict.append(p)
         bm25_results = strict or bm25_results

@@ -17,9 +17,12 @@ import {
   Calendar,
   Globe,
   BookOpen,
-  Sparkles
+  Sparkles,
+  Loader2
 } from 'lucide-react';
 import { truncateText } from '@/lib/utils';
+import RelatedSection from '@/components/RelatedSection';
+import type { RelatedResponse } from '@/lib/types';
 
 interface PapersTableProps {
   papers: Paper[];
@@ -30,8 +33,9 @@ export function PapersTable({ papers }: PapersTableProps) {
   // Default sort by relevance if available, fallback to year
   const [sortField, setSortField] = useState<keyof Paper>('title' as any);
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [related, setRelated] = useState<Record<string, Array<{id:string,title:string,year?:number,venue?:string,url?:string,doi?:string}>>>({});
+  const [related, setRelated] = useState<Record<string, RelatedResponse>>({});
   const [loadingRelated, setLoadingRelated] = useState<Record<string, boolean>>({});
+  const [relatedError, setRelatedError] = useState<Record<string, string | null>>({});
 
   const handleSort = (field: keyof Paper) => {
     if (sortField === field) {
@@ -72,11 +76,26 @@ export function PapersTable({ papers }: PapersTableProps) {
     setLoadingRelated(prev => ({...prev, [paperId]: true}));
     try {
       const base = (import.meta.env.VITE_BACKEND_URL || '') + '/api/related';
-      const resp = await fetch(base, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ paper_id: paperId, k: 10 }) });
+      // Build a strong query from the current paper to improve results
+      const paper = papers.find(p => p.id === paperId);
+      const queryText = paper ? `${paper.title} ${paper.abstract || ''}` : undefined;
+      const body: any = { k: 10 };
+      if (queryText && queryText.trim().length > 0) {
+        body.query = queryText.trim();
+        body.paper_id = paperId;
+      } else {
+        body.paper_id = paperId;
+      }
+      const resp = await fetch(base, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      if (!resp.ok) throw new Error(`Failed to load related (${resp.status})`);
       const data = await resp.json();
-      setRelated(prev => ({...prev, [paperId]: data}));
-    } catch {
-      setRelated(prev => ({...prev, [paperId]: []}));
+      // Auto-expand the row once data is ready
+      setRelated(prev => ({...prev, [paperId]: data as RelatedResponse}));
+      setRelatedError(prev => ({...prev, [paperId]: null}));
+      setExpandedRows(prev => new Set([...prev, paperId]));
+    } catch (e: any) {
+      setRelated(prev => ({...prev, [paperId]: { related: [], insights: { themes: [], gaps: [], future_work: [], summary: '' } }}));
+      setRelatedError(prev => ({...prev, [paperId]: e?.message || 'Failed to load related works'}));
     } finally {
       setLoadingRelated(prev => ({...prev, [paperId]: false}));
     }
@@ -130,7 +149,7 @@ export function PapersTable({ papers }: PapersTableProps) {
             <thead>
               <tr className="border-b">
                 <th 
-                  className="text-left p-2 cursor-pointer hover:bg-muted/50"
+                  className="text-left p-2 cursor-pointer hover:bg-muted/50 break-words whitespace-normal"
                   onClick={() => handleSort('title')}
                 >
                   <div className="flex items-center gap-1">
@@ -141,7 +160,7 @@ export function PapersTable({ papers }: PapersTableProps) {
                   </div>
                 </th>
                 <th 
-                  className="text-left p-2 cursor-pointer hover:bg-muted/50"
+                  className="text-left p-2 cursor-pointer hover:bg-muted/50 break-words whitespace-normal"
                   onClick={() => handleSort('venue')}
                 >
                   <div className="flex items-center gap-1">
@@ -152,7 +171,7 @@ export function PapersTable({ papers }: PapersTableProps) {
                   </div>
                 </th>
                 <th 
-                  className="text-left p-2 cursor-pointer hover:bg-muted/50"
+                  className="text-left p-2 cursor-pointer hover:bg-muted/50 break-words whitespace-normal"
                   onClick={() => handleSort('year')}
                 >
                   <div className="flex items-center gap-1">
@@ -373,24 +392,12 @@ export function PapersTable({ papers }: PapersTableProps) {
                             )}
                           </div>
 
-                          {/* Related */}
-                          {related[paper.id] && (
-                            <div>
-                              <h4 className="font-medium mb-2 flex items-center gap-2">
-                                <Sparkles className="w-4 h-4" /> Related works
-                              </h4>
-                              <ul className="list-disc pl-6 space-y-1">
-                                {related[paper.id]!.map((r) => (
-                                  <li key={r.id} className="text-sm">
-                                    <a href={r.url || (r.doi ? `https://doi.org/${r.doi}` : '#')} target="_blank" className="text-blue-600 hover:underline">
-                                      {truncateText(r.title, 100)}
-                                    </a>
-                                    {r.venue && <span className="text-muted-foreground"> — {r.venue}</span>} {r.year && <span className="text-muted-foreground">({r.year})</span>}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                          {/* Related & Insights */}
+                          <RelatedSection
+                            data={related[paper.id]}
+                            loading={!!loadingRelated[paper.id]}
+                            error={relatedError[paper.id] || null}
+                          />
                         </div>
                       </td>
                     </tr>

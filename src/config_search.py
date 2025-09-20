@@ -45,8 +45,8 @@ def get_search_config() -> SearchConfig:
         "biorxiv": os.getenv("ENABLE_BIORXIV", "true").lower() == "true",
         "medrxiv": os.getenv("ENABLE_MEDRXIV", "true").lower() == "true",
         "dblp": os.getenv("ENABLE_DBLP", "true").lower() == "true",
-        "scholar": os.getenv("ENABLE_SCHOLAR", "false").lower() == "true",
-        "google_scholar": os.getenv("ENABLE_GOOGLE_SCHOLAR", "false").lower() == "true",
+        "scholar": os.getenv("ENABLE_SCHOLAR", "true").lower() == "true",
+        "google_scholar": os.getenv("ENABLE_GOOGLE_SCHOLAR", "true").lower() == "true",
         "pubmed": os.getenv("ENABLE_PUBMED", "true").lower() == "true",
     }
     

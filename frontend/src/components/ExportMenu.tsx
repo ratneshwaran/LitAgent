@@ -102,43 +102,46 @@ export function ExportMenu({ query, results }: ExportMenuProps) {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle className="text-lg flex items-center gap-2">
+        <CardTitle className="text-lg flex items-center gap-2 flex-wrap">
           <Download className="w-5 h-5" />
           Export Results
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
           {exportFormats.map((format) => {
             const Icon = format.icon;
             const isExporting = exporting === format.key;
             const isExported = exported.has(format.key);
-            
+
             return (
-              <Button
-                key={format.key}
-                variant="outline"
-                className="h-auto p-4 flex flex-col items-start gap-2"
-                onClick={() => handleExport(format.key)}
-                disabled={isExporting}
-              >
-                <div className="flex items-center gap-2 w-full">
-                  <Icon className="w-4 h-4" />
-                  <span className="font-medium">{format.label}</span>
-                  {isExporting && <Loader2 className="w-4 h-4 animate-spin ml-auto" />}
-                  {isExported && <CheckCircle className="w-4 h-4 text-green-500 ml-auto" />}
+              <div key={format.key} className="flex flex-col items-center justify-start">
+                <Button
+                  variant="outline"
+                  className="aspect-square w-full max-w-[100px] flex items-center justify-center p-0"
+                  onClick={() => handleExport(format.key)}
+                  disabled={isExporting}
+                  aria-label={`Export ${format.label}`}
+                  title={`Export ${format.label}`}
+                >
+                  {isExporting ? (
+                    <Loader2 className="w-6 h-6 animate-spin" />
+                  ) : (
+                    <Icon className="w-7 h-7" />
+                  )}
+                </Button>
+                <div className="mt-2 text-xs font-medium text-center truncate w-full" title={format.label}>
+                  {format.label}
+                  {isExported && <CheckCircle className="inline-block w-3 h-3 text-green-500 ml-1 align-text-top" />}
                 </div>
-                <p className="text-xs text-muted-foreground text-left">
-                  {format.description}
-                </p>
-              </Button>
+              </div>
             );
           })}
         </div>
 
         {/* Export Summary */}
         <div className="mt-4 p-3 bg-muted/50 rounded-lg">
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-muted-foreground break-words whitespace-normal">
             <strong>Export includes:</strong>
             <ul className="mt-1 space-y-1">
               <li>• {results.summary.total} papers from {results.summary.sources.length} sources</li>
