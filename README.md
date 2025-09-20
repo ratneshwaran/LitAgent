@@ -25,20 +25,21 @@ uv run litrev run "foundation models for single-cell annotation" \
 ```
 
 ## API Usage
-- Start: `uvicorn literature-review-agent.api.main:app --reload`
-- POST `/run` with JSON payload
-- GET `/result/{job_id}` for JSON/Markdown
-- GET `/jobs` for job list
-- GET `/download/{job_id}/{kind}` for md/json/csv
+- Start API: `uv run uvicorn api.main:app --reload`
+- Search: `GET /api/search?q=...&mode=title|semantic|hybrid&k=50` (+ optional filters)
+- QA over results: `POST /api/qa`
+- Related works and insights: `POST /api/related`
+- Jobs: `POST /run`, `GET /result/{job_id}`, `GET /jobs`
+- Downloads: `GET /download/{job_id}/{kind}` for `md`/`json`/`csv`
 
 ## Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
-# open http://localhost:5173 (ensure API at http://localhost:8000)
+# open http://localhost:3000 (ensure API at http://localhost:8000)
 ```
-You can set `VITE_BACKEND_URL` in a `.env` file inside `frontend/` if your API runs elsewhere.
+You can set `VITE_BACKEND_URL` in a `.env` file inside `frontend/` if your API runs elsewhere. The dev server proxies `/api/*` to `http://localhost:8000`.
 
 ## Outputs
 - `outputs/review_<slug>.md` – Markdown report
